@@ -1,0 +1,51 @@
+body{
+	font-family: 'Inconsolata';
+}
+p{
+	top:0px;
+}
+
+figure { 
+    display: inline-block;
+}
+figure img {
+    vertical-align: top;
+}
+figure figcaption {
+	margin-top:10px;
+    text-align: center;
+	font-family: 'Inconsolata';
+	font-size: 1.35em;
+	background: rgba(27,34,9,0.58);
+}
+td{
+	font-size:1.1em;
+}
+th{
+	font-size:1.5em;
+}
+#myModal, label{
+	color: #1B2209;
+}
+#map-container { height: 400px }
+.brand-heading {
+  height:50%;
+  width:auto;
+  margin: 0;
+}
+.datecol{
+	width: 110px;
+}
+.ampel{
+	height:120px;
+	width:95px;
+}
+.ampel > img{
+	height:85%; width:auto;
+}
+.blog{
+	padding:10px;
+}
+.msdown{
+	background: rgba(27,34,9,0.4);
+}

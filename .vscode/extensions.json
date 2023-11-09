@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "github.copilot",
+        "github.copilot-chat",
+        "znck.grammarly",
+        "esbenp.prettier-vscode"
+    ]
+}

@@ -1,0 +1,34 @@
+.card-img-top {
+    max-height: 180px;
+    object-fit: contain;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+
+.card-body .btn {
+    margin-bottom: 0.8rem;
+}
+
+.card-body div img {
+    margin-right: 0.4rem;
+    margin-bottom: 0.3rem;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+}

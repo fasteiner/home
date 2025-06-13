@@ -32,3 +32,16 @@
     flex-grow: 1;
     margin-bottom: 1rem;
 }
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    border-radius: 0.5rem;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    background-color: #fafafa;
+    cursor: pointer;
+}

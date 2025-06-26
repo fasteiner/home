@@ -41,6 +41,7 @@
         color: #fff;
         border: 1px solid #444;
     }
+
 }
 
 /* Theme switcher support: override dark/light via [data-theme] */
@@ -154,4 +155,171 @@
         color: #000;
         border: 1px solid #888;
     }
+
+    /* Fix contrast for headings in light mode */
+    .subheading,
+    h2.mb-5 {
+        color: #bd5d38 !important; /* Accent color for headings in light mode */
+        text-shadow: none;
+    }
+}
+
+[data-theme="light"] .card {
+    background-color: #fff !important;
+    color: #222 !important;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15) !important;
+}
+[data-theme="dark"] .card {
+    background-color: #222 !important;
+    color: #bbb !important;
+    box-shadow: 0 12px 30px rgba(255,255,255,0.1) !important;
+}
+[data-theme="light"] .card:hover {
+    background-color: #fafafa !important;
+}
+[data-theme="dark"] .card:hover {
+    background-color: #333 !important;
+    box-shadow: 0 12px 30px rgba(255,255,255,0.2) !important;
+}
+[data-theme="light"] .card-title {
+    color: #222 !important;
+}
+[data-theme="dark"] .card-title {
+    color: #ddd !important;
+}
+[data-theme="light"] .card-text {
+    color: #333 !important;
+}
+[data-theme="dark"] .card-text {
+    color: #ccc !important;
+}
+
+/* Ensure [data-theme=light] and prefers-color-scheme: light look identical */
+[data-theme="light"] body,
+[data-theme="light"] .card,
+[data-theme="light"] .portfolio-item,
+[data-theme="light"] .card-title,
+[data-theme="light"] .card-text {
+    /* These will override dark mode and match system light mode */
+}
+
+@media (prefers-color-scheme: light) {
+  body:not([data-theme="dark"]) {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+  .card:not([data-theme="dark"] .card) {
+    background-color: #fff !important;
+    color: #222 !important;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15) !important;
+  }
+  .card:hover:not([data-theme="dark"] .card:hover) {
+    background-color: #fafafa !important;
+  }
+  .card-title:not([data-theme="dark"] .card-title) {
+    color: #222 !important;
+  }
+  .card-text:not([data-theme="dark"] .card-text) {
+    color: #333 !important;
+  }
+}
+
+/* High-contrast headings for accessibility */
+[data-theme="dark"] .subheading {
+  color: #ffb380 !important; /* high-contrast accent for dark bg */
+  text-shadow: 0 2px 8px #000, 0 1px 0 #333;
+}
+@media (prefers-color-scheme: dark) {
+  .subheading {
+    color: #ffb380 !important;
+    text-shadow: 0 2px 8px #000, 0 1px 0 #333;
+  }
+}
+[data-theme="light"] .subheading {
+  color: #bd5d38 !important; /* accent for light bg */
+  text-shadow: none;
+}
+@media (prefers-color-scheme: light) {
+  .subheading {
+    color: #bd5d38 !important;
+    text-shadow: none;
+  }
+}
+[data-theme="dark"] h2.mb-5 {
+  color: #fff !important;
+  text-shadow: 0 2px 8px #000, 0 1px 0 #333;
+}
+@media (prefers-color-scheme: dark) {
+  h2.mb-5 {
+    color: #fff !important;
+    text-shadow: 0 2px 8px #000, 0 1px 0 #333;
+  }
+}
+[data-theme="light"] h2.mb-5 {
+  color: #bd5d38 !important;
+  text-shadow: none;
+}
+@media (prefers-color-scheme: light) {
+  h2.mb-5 {
+    color: #bd5d38 !important;
+    text-shadow: none;
+  }
+}
+
+/* Employer Reference Link: high-contrast color for dark mode only */
+[data-theme="dark"] .reference-link {
+  color: #ffb380 !important;
+  text-decoration: underline;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+[data-theme="dark"] .reference-link:hover, [data-theme="dark"] .reference-link:focus {
+  color: #fff !important;
+}
+[data-theme="light"] .reference-link {
+  color: #212529 !important;
+  text-decoration: underline;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+[data-theme="light"] .reference-link:hover, [data-theme="light"] .reference-link:focus {
+  color: #6e554b !important;
+}
+@media (prefers-color-scheme: dark) {
+  .reference-link {
+    color: #ffb380 !important;
+    text-decoration: underline;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .reference-link:hover, .reference-link:focus {
+    color: #fff !important;
+  }
+}
+@media (prefers-color-scheme: light) {
+  .reference-link {
+    color: #212529 !important;
+    text-decoration: underline;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .reference-link:hover, .reference-link:focus {
+    color: #6e554b !important;
+  }
 }

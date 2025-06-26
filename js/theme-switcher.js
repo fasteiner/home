@@ -24,26 +24,8 @@
   function setTheme(theme) {
     localStorage.setItem(THEME_KEY, theme);
     applyTheme(theme);
-  }
-
-  function initSwitcher() {
-    const navCollapse = document.getElementById('navbarSupportedContent');
-    if (!navCollapse) return;
-    const switcher = document.createElement('div');
-    switcher.className = 'theme-switcher';
-    switcher.innerHTML = `
-      <select id="theme-select" aria-label="Theme switcher" class="form-control form-control-sm mt-3">
-        <option value="system">System</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-      </select>
-    `;
-    navCollapse.appendChild(switcher);
     const select = document.getElementById('theme-select');
-    select.value = getSavedTheme() || 'system';
-    select.addEventListener('change', function() {
-      setTheme(this.value);
-    });
+    if (select) select.value = theme;
   }
 
   // Listen for system theme changes
@@ -57,6 +39,12 @@
   document.addEventListener('DOMContentLoaded', function() {
     const saved = getSavedTheme();
     applyTheme(saved === 'system' || !saved ? getSystemTheme() : saved);
-    initSwitcher();
+    const select = document.getElementById('theme-select');
+    if (select) {
+      select.value = saved || 'system';
+      select.addEventListener('change', function() {
+        setTheme(this.value);
+      });
+    }
   });
 })();

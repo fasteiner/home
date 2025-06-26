@@ -1,0 +1,157 @@
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000000;
+        color: #ffffff;
+        /* ...override other styles for dark mode here... */
+    }
+
+    .portfolio-item {
+        background-color: #111;
+        border: 1px solid #333;
+        color: #bbb;
+    }
+
+    /* Improve contrast for #documents links in dark mode, but keep them styled as links */
+    #documents a {
+        color: #bd5d38; /* Softer blue for dark backgrounds */
+        background: none;
+        border: none;
+        padding: 0;
+        border-radius: 0;
+        text-decoration: underline;
+        transition: color 0.2s;
+    }
+
+    #documents a:hover {
+        color: #6e554b; /* Lighter red on hover */
+        background: none;
+        text-decoration: underline;
+    }
+
+    /* Remove border from navigation image in dark mode */
+    nav img, .navbar img, .navigation img {
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Theme the background of select options based on the current theme */
+    .theme-switcher select {
+        background: #222 !important;
+        color: #fff;
+        border: 1px solid #444;
+    }
+}
+
+/* Theme switcher support: override dark/light via [data-theme] */
+[data-theme="dark"] body {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+[data-theme="light"] body {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+[data-theme="dark"] .portfolio-item {
+    background-color: #111 !important;
+    border: 1px solid #333 !important;
+    color: #bbb !important;
+}
+[data-theme="light"] .portfolio-item {
+    background-color: #fff !important;
+    border: 1px solid #eee !important;
+    color: #222 !important;
+}
+
+[data-theme="dark"] #documents a {
+    color: #bd5d38 !important;
+}
+[data-theme="light"] #documents a {
+    color: #bd5d38 !important;
+}
+
+.theme-switcher {
+    text-align: center;
+    margin-top: 1rem;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+.theme-switcher select {
+    background: transparent !important;
+    color: inherit;
+    border: 1px solid #888;
+    box-shadow: none;
+}
+.theme-switcher select:focus {
+    outline: none;
+    border-color: #bd5d38;
+}
+
+/* Modern, semitransparent dropdown tailored to theme */
+[data-theme="dark"] .theme-switcher select,
+@media (prefers-color-scheme: dark) {
+    .theme-switcher select {
+        background: rgba(34, 34, 34, 0.7) !important;
+        color: #fff;
+        border: 1px solid #444;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        backdrop-filter: blur(2px);
+    }
+}
+[data-theme="light"] .theme-switcher select,
+@media (prefers-color-scheme: light) {
+    .theme-switcher select {
+        background: rgba(255,255,255,0.7) !important;
+        color: #222;
+        border: 1px solid #bbb;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        backdrop-filter: blur(2px);
+    }
+}
+
+/* Light mode styles */
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #ffffff;
+        color: #000000;
+        /* ...override other styles for light mode here... */
+    }
+
+    .portfolio-item {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        color: #333;
+    }
+
+    /* Improve contrast for #documents links in light mode */
+    #documents a {
+        color: #bd5d38; /* Softer blue for light backgrounds */
+        background: none;
+        border: none;
+        padding: 0;
+        border-radius: 0;
+        text-decoration: underline;
+        transition: color 0.2s;
+    }
+
+    #documents a:hover {
+        color: #6e554b; /* Lighter red on hover */
+        background: none;
+        text-decoration: underline;
+    }
+
+    /* Remove border from navigation image in light mode */
+    nav img, .navbar img, .navigation img {
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Theme the background of select options based on the current theme */
+    .theme-switcher select {
+        background: #fff !important;
+        color: #000;
+        border: 1px solid #888;
+    }
+}

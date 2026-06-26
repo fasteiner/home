@@ -37,7 +37,10 @@
       color: $white;
     }
 
-    &.active {
+    // Highlight the selected language via aria-current, not an `active` class:
+    // the toggle lives inside the scrollspy nav, and scrollspy strips the
+    // `active` class from every link in that nav as the visitor scrolls.
+    &[aria-current="true"] {
       background-color: $white;
       color: $primary;
     }

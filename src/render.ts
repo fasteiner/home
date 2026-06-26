@@ -223,17 +223,19 @@ function renderProjects(lang: Lang): string {
 
 function renderInterests(lang: Lang): string {
   const items = data.interests.items
-    .map(
-      (i) => `<div class="col-lg-6">
+    .map((i) => {
+      const text = esc(t(i.text, lang));
+      const caption = text ? `<p class="mb-0">${text}</p>` : "";
+      return `<div class="col-lg-6">
     <a class="portfolio-item" href="#">
       <span class="caption"><span class="caption-content">
         <h2>${esc(t(i.name, lang))}</h2>
-        <p class="mb-0">${esc(t(i.text, lang))}</p>
+        ${caption}
       </span></span>
       <img class="img-fluid" src="${asset(i.image)}" alt="">
     </a>
-  </div>`,
-    )
+  </div>`;
+    })
     .join("\n");
   return section("interests", t(data.interests.title, lang), `<div class="row g-0">${items}</div>`);
 }
@@ -302,8 +304,8 @@ export function renderNav(lang: Lang): string {
   </li>
   <li class="nav-item">
     <div class="lang-switch" role="group" aria-label="${langAria}">
-      <a href="/en/" hreflang="en" class="lang-option${lang === "en" ? " active" : ""}"${lang === "en" ? ' aria-current="true"' : ""}>EN</a>
-      <a href="/de/" hreflang="de" class="lang-option${lang === "de" ? " active" : ""}"${lang === "de" ? ' aria-current="true"' : ""}>DE</a>
+      <a href="/en/" hreflang="en" class="lang-option"${lang === "en" ? ' aria-current="true"' : ""}>EN</a>
+      <a href="/de/" hreflang="de" class="lang-option"${lang === "de" ? ' aria-current="true"' : ""}>DE</a>
     </div>
   </li>`;
 }

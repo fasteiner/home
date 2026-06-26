@@ -23,7 +23,6 @@
   "social": [
     { "href": "https://www.linkedin.com/in/fabian-steiner-574111318/", "icon": "fab fa-linkedin" },
     { "href": "https://www.xing.com/profile/Fabian_SteinerBSc/cv", "icon": "fab fa-xing" },
-    { "href": "https://www.facebook.com/fabian.steiner.522", "icon": "fab fa-facebook-f" },
     { "href": "https://github.com/fasteiner", "icon": "fab fa-github" }
   ],
 
@@ -246,7 +245,7 @@
         "role": { "en": "Programmer and Designer", "de": "Programmierer und Designer" },
         "org": {
           "name": { "en": "SGREENING (Diploma project)", "de": "SGREENING (Diplomarbeit)" },
-          "href": "https://fabian.stei-ner.net/projects/sgreening"
+          "href": "/projects/sgreening/"
         },
         "date": { "en": "September 2017 - May 2018", "de": "September 2017 - Mai 2018" },
         "summary": {

@@ -6,8 +6,14 @@
 //   1. Cross-document View Transitions (enabled in _scroll.scss) cross-fade the
 //      old and new page instead of flashing a white reload.
 //   2. The switch links carry the current section as a URL hash (e.g.
-//      /de/#projects), so the visitor lands on the same section — and that
-//      section stays visible and shareable in the address bar.
+//      /de/#projects), so the visitor lands on the same section.
+//
+// IMPORTANT: the section hash is applied to the href only on click — never at
+// load time. The toggle lives inside the scrollspy nav (#sideNav); if its href
+// held an in-page fragment (#projects) at startup, Bootstrap scrollspy would
+// adopt it as a scroll target and hijack its `active` class, breaking the
+// prerendered language highlight. Setting it at click time keeps the toggle out
+// of scrollspy entirely.
 //
 // A one-shot sessionStorage flag also tells the destination page to skip the
 // reveal-on-scroll animation, so the translated text is simply *there* once the
@@ -18,8 +24,7 @@ const LANG_SWITCH_FLAG = "lang-switch";
 const langLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>(".lang-option"));
 
 if (langLinks.length) {
-  // Remember each link's bare destination ("/en/" or "/de/") before we start
-  // appending hashes to it.
+  // Remember each link's bare destination ("/en/" or "/de/").
   for (const link of langLinks) {
     link.dataset.langBase = link.getAttribute("href") ?? "";
   }
@@ -37,37 +42,18 @@ if (langLinks.length) {
     return id;
   }
 
-  // Point both switch links at the current section so a plain click navigates to
-  // /<lang>/#<section> (and the address bar previews the right URL on hover).
-  function syncHashes(): void {
-    const id = currentSectionId();
-    for (const link of langLinks) {
-      const base = link.dataset.langBase ?? "";
-      link.setAttribute("href", id ? `${base}#${id}` : base);
-    }
-  }
-
-  // Keep the hashes current as the visitor scrolls / resizes, coalesced to one
-  // update per frame.
-  let ticking = false;
-  const scheduleSync = () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      ticking = false;
-      syncHashes();
-    });
-  };
-
-  syncHashes();
-  window.addEventListener("scroll", scheduleSync, { passive: true });
-  window.addEventListener("resize", scheduleSync, { passive: true });
-
-  // Flag the next load as a language switch (so it can skip the reveal animation).
-  // Clicking the already-active language is just an in-page jump — leave it.
   for (const link of langLinks) {
     link.addEventListener("click", () => {
-      if (link.classList.contains("active")) return;
+      // Carry the current section across so the visitor lands on the same place.
+      // The browser navigates using this freshly-set href (modifier/middle clicks
+      // keep working); the destination page re-renders with a bare href.
+      const base = link.dataset.langBase ?? "";
+      const id = currentSectionId();
+      link.setAttribute("href", id ? `${base}#${id}` : base);
+
+      // Flag the next load as a language switch (so it can skip the reveal
+      // animation). Clicking the already-selected language is just an in-page jump.
+      if (link.getAttribute("aria-current") === "true") return;
       try {
         sessionStorage.setItem(LANG_SWITCH_FLAG, "1");
       } catch {

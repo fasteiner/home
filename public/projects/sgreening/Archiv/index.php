@@ -252,7 +252,7 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGIBpSuGI37YWz6gzBaoAY_t_VJiUP8Co&sensor=false"></script>
+    <!-- Google Maps removed (API key revoked) -->
 	   <script>	
  
       function init_map() {

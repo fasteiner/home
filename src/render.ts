@@ -177,7 +177,7 @@ function renderSkills(lang: Lang): string {
         ? `<ul class="list-inline dev-icons">${group.icons
             .map((icon) =>
               icon.type === "img"
-                ? `<li class="list-inline-item"><img class="fab" src="${asset(icon.src ?? "")}" height="72px" alt=""></li>`
+                ? `<li class="list-inline-item"><img class="fab" src="${asset(icon.src ?? "")}" height="72px" alt="" loading="lazy" decoding="async"></li>`
                 : `<li class="list-inline-item"><i class="${icon.value}"></i></li>`,
             )
             .join("")}</ul>`
@@ -195,14 +195,17 @@ function renderProjects(lang: Lang): string {
   const cards = data.projects.items
     .map((p) => {
       const media = p.image
-        ? `<img src="${asset(p.image)}" class="card-img-top p-4" alt="${esc(p.imageAlt ?? p.title)}">`
+        ? `<img src="${asset(p.image)}" class="card-img-top p-4" alt="${esc(p.imageAlt ?? p.title)}" loading="lazy" decoding="async">`
         : `<div class="card-img-top d-flex align-items-center justify-content-center" style="height: 180px;"><i class="${p.icon} fa-4x text-primary"></i></div>`;
       const repo = p.repo
         ? `\n        <a href="${p.repo}" ${TARGET} class="ms-2 text-body" title="View on GitHub"><i class="fab fa-github"></i></a>`
         : "";
       const badges = p.badges
         ? `<div>${p.badges
-            .map((b) => `<img src="${b.src}" alt="${esc(b.alt)}" title="${esc(b.alt)}">`)
+            .map(
+              (b) =>
+                `<img src="${b.src}" alt="${esc(b.alt)}" title="${esc(b.alt)}" loading="lazy" decoding="async">`,
+            )
             .join("")}</div>`
         : "";
       return `<div class="col-md-6 col-lg-4 mb-4">
@@ -232,7 +235,7 @@ function renderInterests(lang: Lang): string {
         <h2>${esc(t(i.name, lang))}</h2>
         ${caption}
       </span></span>
-      <img class="img-fluid" src="${asset(i.image)}" alt="">
+      <img class="img-fluid" src="${asset(i.image)}" alt="" loading="lazy" decoding="async">
     </a>
   </div>`;
     })

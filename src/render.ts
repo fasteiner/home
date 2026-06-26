@@ -304,8 +304,8 @@ export function renderNav(lang: Lang): string {
   </li>
   <li class="nav-item">
     <div class="lang-switch" role="group" aria-label="${langAria}">
-      <a href="/en/" hreflang="en" class="lang-option${lang === "en" ? " active" : ""}"${lang === "en" ? ' aria-current="true"' : ""}>EN</a>
-      <a href="/de/" hreflang="de" class="lang-option${lang === "de" ? " active" : ""}"${lang === "de" ? ' aria-current="true"' : ""}>DE</a>
+      <a href="/en/" hreflang="en" class="lang-option"${lang === "en" ? ' aria-current="true"' : ""}>EN</a>
+      <a href="/de/" hreflang="de" class="lang-option"${lang === "de" ? ' aria-current="true"' : ""}>DE</a>
     </div>
   </li>`;
 }

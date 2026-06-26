@@ -52,8 +52,8 @@ if (langLinks.length) {
       link.setAttribute("href", id ? `${base}#${id}` : base);
 
       // Flag the next load as a language switch (so it can skip the reveal
-      // animation). Clicking the already-active language is just an in-page jump.
-      if (link.classList.contains("active")) return;
+      // animation). Clicking the already-selected language is just an in-page jump.
+      if (link.getAttribute("aria-current") === "true") return;
       try {
         sessionStorage.setItem(LANG_SWITCH_FLAG, "1");
       } catch {

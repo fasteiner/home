@@ -80,6 +80,14 @@
   </style>
   <script>
     document.documentElement.classList.add("app-loading");
+    // Fail-safe: main.ts normally removes the overlay once styles are applied.
+    // If the bundle never runs (network error, a deploy serving raw source, JS
+    // disabled mid-load), reveal the page anyway instead of spinning forever.
+    window.setTimeout(function () {
+      var loader = document.getElementById("app-loader");
+      if (loader) loader.remove();
+      document.documentElement.classList.remove("app-loading");
+    }, 8000);
   </script>
 
   <!-- Custom fonts -->

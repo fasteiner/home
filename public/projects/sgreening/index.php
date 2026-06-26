@@ -26,6 +26,7 @@
     <link href="css/grayscale.min.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet'>
 	<link href="css/custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 	<script src='https://www.google.com/recaptcha/api.js'></script>
   </head>
 
@@ -238,36 +239,22 @@
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGIBpSuGI37YWz6gzBaoAY_t_VJiUP8Co&sensor=false"></script>
-	   <script>	
- 
-      function init_map() {
-		var var_location = new google.maps.LatLng(48.190776,16.397527);
- 
-        var var_mapoptions = {
-          center: var_location,
-          zoom: 15
-        };
- 
-		var var_marker = new google.maps.Marker({
-			position: var_location,
-            map: var_map,
-			title:"Venice"});
- 
-        var var_map = new google.maps.Map(document.getElementById("map-container"),
-            var_mapoptions);
- 
-		var_marker.setMap(var_map);	
- 
-      }
- 
-      google.maps.event.addDomListener(window, 'load', init_map);
- 
-    </script>
+    <!-- Map via Leaflet + OpenStreetMap (no API key required) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+      (function () {
+        var coords = [48.190776, 16.397527];
+        var map = L.map("map-container", { center: coords, zoom: 15, scrollWheelZoom: false });
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 19,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        L.marker(coords).addTo(map);
+      })();
+    </script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/grayscale.min.js"></script>
+    <script src="js/grayscale.js"></script>
 
   </body>
 

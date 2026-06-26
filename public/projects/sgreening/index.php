@@ -244,7 +244,7 @@
     <script>
       (function () {
         var coords = [48.190776, 16.397527];
-        var map = L.map("map-container", { center: coords, zoom: 15, scrollWheelZoom: false });
+        var map = L.map("map-container", { center: coords, zoom: 15, scrollWheelZoom: true, touchZoom: true });
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
           maxZoom: 19,
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

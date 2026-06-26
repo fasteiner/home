@@ -28,3 +28,34 @@ if (lang === "en" || lang === "de") {
     // localStorage may be unavailable (private mode) — safe to ignore.
   }
 }
+
+// Drop the loading overlay (see the inline styles in the page <head>). Reaching
+// this point means the bundled stylesheet has been applied, so the page is now
+// fully styled; we only briefly wait for web fonts so the first visible frame is
+// already laid out in the final typeface, then fade the spinner out.
+function revealApp(): void {
+  const root = document.documentElement;
+  const loader = document.getElementById("app-loader");
+  root.classList.add("app-ready");
+  if (!loader) {
+    root.classList.remove("app-loading");
+    return;
+  }
+  const remove = (): void => {
+    loader.remove();
+    root.classList.remove("app-loading", "app-ready");
+  };
+  loader.addEventListener("transitionend", remove, { once: true });
+  // Fallback for when the fade is skipped (reduced motion) or transitionend is missed.
+  window.setTimeout(remove, 700);
+}
+
+const fontsReady: Promise<unknown> =
+  "fonts" in document
+    ? Promise.race([
+        document.fonts.ready,
+        new Promise<void>((resolve) => window.setTimeout(resolve, 1500)),
+      ])
+    : Promise.resolve();
+
+void fontsReady.then(() => requestAnimationFrame(revealApp));

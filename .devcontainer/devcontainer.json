@@ -1,0 +1,39 @@
+{
+  "name": "fabian-steiner-resume (Vite + TypeScript)",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
+
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+
+  // Vite dev server (5173)
+  "appPort": [5173],
+  "portsAttributes": {
+    "5173": {
+      "label": "Vite dev server",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  "postCreateCommand": "npm install",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "EditorConfig.EditorConfig",
+        "Anthropic.claude-code"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
+        }
+      }
+    }
+  },
+
+  "remoteUser": "node"
+}

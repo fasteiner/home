@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Persönliche Website und Online-Lebenslauf von Ing. Fabian Steiner BSc., Automation Consultant.">
+  <meta name="author" content="Fabian Steiner">
+
+  <title>Ing. Fabian Steiner BSc.</title>
+
+  <link rel="icon" type="image/png" href="/img/fabian_steiner.png">
+  <link rel="alternate" hreflang="en" href="https://fabian.stei-ner.net/en/">
+  <link rel="alternate" hreflang="de" href="https://fabian.stei-ner.net/de/">
+  <link rel="canonical" href="https://fabian.stei-ner.net/de/">
+
+  <!-- Set the colour mode before first paint to avoid a flash of the wrong theme -->
+  <script>
+    (function () {
+      try {
+        var pref = localStorage.getItem("theme-preference") || "system";
+        var dark =
+          pref === "dark" ||
+          (pref !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.setAttribute("data-bs-theme", dark ? "dark" : "light");
+      } catch (e) {}
+    })();
+  </script>
+
+  <!--
+    Loading overlay. The stylesheet is bundled into /src/main.ts (a deferred
+    module), so the raw page would otherwise paint unstyled for a moment — most
+    visibly as a full-width profile image. This inline CSS paints immediately and
+    covers the page with a spinner until main.ts has applied the styles, then
+    fades out. It only appears when JS is enabled (see the class toggle below).
+  -->
+  <style>
+    #app-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      transition: opacity 0.35s ease;
+    }
+    html[data-bs-theme="dark"] #app-loader {
+      background-color: #212529;
+    }
+    html.app-loading #app-loader {
+      display: flex;
+    }
+    html.app-ready #app-loader {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .app-loader__spinner {
+      width: 3rem;
+      height: 3rem;
+      border: 0.3rem solid rgba(128, 128, 128, 0.25);
+      border-top-color: #bd5d38;
+      border-radius: 50%;
+      animation: app-loader-spin 0.8s linear infinite;
+    }
+    @keyframes app-loader-spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .app-loader__spinner {
+        animation: none;
+      }
+      #app-loader {
+        transition: none;
+      }
+    }
+  </style>
+  <script>
+    document.documentElement.classList.add("app-loading");
+  </script>
+
+  <!-- Custom fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,800;1,400;1,800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+  <!-- App entry: Vite bundles Bootstrap, the SCSS theme and the site scripts -->
+  <script type="module" src="/src/main.ts"></script>
+
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#sideNav" data-bs-offset="54">
+
+  <div id="app-loader" aria-hidden="true">
+    <div class="app-loader__spinner"></div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Fabian Steiner</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="/img/fabian_steiner.png" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <!--@NAV-->
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid p-0">
+    <!--@CONTENT-->
+  </div>
+
+</body>
+
+</html>

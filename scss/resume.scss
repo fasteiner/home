@@ -1,6 +1,23 @@
-@import "variables.scss";
-@import "mixins.scss";
-@import "global.scss";
-@import "nav.scss";
-@import "resume-item.scss";
-@import "bootstrap-overrides.scss";
+//
+// Fabian Steiner — resume site styles
+//
+// Bootstrap 5.3 is imported here so the brand variables (orange $primary,
+// fonts, body colour) flow into every component and into the light/dark
+// colour modes. Order matters: variables -> Bootstrap -> theme layer.
+//
+
+// 1) Brand variable overrides (must come before Bootstrap)
+@import "variables";
+
+// 2) Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// 3) Theme layer
+@import "mixins";
+@import "global";
+@import "nav";
+@import "resume-item";
+@import "cards";
+@import "portfolio";
+@import "theme";
+@import "scroll";

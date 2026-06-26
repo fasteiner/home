@@ -1,0 +1,46 @@
+// Project cards — extend Bootstrap cards. Colours come from Bootstrap colour
+// mode variables (--bs-*), so light/dark mode just work without overrides.
+
+.card {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--bs-box-shadow-lg);
+  }
+}
+
+.card-img-top {
+  max-height: 180px;
+  object-fit: contain;
+  padding: 1.5rem;
+  background-color: var(--bs-tertiary-bg);
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+
+  .btn {
+    margin-bottom: 0.8rem;
+  }
+
+  div img {
+    margin-right: 0.4rem;
+    margin-bottom: 0.3rem;
+  }
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card-text {
+  flex-grow: 1;
+}

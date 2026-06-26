@@ -1,0 +1,771 @@
+{
+  "meta": {
+    "name": { "pre": "Ing. Fabian Franz", "highlight": "Steiner", "post": "BSc." },
+    "shortName": "Fabian Steiner",
+    "profileImage": "img/fabian_steiner.png",
+    "lead": {
+      "en": "I'm an independent Automation Consultant who also subcontracts for techwork data GmbH. I deliver automation consulting with PowerShell and Python, Azure integrations, Jenkins support, API scripting, Logic Apps and Azure Automation, and broader M365 automation. Xurrent, Freshdesk, and techwork automator consulting are provided through techwork. Outside of work I dive into multi-language automation projects and find balance in the rush of motorcycles, the splash of water skiing, and the rhythm of MotoGP and Formula 1.",
+      "de": "Ich bin selbstständiger Automation Consultant und arbeite zudem als Subunternehmer für die techwork data GmbH. Ich biete Automatisierungsberatung mit PowerShell und Python, Azure-Integrationen, Jenkins-Support, API-Scripting, Logic Apps und Azure Automation sowie M365-Automatisierung im weiteren Sinne. Die Beratung zu Xurrent, Freshdesk und dem techwork automator läuft über techwork. Abseits der Arbeit vertiefe ich mich in Automatisierungsprojekte mit den unterschiedlichsten Programmiersprachen und finde meinen Ausgleich im Nervenkitzel auf dem Motorrad, in der Gischt beim Wasserski und im Rhythmus von MotoGP und Formel 1."
+    }
+  },
+
+  "nav": [
+    { "id": "about", "label": { "en": "About", "de": "Über mich" } },
+    { "id": "experience", "label": { "en": "Experience", "de": "Berufserfahrung" } },
+    { "id": "education", "label": { "en": "Education", "de": "Ausbildung" } },
+    { "id": "skills", "label": { "en": "Skills", "de": "Kenntnisse" } },
+    { "id": "projects", "label": { "en": "Projects", "de": "Projekte" } },
+    { "id": "interests", "label": { "en": "Interests", "de": "Interessen" } },
+    { "id": "awards", "label": { "en": "Certifications", "de": "Zertifizierungen" } },
+    { "id": "documents", "label": { "en": "Documents", "de": "Dokumente" } }
+  ],
+
+  "social": [
+    { "href": "https://www.linkedin.com/in/fabian-steiner-574111318/", "icon": "fab fa-linkedin" },
+    { "href": "https://www.xing.com/profile/Fabian_SteinerBSc/cv", "icon": "fab fa-xing" },
+    { "href": "https://www.facebook.com/fabian.steiner.522", "icon": "fab fa-facebook-f" },
+    { "href": "https://github.com/fasteiner", "icon": "fab fa-github" }
+  ],
+
+  "experience": {
+    "title": { "en": "Experience", "de": "Berufserfahrung" },
+    "items": [
+      {
+        "role": {
+          "en": "Independent Automation Consultant",
+          "de": "Selbstständiger Automation Consultant"
+        },
+        "org": { "name": { "en": "Self-employed", "de": "Selbstständig" } },
+        "date": { "en": "December 2025 - now", "de": "Dezember 2025 - heute" },
+        "bullets": [
+          {
+            "en": "Automation consulting and programming in PowerShell and Python for Microsoft 365 and Azure scenarios",
+            "de": "Automatisierungsberatung und -programmierung in PowerShell und Python für Microsoft-365- und Azure-Szenarien"
+          },
+          {
+            "en": "Azure integrations, Logic Apps, Azure Automation, and API scripting for cloud and on-premises workflows",
+            "de": "Azure-Integrationen, Logic Apps, Azure Automation und API-Scripting für Cloud- und On-Premises-Workflows"
+          },
+          {
+            "en": "Jenkins support, CI/CD automation, GitHub Actions, and infrastructure scripting",
+            "de": "Jenkins-Support, CI/CD-Automatisierung, GitHub Actions und Infrastruktur-Scripting"
+          },
+          {
+            "en": "Active Directory and Entra ID automation, SAML/SSO configuration, and identity-driven process design",
+            "de": "Automatisierung von Active Directory und Entra ID, SAML/SSO-Konfiguration und identitätsbasiertes Prozessdesign"
+          }
+        ]
+      },
+      {
+        "role": {
+          "en": "Automation Consultant (Subcontractor)",
+          "de": "Automation Consultant (Subunternehmer)"
+        },
+        "org": {
+          "name": { "en": "techwork data GmbH", "de": "techwork data GmbH" },
+          "href": "https://www.techwork.at/"
+        },
+        "date": { "en": "December 2025 - now", "de": "Dezember 2025 - heute" },
+        "bullets": [
+          {
+            "en": "Design and delivery of <a href='https://www.techwork.at/automator/' rel='noopener noreferrer' target='_blank'>techwork automator</a> solutions aligned to customer processes",
+            "de": "Konzeption und Umsetzung von <a href='https://www.techwork.at/automator/' rel='noopener noreferrer' target='_blank'>techwork automator</a>-Lösungen, abgestimmt auf die Kundenprozesse"
+          },
+          {
+            "en": "M365 and cross-platform integrations",
+            "de": "M365- und plattformübergreifende Integrationen"
+          },
+          { "en": "Web application development", "de": "Entwicklung von Webanwendungen" },
+          {
+            "en": "Consulting for Xurrent and Freshdesk platforms, including workflow automation and integrations",
+            "de": "Beratung zu den Plattformen Xurrent und Freshdesk, einschließlich Workflow-Automatisierung und Integrationen"
+          },
+          {
+            "en": "Extensive JavaScript automation scripting on the <a href='https://docs.automator.at/' rel='noopener noreferrer' target='_blank'>techwork automator</a> platform",
+            "de": "Umfangreiches Automatisierungs-Scripting in JavaScript auf der <a href='https://docs.automator.at/' rel='noopener noreferrer' target='_blank'>techwork automator</a>-Plattform"
+          },
+          {
+            "en": "Xurrent ITSM implementations: approval workflows, knowledge article automation, and UI extensions",
+            "de": "Xurrent-ITSM-Implementierungen: Genehmigungs-Workflows, Automatisierung von Knowledge-Artikeln und UI-Erweiterungen"
+          },
+          {
+            "en": "GraphQL-based platform integrations (Xurrent/4me API)",
+            "de": "GraphQL-basierte Plattformintegrationen (Xurrent/4me-API)"
+          },
+          {
+            "en": "Jira and Azure DevOps integrations",
+            "de": "Jira- und Azure-DevOps-Integrationen"
+          },
+          {
+            "en": "ITSM deployments for enterprise customers across Austria and Europe",
+            "de": "ITSM-Einführungen für Enterprise-Kunden in Österreich und Europa"
+          }
+        ]
+      },
+      {
+        "role": { "en": "IT Automation Engineer", "de": "IT Automation Engineer" },
+        "org": {
+          "name": { "en": "TTTech Computertechnik AG", "de": "TTTech Computertechnik AG" },
+          "href": "https://www.tttech.com/"
+        },
+        "date": { "en": "June 2022 - December 2025", "de": "Juni 2022 - Dezember 2025" },
+        "bullets": [
+          {
+            "en": "Agent creation in Copilot Studio",
+            "de": "Erstellung von Agenten in Copilot Studio"
+          },
+          {
+            "en": "Automation Ticket System Integration",
+            "de": "Automatisierte Ticketsystem-Integration"
+          },
+          {
+            "en": "Automation using PowerShell, Python, Groovy, Logic Apps, etc.",
+            "de": "Automatisierung mit PowerShell, Python, Groovy, Logic Apps usw."
+          },
+          {
+            "en": "<a href='https://www.techwork.at/automator/' rel='noopener noreferrer' target='_blank'>techwork automator</a> (4me Frontend Automation)",
+            "de": "<a href='https://www.techwork.at/automator/' rel='noopener noreferrer' target='_blank'>techwork automator</a> (4me-Frontend-Automatisierung)"
+          },
+          { "en": "Jenkins Management", "de": "Jenkins-Management" },
+          { "en": "Active Directory Automation", "de": "Active-Directory-Automatisierung" },
+          {
+            "en": "VCenter Administration + Automation",
+            "de": "vCenter-Administration + Automatisierung"
+          },
+          { "en": "Automation using Microsoft Graph", "de": "Automatisierung mit Microsoft Graph" },
+          { "en": "Au2mator Administration", "de": "Au2mator-Administration" },
+          {
+            "en": "Administration of Active Directory, Exchange, and Azure",
+            "de": "Administration von Active Directory, Exchange und Azure"
+          },
+          {
+            "en": "<a href='https://www.xurrent.com/' rel='noopener noreferrer' target='_blank'>Xurrent (4me)</a> / Ticket System Administration (Workflow and Form Design, Automation)",
+            "de": "<a href='https://www.xurrent.com/' rel='noopener noreferrer' target='_blank'>Xurrent (4me)</a> / Ticketsystem-Administration (Workflow- und Formulardesign, Automatisierung)"
+          }
+        ]
+      },
+      {
+        "role": { "en": "IT Service Desk Engineer", "de": "IT Service Desk Engineer" },
+        "org": {
+          "name": { "en": "TTTech Computertechnik AG", "de": "TTTech Computertechnik AG" },
+          "href": "https://www.tttech.com/"
+        },
+        "date": { "en": "August 2020 - May 2022", "de": "August 2020 - Mai 2022" },
+        "bullets": [
+          { "en": "Phone Support & Dispatching", "de": "Telefon-Support & Dispatching" },
+          { "en": "Computer Setup", "de": "Computer-Setup" },
+          {
+            "en": "Permission Management (SVN, AD, Linux File Server, 4me, Kaba)",
+            "de": "Berechtigungsverwaltung (SVN, AD, Linux-Fileserver, 4me, Kaba)"
+          },
+          {
+            "en": "Exchange Management (Mailbox & Contact Management)",
+            "de": "Exchange-Management (Postfach- & Kontaktverwaltung)"
+          },
+          {
+            "en": "Intune Management (Policies & Apps)",
+            "de": "Intune-Management (Richtlinien & Apps)"
+          },
+          { "en": "Phone Setup & Preparation", "de": "Telefon-Einrichtung & -Vorbereitung" },
+          {
+            "en": "Ticket System Administration (Workflows, Forms, Service Catalogue, Asset Management, Automation)",
+            "de": "Ticketsystem-Administration (Workflows, Formulare, Servicekatalog, Asset-Management, Automatisierung)"
+          },
+          {
+            "en": "Backend Automation (PowerShell, Jenkins)",
+            "de": "Backend-Automatisierung (PowerShell, Jenkins)"
+          }
+        ]
+      },
+      {
+        "role": { "en": "Junior System Engineer", "de": "Junior System Engineer" },
+        "org": {
+          "name": { "en": "CP-Consult Bugram GmbH", "de": "CP-Consult Bugram GmbH" },
+          "href": "http://www.cp-consult.at/"
+        },
+        "reference": {
+          "href": "download/Dienstzeugnis_CP-Consult.pdf",
+          "label": { "en": "Employers Reference", "de": "Dienstzeugnis" }
+        },
+        "date": { "en": "August 2019 - February 2020", "de": "August 2019 - Februar 2020" },
+        "bullets": [
+          { "en": "Network Design and Configuration", "de": "Netzwerkdesign und -konfiguration" },
+          { "en": "DIVOS Configuration", "de": "DIVOS-Konfiguration" },
+          {
+            "en": "SQL View and Procedure Development",
+            "de": "Entwicklung von SQL-Views und -Prozeduren"
+          },
+          {
+            "en": "Active Directory Administration (GPOs, DFS, Password Policies, etc.)",
+            "de": "Active-Directory-Administration (GPOs, DFS, Passwortrichtlinien usw.)"
+          },
+          { "en": "VCenter Setup + Administration", "de": "vCenter-Einrichtung + Administration" }
+        ]
+      },
+      {
+        "role": { "en": "Recruit", "de": "Grundwehrdiener" },
+        "org": {
+          "name": { "en": "Austrian Armed Forces", "de": "Österreichisches Bundesheer" },
+          "href": "http://www.bundesheer.at/"
+        },
+        "reference": {
+          "href": "download/Praktikumsbestätigung_Österreichisches_Bundesheer.pdf",
+          "label": { "en": "Employers Reference", "de": "Dienstzeugnis" }
+        },
+        "date": { "en": "October 2018 - March 2019", "de": "Oktober 2018 - März 2019" }
+      },
+      {
+        "role": { "en": "Network Administrator", "de": "Netzwerkadministrator" },
+        "org": { "name": { "en": "Christian Lewold", "de": "Christian Lewold" } },
+        "date": { "en": "December 2018", "de": "Dezember 2018" },
+        "summary": {
+          "en": "Configuration of the company network",
+          "de": "Konfiguration des Firmennetzwerks"
+        }
+      },
+      {
+        "role": { "en": "IT Staff", "de": "IT-Mitarbeiter" },
+        "org": {
+          "name": {
+            "en": "FCP Fritsch, Chiari & Partner ZT GmbH",
+            "de": "FCP Fritsch, Chiari & Partner ZT GmbH"
+          },
+          "href": "http://www.fcp.at"
+        },
+        "reference": {
+          "href": "download/Praktikumszeugnis_FCP_2018.pdf",
+          "label": { "en": "Employers Reference", "de": "Dienstzeugnis" }
+        },
+        "date": { "en": "August 2018 - September 2018", "de": "August 2018 - September 2018" },
+        "summary": {
+          "en": "Network Administration, Web Development, Monitoring, Windows 10 Migration, Virtualisation and IT Support",
+          "de": "Netzwerkadministration, Webentwicklung, Monitoring, Windows-10-Migration, Virtualisierung und IT-Support"
+        }
+      },
+      {
+        "role": { "en": "Programmer and Designer", "de": "Programmierer und Designer" },
+        "org": {
+          "name": { "en": "SGREENING (Diploma project)", "de": "SGREENING (Diplomarbeit)" },
+          "href": "https://fabian.stei-ner.net/projects/sgreening"
+        },
+        "date": { "en": "September 2017 - May 2018", "de": "September 2017 - Mai 2018" },
+        "summary": {
+          "en": "Diploma project: Development of a Server Room Monitoring System",
+          "de": "Diplomarbeit: Entwicklung eines Serverraum-Überwachungssystems"
+        }
+      },
+      {
+        "role": { "en": "IT Staff", "de": "IT-Mitarbeiter" },
+        "org": {
+          "name": {
+            "en": "FCP Fritsch, Chiari & Partner ZT GmbH",
+            "de": "FCP Fritsch, Chiari & Partner ZT GmbH"
+          },
+          "href": "http://www.fcp.at"
+        },
+        "reference": {
+          "href": "download/Praktikumszeugnis_FCP_2017.pdf",
+          "label": { "en": "Employers Reference", "de": "Dienstzeugnis" }
+        },
+        "date": { "en": "August 2017", "de": "August 2017" },
+        "summary": {
+          "en": "Network Administration, Development of a Network Monitoring System, Preparing the Windows 10 Migration, Python Programming and Database Development",
+          "de": "Netzwerkadministration, Entwicklung eines Netzwerk-Monitoring-Systems, Vorbereitung der Windows-10-Migration, Python-Programmierung und Datenbankentwicklung"
+        }
+      },
+      {
+        "role": { "en": "Software Developer", "de": "Softwareentwickler" },
+        "org": {
+          "name": { "en": "Gebrüder Aschauer GnbR", "de": "Gebrüder Aschauer GnbR" },
+          "href": "http://www.bauernhofmilch.at"
+        },
+        "date": { "en": "March 2017 - April 2017", "de": "März 2017 - April 2017" },
+        "summary": {
+          "en": "Development of a tool to track medicine use on cows",
+          "de": "Entwicklung eines Tools zur Erfassung des Medikamenteneinsatzes bei Kühen"
+        }
+      },
+      {
+        "role": { "en": "IT Staff", "de": "IT-Mitarbeiter" },
+        "org": {
+          "name": {
+            "en": "FCP Fritsch, Chiari & Partner ZT GmbH",
+            "de": "FCP Fritsch, Chiari & Partner ZT GmbH"
+          },
+          "href": "http://www.fcp.at"
+        },
+        "date": { "en": "18.11, 2.12, 8. – 11.12.2016", "de": "18.11., 2.12., 8.–11.12.2016" },
+        "summary": {
+          "en": "Supporting the relocation of FCP: Configuring network devices, arranging workstations, configuring printers and beamers, wiring a server room and structured testing",
+          "de": "Unterstützung beim Umzug von FCP: Konfiguration von Netzwerkgeräten, Einrichten von Arbeitsplätzen, Konfiguration von Druckern und Beamern, Verkabelung eines Serverraums und strukturiertes Testen"
+        }
+      },
+      {
+        "role": { "en": "IT Staff", "de": "IT-Mitarbeiter" },
+        "org": {
+          "name": {
+            "en": "FCP Fritsch, Chiari & Partner ZT GmbH",
+            "de": "FCP Fritsch, Chiari & Partner ZT GmbH"
+          },
+          "href": "http://www.fcp.at"
+        },
+        "reference": {
+          "href": "download/Praktikumszeugnis_FCP_2016.pdf",
+          "label": { "en": "Employers Reference", "de": "Dienstzeugnis" }
+        },
+        "date": { "en": "August 2016", "de": "August 2016" },
+        "summary": {
+          "en": "Network Administration, Development of a Sensor System, Python Programming, Database Development and IT Support",
+          "de": "Netzwerkadministration, Entwicklung eines Sensorsystems, Python-Programmierung, Datenbankentwicklung und IT-Support"
+        }
+      },
+      {
+        "role": { "en": "Supply Chain Management", "de": "Supply Chain Management" },
+        "org": {
+          "name": { "en": "TTTech Computertechnik AG", "de": "TTTech Computertechnik AG" },
+          "href": "https://www.tttech.com/"
+        },
+        "reference": {
+          "href": "download/Praktikumszeugnis_TTTech_2015.pdf",
+          "label": { "en": "Employers Reference", "de": "Dienstzeugnis" }
+        },
+        "date": { "en": "July 2015 - August 2015", "de": "Juli 2015 - August 2015" },
+        "summary": {
+          "en": "Assembling and flashing / programming network devices, repairing and packing products, and visual quality control",
+          "de": "Montage und Flashen / Programmieren von Netzwerkgeräten, Reparatur und Verpackung von Produkten sowie optische Qualitätskontrolle"
+        }
+      }
+    ]
+  },
+
+  "education": {
+    "title": { "en": "Education", "de": "Ausbildung" },
+    "items": [
+      {
+        "school": { "name": "FH Technikum Wien", "href": "https://www.technikum-wien.at/en/" },
+        "subtitle": {
+          "en": "University of Applied Sciences | Technikum Wien",
+          "de": "Fachhochschule | Technikum Wien"
+        },
+        "detail": {
+          "text": {
+            "en": "Bachelor - Information and Communication Systems and Services",
+            "de": "Bachelor – Information and Communication Systems and Services"
+          },
+          "href": "https://www.technikum-wien.at/en/programs/bachelor-information-and-communication-systems-and-services/"
+        },
+        "date": { "en": "2021 - 2023", "de": "2021 - 2023" }
+      },
+      {
+        "school": { "name": "TU Wien", "href": "https://www.tuwien.at/en/" },
+        "subtitle": { "en": "Technical University of Vienna", "de": "Technische Universität Wien" },
+        "detail": {
+          "text": {
+            "en": "Bachelor's Programme Medical Informatics",
+            "de": "Bachelorstudium Medizinische Informatik"
+          }
+        },
+        "date": { "en": "2019 - 2021", "de": "2019 - 2021" }
+      },
+      {
+        "school": { "name": "HTL Rennweg", "href": "https://www.htl.rennweg.at/" },
+        "subtitle": {
+          "en": "School for higher technical education",
+          "de": "Höhere technische Lehranstalt"
+        },
+        "detail": {
+          "text": {
+            "en": "IT School with focus on Networking and Security",
+            "de": "IT-Schule mit Schwerpunkt Netzwerktechnik und Security"
+          }
+        },
+        "date": { "en": "2013 - 2018", "de": "2013 - 2018" }
+      },
+      {
+        "school": { "name": "Mater Salvatoris Kenyongasse", "href": "http://www.kenyon.at/" },
+        "subtitle": { "en": "Private Grammar School", "de": "Privates Gymnasium" },
+        "detail": {
+          "text": {
+            "en": "Grammar School with focus on science",
+            "de": "Gymnasium mit naturwissenschaftlichem Schwerpunkt"
+          }
+        },
+        "date": { "en": "2011 - 2013", "de": "2011 - 2013" }
+      },
+      {
+        "school": {
+          "name": "St. Marien Liniengasse",
+          "href": "https://www.liniengasse.at/home/index.php"
+        },
+        "subtitle": { "en": "Private Secondary School", "de": "Private Mittelschule" },
+        "date": { "en": "2009 - 2011", "de": "2009 - 2011" }
+      },
+      {
+        "school": { "name": "St. Marien Liniengasse", "href": "http://stmarien-vs.at/" },
+        "subtitle": { "en": "Private Primary School", "de": "Private Volksschule" },
+        "date": { "en": "2005 - 2009", "de": "2005 - 2009" }
+      }
+    ]
+  },
+
+  "skills": {
+    "title": { "en": "Skills", "de": "Kenntnisse" },
+    "groups": [
+      {
+        "name": { "en": "Programming Languages", "de": "Programmiersprachen" },
+        "icons": [
+          { "type": "fa", "value": "fab fa-html5" },
+          { "type": "fa", "value": "fab fa-css3-alt" },
+          { "type": "fa", "value": "fab fa-js-square" },
+          { "type": "fa", "value": "fab fa-php" },
+          { "type": "fa", "value": "fab fa-java" },
+          { "type": "fa", "value": "fab fa-python" },
+          { "type": "fa", "value": "fab fa-power" },
+          { "type": "img", "src": "img/mysql_128_black.ico" }
+        ],
+        "items": [
+          { "en": "PowerShell", "de": "PowerShell" },
+          { "en": "Groovy", "de": "Groovy" },
+          { "en": "bash", "de": "bash" }
+        ]
+      },
+      {
+        "name": { "en": "Environments", "de": "Umgebungen" },
+        "items": [
+          { "en": "Active Directory", "de": "Active Directory" },
+          { "en": "Ansible", "de": "Ansible" },
+          { "en": "Azure / Entra", "de": "Azure / Entra" },
+          { "en": "Exchange", "de": "Exchange" },
+          { "en": "Cisco", "de": "Cisco" },
+          { "en": "DIVOS", "de": "DIVOS" },
+          { "en": "Linux", "de": "Linux" },
+          { "en": "Windows", "de": "Windows" }
+        ]
+      },
+      {
+        "name": { "en": "Tools", "de": "Werkzeuge" },
+        "items": [
+          { "en": "Jenkins", "de": "Jenkins" },
+          { "en": "Office, Microsoft Project & Visio", "de": "Office, Microsoft Project & Visio" },
+          {
+            "en": "Adobe (Photoshop, Illustrator, InDesign)",
+            "de": "Adobe (Photoshop, Illustrator, InDesign)"
+          }
+        ]
+      },
+      {
+        "name": { "en": "Languages", "de": "Sprachen" },
+        "items": [
+          { "en": "German", "de": "Deutsch" },
+          { "en": "English", "de": "Englisch" },
+          { "en": "Italian (A1)", "de": "Italienisch (A1)" }
+        ]
+      },
+      {
+        "name": { "en": "Driving Licences", "de": "Führerscheine" },
+        "items": [
+          { "en": "B", "de": "B" },
+          { "en": "A", "de": "A" }
+        ]
+      }
+    ]
+  },
+
+  "projects": {
+    "title": { "en": "Projects", "de": "Projekte" },
+    "items": [
+      {
+        "title": "Xurrent-Helpers",
+        "icon": "fas fa-terminal",
+        "primaryHref": "https://github.com/fasteiner/Xurrent-Helpers",
+        "repo": "https://github.com/fasteiner/Xurrent-Helpers",
+        "desc": {
+          "en": "A PowerShell module to automate Xurrent (4me) administration, including round-trip Markdown ↔ CSV import/export of knowledge articles.",
+          "de": "Ein PowerShell-Modul zur Automatisierung der Xurrent-(4me-)Administration, inklusive verlustfreiem Markdown-↔-CSV-Import/-Export von Knowledge-Artikeln."
+        },
+        "button": {
+          "label": { "en": "View on PowerShell Gallery", "de": "Auf PowerShell Gallery ansehen" },
+          "href": "https://www.powershellgallery.com/packages/XurrentHelpers/"
+        },
+        "badges": [
+          { "src": "https://img.shields.io/powershellgallery/v/XurrentHelpers", "alt": "Version" },
+          {
+            "src": "https://img.shields.io/powershellgallery/dt/XurrentHelpers",
+            "alt": "Downloads"
+          }
+        ]
+      },
+      {
+        "title": "Sampler.CustomTasks",
+        "icon": "fas fa-gears",
+        "primaryHref": "https://github.com/tsubotitsch/Sampler.CustomTasks",
+        "repo": "https://github.com/tsubotitsch/Sampler.CustomTasks",
+        "desc": {
+          "en": "A CI/CD PowerShell module providing custom build tasks for the Sampler build framework.",
+          "de": "Ein CI/CD-PowerShell-Modul mit benutzerdefinierten Build-Tasks für das Sampler-Build-Framework."
+        },
+        "button": {
+          "label": { "en": "View on PowerShell Gallery", "de": "Auf PowerShell Gallery ansehen" },
+          "href": "https://www.powershellgallery.com/packages/Sampler.CustomTasks/"
+        },
+        "badges": [
+          {
+            "src": "https://img.shields.io/powershellgallery/v/Sampler.CustomTasks",
+            "alt": "Version"
+          },
+          {
+            "src": "https://img.shields.io/powershellgallery/dt/Sampler.CustomTasks",
+            "alt": "Downloads"
+          }
+        ]
+      },
+      {
+        "title": "Notion PowerShell Module",
+        "image": "https://raw.githubusercontent.com/fasteiner/Notion/main/TSNotion.png",
+        "imageAlt": "Notion PowerShell Module Logo",
+        "primaryHref": "https://www.powershellgallery.com/packages/Notion/",
+        "repo": "https://github.com/fasteiner/Notion",
+        "desc": {
+          "en": "A PowerShell module to work with Notion APIs.",
+          "de": "Ein PowerShell-Modul für die Arbeit mit den Notion-APIs."
+        },
+        "button": {
+          "label": { "en": "View on PowerShell Gallery", "de": "Auf PowerShell Gallery ansehen" },
+          "href": "https://www.powershellgallery.com/packages/Notion/"
+        },
+        "badges": [
+          { "src": "https://img.shields.io/powershellgallery/v/Notion", "alt": "Version" },
+          { "src": "https://img.shields.io/powershellgallery/dt/Notion", "alt": "Downloads" }
+        ]
+      },
+      {
+        "title": "Brevo PowerShell Module",
+        "image": "https://raw.githubusercontent.com/tsubotitsch/Brevo/main/Brevo-Powershell.png",
+        "imageAlt": "Brevo PowerShell Module Logo",
+        "primaryHref": "https://www.powershellgallery.com/packages/Brevo/",
+        "repo": "https://github.com/tsubotitsch/Brevo",
+        "desc": {
+          "en": "A PowerShell module to integrate with Brevo (formerly Sendinblue).",
+          "de": "Ein PowerShell-Modul zur Anbindung an Brevo (ehemals Sendinblue)."
+        },
+        "button": {
+          "label": { "en": "View on PowerShell Gallery", "de": "Auf PowerShell Gallery ansehen" },
+          "href": "https://www.powershellgallery.com/packages/Brevo/"
+        },
+        "badges": [
+          { "src": "https://img.shields.io/powershellgallery/v/Brevo", "alt": "Version" },
+          { "src": "https://img.shields.io/powershellgallery/dt/Brevo", "alt": "Downloads" }
+        ]
+      },
+      {
+        "title": "Xurrent Python Module",
+        "image": "img/XurrentPython.png",
+        "imageAlt": "Xurrent Python Module Logo",
+        "primaryHref": "https://pypi.org/project/xurrent/",
+        "repo": "https://github.com/fasteiner/xurrent-python",
+        "desc": {
+          "en": "A Python library to interface with Xurrent API.",
+          "de": "Eine Python-Bibliothek zur Anbindung an die Xurrent-API."
+        },
+        "button": {
+          "label": { "en": "View on PyPI", "de": "Auf PyPI ansehen" },
+          "href": "https://pypi.org/project/xurrent/"
+        },
+        "badges": [
+          { "src": "https://img.shields.io/pypi/v/xurrent", "alt": "Version" },
+          { "src": "https://img.shields.io/pypi/dm/xurrent", "alt": "Downloads" }
+        ]
+      },
+      {
+        "title": "Keep A ChangeLog Assistant",
+        "image": "img/KeepAChangelogAssistant.png",
+        "imageAlt": "Keep A ChangeLog Assistant Logo",
+        "primaryHref": "https://chat.openai.com/g/g-684af39084148191b7c83c89daf1b477-keep-a-changelog-assistant",
+        "desc": {
+          "en": "A Custom GPT to assist with generating and maintaining changelogs.",
+          "de": "Ein Custom GPT zur Unterstützung beim Erstellen und Pflegen von Changelogs."
+        },
+        "button": {
+          "label": { "en": "Try the Assistant", "de": "Assistent ausprobieren" },
+          "href": "https://chat.openai.com/g/g-684af39084148191b7c83c89daf1b477-keep-a-changelog-assistant"
+        }
+      }
+    ]
+  },
+
+  "interests": {
+    "title": { "en": "Interests / Hobbies", "de": "Interessen / Hobbys" },
+    "items": [
+      {
+        "name": { "en": "Dancing", "de": "Tanzen" },
+        "text": {
+          "en": "Dancing is my favourite thing to do",
+          "de": "Tanzen ist meine liebste Beschäftigung"
+        },
+        "image": "img/portfolio-1.jpg"
+      },
+      {
+        "name": { "en": "Motorcycles", "de": "Motorräder" },
+        "text": {
+          "en": "Exploring the world on two wheels is my passion.",
+          "de": "Die Welt auf zwei Rädern zu erkunden, ist meine Leidenschaft."
+        },
+        "image": "img/portfolio-2.jpg"
+      },
+      {
+        "name": { "en": "Piano", "de": "Klavier" },
+        "text": {
+          "en": "Playing the piano can be very relaxing and inspiring.",
+          "de": "Klavierspielen kann sehr entspannend und inspirierend sein."
+        },
+        "image": "img/portfolio-3.jpg"
+      },
+      {
+        "name": { "en": "Beekeeping", "de": "Imkern" },
+        "text": { "en": "", "de": "" },
+        "image": "img/portfolio-4.jpg"
+      }
+    ]
+  },
+
+  "certifications": {
+    "title": { "en": "Certifications", "de": "Zertifizierungen" },
+    "items": [
+      {
+        "text": { "en": "Certified Engineer (Ing.)", "de": "Zertifizierter Ingenieur (Ing.)" },
+        "link": {
+          "href": "https://www.wko.at/site/ingenieurzertifizierung/Startseite.html",
+          "label": { "en": "Engineer Certifications WKO", "de": "Ingenieurzertifizierung WKO" }
+        }
+      },
+      {
+        "text": {
+          "en": "Xurrent Automation Rules Certification",
+          "de": "Xurrent Automation Rules – Zertifizierung"
+        },
+        "link": {
+          "href": "download/Certificate%20Xurrent%20Automation%20Rules%20(for%20Absorb).pdf",
+          "label": { "en": "View certificate", "de": "Zertifikat ansehen" }
+        }
+      },
+      {
+        "text": {
+          "en": "Xurrent Administrator Level 2-A Certification",
+          "de": "Xurrent Administrator Level 2-A – Zertifizierung"
+        },
+        "link": {
+          "href": "download/Certificate%20Xurrent%20Administrator%20Level%202-A.pdf",
+          "label": { "en": "View certificate", "de": "Zertifikat ansehen" }
+        }
+      },
+      {
+        "text": {
+          "en": "IPMA Level D (certified Junior Project Manager)",
+          "de": "IPMA Level D (zertifizierter Junior-Projektmanager)"
+        }
+      },
+      {
+        "text": { "en": "Communication and Team Building", "de": "Kommunikation und Teambuilding" }
+      },
+      {
+        "text": {
+          "en": "Oracle (Database Design, Database Programming with SQL, Database Programming with PL/SQL)",
+          "de": "Oracle (Database Design, Database Programming with SQL, Database Programming with PL/SQL)"
+        }
+      },
+      {
+        "text": {
+          "en": "Python (Programming for Everybody, Data Structures, Using Databases with Python, Using Python to Access Web Data)",
+          "de": "Python (Programming for Everybody, Data Structures, Using Databases with Python, Using Python to Access Web Data)"
+        }
+      },
+      {
+        "text": {
+          "en": "Cisco Introduction to Cybersecurity",
+          "de": "Cisco Introduction to Cybersecurity"
+        }
+      },
+      {
+        "text": {
+          "en": "Certificate of Attendance: General English Course",
+          "de": "Teilnahmebestätigung: Allgemeiner Englischkurs"
+        }
+      },
+      { "text": { "en": "Italian A1", "de": "Italienisch A1" } }
+    ]
+  },
+
+  "documents": {
+    "title": { "en": "Documents", "de": "Dokumente" },
+    "items": [
+      {
+        "href": "download/Lebenslauf_Fabian_Steiner.pdf",
+        "label": { "en": "CV in German", "de": "Lebenslauf (Deutsch)" }
+      },
+      {
+        "href": "download/BakkurkundeEng_BIC_6_SS2023.pdf",
+        "label": { "en": "Bachelor Diploma (English)", "de": "Bachelor-Diplom (Englisch)" }
+      },
+      {
+        "href": "download/Ingenieurzertifikat.pdf",
+        "label": { "en": "Engineer Certificate (German)", "de": "Ingenieurzertifikat (Deutsch)" }
+      },
+      {
+        "href": "download/Dienstzeugnis_CP-Consult.pdf",
+        "label": {
+          "en": "Employer's Reference — CP-Consult 2019–2020 (German)",
+          "de": "Dienstzeugnis — CP-Consult 2019–2020 (Deutsch)"
+        }
+      },
+      {
+        "href": "download/Praktikumsbestätigung_Österreichisches_Bundesheer.pdf",
+        "label": {
+          "en": "Employer's Reference — Austrian Military (German)",
+          "de": "Dienstzeugnis — Österreichisches Bundesheer (Deutsch)"
+        }
+      },
+      {
+        "href": "download/Praktikumszeugnis_FCP_2018.pdf",
+        "label": {
+          "en": "Employer's Reference — FCP 2018 (German)",
+          "de": "Dienstzeugnis — FCP 2018 (Deutsch)"
+        }
+      },
+      {
+        "href": "download/Praktikumszeugnis_FCP_2017.pdf",
+        "label": {
+          "en": "Employer's Reference — FCP 2017 (German)",
+          "de": "Dienstzeugnis — FCP 2017 (Deutsch)"
+        }
+      },
+      {
+        "href": "download/Praktikumszeugnis_FCP_2016.pdf",
+        "label": {
+          "en": "Employer's Reference — FCP 2016 (German)",
+          "de": "Dienstzeugnis — FCP 2016 (Deutsch)"
+        }
+      },
+      {
+        "href": "download/Praktikumszeugnis_TTTech_2015.pdf",
+        "label": {
+          "en": "Employer's Reference — TTTech 2015 (German)",
+          "de": "Dienstzeugnis — TTTech 2015 (Deutsch)"
+        }
+      },
+      {
+        "href": "download/Certificate%20Xurrent%20Automation%20Rules%20(for%20Absorb).pdf",
+        "label": {
+          "en": "Xurrent Automation Rules Certificate",
+          "de": "Xurrent Automation Rules – Zertifikat"
+        }
+      },
+      {
+        "href": "download/Certificate%20Xurrent%20Administrator%20Level%202-A.pdf",
+        "label": {
+          "en": "Xurrent Administrator Level 2-A Certificate",
+          "de": "Xurrent Administrator Level 2-A – Zertifikat"
+        }
+      }
+    ]
+  }
+}

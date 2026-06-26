@@ -1,9 +1,15 @@
 section.resume-section {
   padding-top: 5rem !important;
   padding-bottom: 5rem !important;
-  max-width: 75rem;
+  // Center the content in the area beside the sidebar (instead of pinning it to
+  // the left) and let it use more width on large screens.
+  width: 100%;
+  max-width: 87.5rem;
+  margin-right: auto;
+  margin-left: auto;
   .resume-item {
-    .resume-content {}
+    .resume-content {
+    }
     .resume-date {
       min-width: none;
     }

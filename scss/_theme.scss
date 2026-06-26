@@ -1,0 +1,46 @@
+// Colour-mode tweaks layered on top of Bootstrap's native light/dark support.
+
+// Smooth transition when the theme is switched.
+body,
+.card,
+.navbar {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+// Section subheadings and section titles carry the brand accent;
+// lighten the accent in dark mode for sufficient contrast.
+.subheading,
+section.resume-section > .my-auto > h2 {
+  color: $primary;
+}
+
+// Understated, underlined "reference" links in the brand accent.
+.reference-link {
+  color: $primary;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+
+  &:hover,
+  &:focus {
+    color: shade-color($primary, 20%);
+  }
+}
+
+[data-bs-theme="dark"] {
+  .subheading,
+  section.resume-section > .my-auto > h2 {
+    color: tint-color($primary, 35%);
+  }
+
+  .reference-link {
+    color: tint-color($primary, 35%);
+
+    &:hover,
+    &:focus {
+      color: tint-color($primary, 55%);
+    }
+  }
+}

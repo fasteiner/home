@@ -68,7 +68,7 @@ interface ResumeData {
     lead: L;
   };
   nav: { id: string; label: L }[];
-  social: { href: string; icon: string }[];
+  social: { href: string; icon: string; label: string }[];
   experience: { title: L; items: ExperienceItem[] };
   education: { title: L; items: EduItem[] };
   skills: { title: L; groups: SkillGroup[] };
@@ -106,7 +106,10 @@ function section(id: string, title: string | null, body: string): string {
 function renderAbout(lang: Lang): string {
   const { name, lead } = data.meta;
   const social = data.social
-    .map((s) => `<a href="${s.href}" ${TARGET}><i class="${s.icon}"></i></a>`)
+    .map(
+      (s) =>
+        `<a href="${s.href}" ${TARGET} aria-label="${esc(s.label)}" title="${esc(s.label)}"><i class="${s.icon}" aria-hidden="true"></i></a>`,
+    )
     .join("\n");
   const body = `<h1 class="mb-0">${esc(name.pre)}
     <span class="text-primary">${esc(name.highlight)}</span>
@@ -198,7 +201,7 @@ function renderProjects(lang: Lang): string {
         ? `<img src="${asset(p.image)}" class="card-img-top p-4" alt="${esc(p.imageAlt ?? p.title)}" loading="lazy" decoding="async">`
         : `<div class="card-img-top d-flex align-items-center justify-content-center" style="height: 180px;"><i class="${p.icon} fa-4x text-primary"></i></div>`;
       const repo = p.repo
-        ? `\n        <a href="${p.repo}" ${TARGET} class="ms-2 text-body" title="View on GitHub"><i class="fab fa-github"></i></a>`
+        ? `\n        <a href="${p.repo}" ${TARGET} class="ms-2 text-body" title="View on GitHub" aria-label="${esc(p.title)} on GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>`
         : "";
       const badges = p.badges
         ? `<div>${p.badges
@@ -212,7 +215,7 @@ function renderProjects(lang: Lang): string {
     <div class="card h-100 shadow-sm border-0">
       <a href="${p.primaryHref}" ${TARGET}>${media}</a>
       <div class="card-body">
-        <h5 class="card-title">${esc(p.title)}${repo}</h5>
+        <h3 class="card-title">${esc(p.title)}${repo}</h3>
         <p class="card-text">${esc(t(p.desc, lang))}</p>
         <a href="${p.button.href}" ${TARGET} class="btn btn-primary mb-2">${esc(t(p.button.label, lang))}</a>
         ${badges}
@@ -232,7 +235,7 @@ function renderInterests(lang: Lang): string {
       return `<div class="col-lg-6">
     <a class="portfolio-item" href="#">
       <span class="caption"><span class="caption-content">
-        <h2>${esc(t(i.name, lang))}</h2>
+        <h3>${esc(t(i.name, lang))}</h3>
         ${caption}
       </span></span>
       <img class="img-fluid" src="${asset(i.image)}" alt="" loading="lazy" decoding="async">

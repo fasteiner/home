@@ -2,7 +2,7 @@
   "meta": {
     "name": { "pre": "Ing. Fabian Franz", "highlight": "Steiner", "post": "BSc." },
     "shortName": "Fabian Steiner",
-    "profileImage": "img/fabian_steiner.png",
+    "profileImage": "img/fabian_steiner.webp",
     "lead": {
       "en": "I'm an independent Automation Consultant who also subcontracts for techwork data GmbH. I deliver automation consulting with PowerShell and Python, Azure integrations, Jenkins support, API scripting, Logic Apps and Azure Automation, and broader M365 automation. Xurrent, Freshdesk, and techwork automator consulting are provided through techwork. Outside of work I dive into multi-language automation projects and find balance in the rush of motorcycles, the splash of water skiing, and the rhythm of MotoGP and Formula 1.",
       "de": "Ich bin selbstständiger Automation Consultant und arbeite zudem als Subunternehmer für die techwork data GmbH. Ich biete Automatisierungsberatung mit PowerShell und Python, Azure-Integrationen, Jenkins-Support, API-Scripting, Logic Apps und Azure Automation sowie M365-Automatisierung im weiteren Sinne. Die Beratung zu Xurrent, Freshdesk und dem techwork automator läuft über techwork. Abseits der Arbeit vertiefe ich mich in Automatisierungsprojekte mit den unterschiedlichsten Programmiersprachen und finde meinen Ausgleich im Nervenkitzel auf dem Motorrad, in der Gischt beim Wasserski und im Rhythmus von MotoGP und Formel 1."
@@ -558,7 +558,7 @@
       },
       {
         "title": "Xurrent Python Module",
-        "image": "img/XurrentPython.png",
+        "image": "img/XurrentPython.webp",
         "imageAlt": "Xurrent Python Module Logo",
         "primaryHref": "https://pypi.org/project/xurrent/",
         "repo": "https://github.com/fasteiner/xurrent-python",
@@ -577,7 +577,7 @@
       },
       {
         "title": "Keep A ChangeLog Assistant",
-        "image": "img/KeepAChangelogAssistant.png",
+        "image": "img/KeepAChangelogAssistant.webp",
         "imageAlt": "Keep A ChangeLog Assistant Logo",
         "primaryHref": "https://chat.openai.com/g/g-684af39084148191b7c83c89daf1b477-keep-a-changelog-assistant",
         "desc": {
@@ -601,7 +601,7 @@
           "en": "Dancing is my favourite thing to do",
           "de": "Tanzen ist meine liebste Beschäftigung"
         },
-        "image": "img/portfolio-1.jpg"
+        "image": "img/portfolio-1.webp"
       },
       {
         "name": { "en": "Motorcycles", "de": "Motorräder" },
@@ -609,7 +609,7 @@
           "en": "Exploring the world on two wheels is my passion.",
           "de": "Die Welt auf zwei Rädern zu erkunden, ist meine Leidenschaft."
         },
-        "image": "img/portfolio-2.jpg"
+        "image": "img/portfolio-2.webp"
       },
       {
         "name": { "en": "Piano", "de": "Klavier" },
@@ -617,12 +617,12 @@
           "en": "Playing the piano can be very relaxing and inspiring.",
           "de": "Klavierspielen kann sehr entspannend und inspirierend sein."
         },
-        "image": "img/portfolio-3.jpg"
+        "image": "img/portfolio-3.webp"
       },
       {
         "name": { "en": "Beekeeping", "de": "Imkern" },
         "text": { "en": "", "de": "" },
-        "image": "img/portfolio-4.jpg"
+        "image": "img/portfolio-4.webp"
       }
     ]
   },

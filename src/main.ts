@@ -10,6 +10,7 @@ import "./theme-switcher";
 import "./resume";
 import { initScrollReveal } from "./scroll-reveal";
 import "./section-nav";
+import "./section-hash";
 import { consumeLangSwitch } from "./lang-switch";
 
 // Skip the reveal-on-scroll animation when we arrived via the language switch,

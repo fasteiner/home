@@ -15,7 +15,9 @@
 }
 
 .card-img-top {
-  max-height: 180px;
+  // Fixed height (not max-height) so the box is reserved before the lazy image
+  // loads — prevents the card growing and shifting layout (CLS).
+  height: 180px;
   object-fit: contain;
   padding: 1.5rem;
   background-color: var(--bs-tertiary-bg);

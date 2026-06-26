@@ -21,9 +21,17 @@
   ],
 
   "social": [
-    { "href": "https://www.linkedin.com/in/fabian-steiner-574111318/", "icon": "fab fa-linkedin" },
-    { "href": "https://www.xing.com/profile/Fabian_SteinerBSc/cv", "icon": "fab fa-xing" },
-    { "href": "https://github.com/fasteiner", "icon": "fab fa-github" }
+    {
+      "href": "https://www.linkedin.com/in/fabian-steiner-574111318/",
+      "icon": "fab fa-linkedin",
+      "label": "LinkedIn"
+    },
+    {
+      "href": "https://www.xing.com/profile/Fabian_SteinerBSc/cv",
+      "icon": "fab fa-xing",
+      "label": "Xing"
+    },
+    { "href": "https://github.com/fasteiner", "icon": "fab fa-github", "label": "GitHub" }
   ],
 
   "experience": {

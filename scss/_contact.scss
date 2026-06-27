@@ -1,0 +1,55 @@
+// Contact section — call-to-action buttons plus a responsive grid of contact
+// channels (email, social, location). Colours come from Bootstrap colour-mode
+// variables so light/dark mode just work.
+
+.contact-channels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+
+.contact-channel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.75rem;
+  background-color: var(--bs-tertiary-bg);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+
+  .contact-icon {
+    font-size: 1.4rem;
+    color: $primary;
+  }
+
+  .contact-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .contact-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--bs-secondary-color);
+  }
+
+  .contact-value {
+    font-weight: 600;
+    overflow-wrap: anywhere;
+  }
+}
+
+// Only the linked channels react to hover (plain info tiles stay static).
+a.contact-channel:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--bs-box-shadow-sm);
+  border-color: $primary;
+}

@@ -11,13 +11,15 @@
 
   "nav": [
     { "id": "about", "label": { "en": "About", "de": "Über mich" } },
+    { "id": "services", "label": { "en": "Services", "de": "Angebot" } },
     { "id": "experience", "label": { "en": "Experience", "de": "Berufserfahrung" } },
     { "id": "education", "label": { "en": "Education", "de": "Ausbildung" } },
     { "id": "skills", "label": { "en": "Skills", "de": "Kenntnisse" } },
     { "id": "projects", "label": { "en": "Projects", "de": "Projekte" } },
     { "id": "interests", "label": { "en": "Interests", "de": "Interessen" } },
     { "id": "awards", "label": { "en": "Certifications", "de": "Zertifizierungen" } },
-    { "id": "documents", "label": { "en": "Documents", "de": "Dokumente" } }
+    { "id": "documents", "label": { "en": "Documents", "de": "Dokumente" } },
+    { "id": "contact", "label": { "en": "Contact", "de": "Kontakt" } }
   ],
 
   "social": [
@@ -33,6 +35,115 @@
     },
     { "href": "https://github.com/fasteiner", "icon": "fab fa-github", "label": "GitHub" }
   ],
+
+  "services": {
+    "title": { "en": "What I Offer", "de": "Mein Angebot" },
+    "lead": {
+      "en": "As an independent Automation Consultant I help teams replace repetitive, error-prone manual work with reliable automation. Whether it's a single script or a platform-wide integration, here's how we can work together.",
+      "de": "Als selbstständiger Automation Consultant helfe ich Teams, wiederkehrende und fehleranfällige Handarbeit durch verlässliche Automatisierung zu ersetzen. Ob ein einzelnes Skript oder eine plattformübergreifende Integration – so können wir zusammenarbeiten."
+    },
+    "items": [
+      {
+        "icon": "fas fa-robot",
+        "title": { "en": "Automation Consulting", "de": "Automatisierungsberatung" },
+        "desc": {
+          "en": "From a recurring manual task to a fully automated workflow — designed, built and documented in PowerShell or Python.",
+          "de": "Von der wiederkehrenden Handarbeit zum vollautomatisierten Workflow – konzipiert, umgesetzt und dokumentiert in PowerShell oder Python."
+        },
+        "points": [
+          {
+            "en": "PowerShell & Python automation",
+            "de": "Automatisierung mit PowerShell & Python"
+          },
+          { "en": "Process analysis & tool selection", "de": "Prozessanalyse & Werkzeugauswahl" },
+          { "en": "Maintainable, documented scripts", "de": "Wartbare, dokumentierte Skripte" }
+        ]
+      },
+      {
+        "icon": "fas fa-cloud",
+        "title": { "en": "Cloud & M365 Integration", "de": "Cloud- & M365-Integration" },
+        "desc": {
+          "en": "Connect and automate your Microsoft 365 and Azure landscape — from identity to Logic Apps and Azure Automation.",
+          "de": "Verbinden und automatisieren Sie Ihre Microsoft-365- und Azure-Landschaft – von Identitäten bis zu Logic Apps und Azure Automation."
+        },
+        "points": [
+          { "en": "Azure integrations & Logic Apps", "de": "Azure-Integrationen & Logic Apps" },
+          {
+            "en": "Entra ID / Active Directory automation",
+            "de": "Entra-ID- / Active-Directory-Automatisierung"
+          },
+          { "en": "Microsoft Graph & SSO (SAML)", "de": "Microsoft Graph & SSO (SAML)" }
+        ]
+      },
+      {
+        "icon": "fas fa-headset",
+        "title": { "en": "ITSM & Xurrent (4me)", "de": "ITSM & Xurrent (4me)" },
+        "desc": {
+          "en": "Certified Xurrent administration: workflow design, automation rules, knowledge-base tooling and API integrations.",
+          "de": "Zertifizierte Xurrent-Administration: Workflow-Design, Automation Rules, Knowledge-Base-Tools und API-Integrationen."
+        },
+        "points": [
+          { "en": "Workflow & form design", "de": "Workflow- & Formulardesign" },
+          { "en": "Automation rules & UI extensions", "de": "Automation Rules & UI-Erweiterungen" },
+          {
+            "en": "GraphQL (Xurrent/4me) integrations",
+            "de": "GraphQL-Integrationen (Xurrent/4me)"
+          }
+        ]
+      },
+      {
+        "icon": "fas fa-code-branch",
+        "title": { "en": "CI/CD & DevOps", "de": "CI/CD & DevOps" },
+        "desc": {
+          "en": "Build, test and deploy pipelines that run themselves — with Jenkins, GitHub Actions and infrastructure scripting.",
+          "de": "Build-, Test- und Deployment-Pipelines, die sich selbst ausführen – mit Jenkins, GitHub Actions und Infrastruktur-Scripting."
+        },
+        "points": [
+          {
+            "en": "Jenkins & GitHub Actions pipelines",
+            "de": "Jenkins- & GitHub-Actions-Pipelines"
+          },
+          {
+            "en": "PowerShell module CI/CD (Sampler)",
+            "de": "CI/CD für PowerShell-Module (Sampler)"
+          },
+          {
+            "en": "Release & versioning automation",
+            "de": "Release- & Versionierungs-Automatisierung"
+          }
+        ]
+      },
+      {
+        "icon": "fas fa-plug",
+        "title": { "en": "API & Integration Engineering", "de": "API- & Integrations-Engineering" },
+        "desc": {
+          "en": "Make your tools talk to each other. REST and GraphQL integrations across the platforms your business already runs on.",
+          "de": "Bringen Sie Ihre Tools zum Sprechen. REST- und GraphQL-Integrationen über die Plattformen, die Sie bereits nutzen."
+        },
+        "points": [
+          { "en": "REST & GraphQL API scripting", "de": "REST- & GraphQL-API-Scripting" },
+          { "en": "Jira & Azure DevOps integrations", "de": "Jira- & Azure-DevOps-Integrationen" },
+          { "en": "Custom modules (Notion, Brevo, …)", "de": "Eigene Module (Notion, Brevo, …)" }
+        ]
+      },
+      {
+        "icon": "fas fa-laptop-code",
+        "title": { "en": "Web Application Development", "de": "Webanwendungs-Entwicklung" },
+        "desc": {
+          "en": "Lightweight internal tools and web apps that put your automation behind a clean, usable interface.",
+          "de": "Schlanke interne Tools und Webanwendungen, die Ihre Automatisierung hinter eine klare, nutzbare Oberfläche bringen."
+        },
+        "points": [
+          { "en": "Internal tools & dashboards", "de": "Interne Tools & Dashboards" },
+          {
+            "en": "JavaScript / TypeScript front-ends",
+            "de": "JavaScript- / TypeScript-Frontends"
+          },
+          { "en": "Self-hosted & cloud deployments", "de": "Self-Hosted- & Cloud-Deployments" }
+        ]
+      }
+    ]
+  },
 
   "experience": {
     "title": { "en": "Experience", "de": "Berufserfahrung" },
@@ -771,6 +882,68 @@
         "label": {
           "en": "Xurrent Administrator Level 2-A Certificate",
           "de": "Xurrent Administrator Level 2-A – Zertifikat"
+        }
+      }
+    ]
+  },
+
+  "contact": {
+    "title": { "en": "Let's Work Together", "de": "Lass uns zusammenarbeiten" },
+    "lead": {
+      "en": "Have a process worth automating, or a project in mind? I'm available for freelance automation work — remote or on-site in and around Vienna. Drop me a line or grab a slot in my calendar.",
+      "de": "Einen Prozess, der sich zu automatisieren lohnt, oder ein Projekt im Kopf? Ich bin für freiberufliche Automatisierungsprojekte verfügbar – remote oder vor Ort in und um Wien. Schreib mir oder buch dir direkt einen Termin in meinem Kalender."
+    },
+    "actions": [
+      {
+        "type": "primary",
+        "icon": "fas fa-paper-plane",
+        "href": "mailto:fabian@stei-ner.net?subject=Project%20inquiry",
+        "label": { "en": "Email me", "de": "Schreib mir" },
+        "external": false
+      },
+      {
+        "type": "outline",
+        "icon": "far fa-calendar-check",
+        "href": "https://outlook.office.com/bookwithme/user/fabian@stei-ner.net",
+        "label": { "en": "Book a meeting", "de": "Termin buchen" },
+        "external": true
+      }
+    ],
+    "channels": [
+      {
+        "icon": "fas fa-envelope",
+        "label": { "en": "Email", "de": "E-Mail" },
+        "value": "fabian@stei-ner.net",
+        "href": "mailto:fabian@stei-ner.net",
+        "external": false
+      },
+      {
+        "icon": "fab fa-linkedin",
+        "label": "LinkedIn",
+        "value": { "en": "Connect on LinkedIn", "de": "Auf LinkedIn vernetzen" },
+        "href": "https://www.linkedin.com/in/fabian-steiner-574111318/",
+        "external": true
+      },
+      {
+        "icon": "fab fa-xing",
+        "label": "Xing",
+        "value": { "en": "View my Xing profile", "de": "Xing-Profil ansehen" },
+        "href": "https://www.xing.com/profile/Fabian_SteinerBSc/cv",
+        "external": true
+      },
+      {
+        "icon": "fab fa-github",
+        "label": "GitHub",
+        "value": "@fasteiner",
+        "href": "https://github.com/fasteiner",
+        "external": true
+      },
+      {
+        "icon": "fas fa-location-dot",
+        "label": { "en": "Based in", "de": "Standort" },
+        "value": {
+          "en": "Vienna, Austria · remote & on-site",
+          "de": "Wien, Österreich · remote & vor Ort"
         }
       }
     ]

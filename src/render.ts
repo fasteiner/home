@@ -60,6 +60,26 @@ interface DocItem {
   href: string;
   label: L;
 }
+interface Service {
+  icon: string;
+  title: L;
+  desc: L;
+  points: L[];
+}
+interface ContactAction {
+  type: "primary" | "outline";
+  icon: string;
+  href: string;
+  label: L;
+  external?: boolean;
+}
+interface ContactChannel {
+  icon: string;
+  label: string | L;
+  value: string | L;
+  href?: string;
+  external?: boolean;
+}
 interface ResumeData {
   meta: {
     name: { pre: string; highlight: string; post: string };
@@ -69,6 +89,8 @@ interface ResumeData {
   };
   nav: { id: string; label: L }[];
   social: { href: string; icon: string; label: string }[];
+  services: { title: L; lead: L; items: Service[] };
+  contact: { title: L; lead: L; actions: ContactAction[]; channels: ContactChannel[] };
   experience: { title: L; items: ExperienceItem[] };
   education: { title: L; items: EduItem[] };
   skills: { title: L; groups: SkillGroup[] };
@@ -88,6 +110,12 @@ function esc(value: string): string {
 
 function t(value: L, lang: Lang): string {
   return value[lang];
+}
+
+// Resolve a value that may be a plain string (language-neutral, e.g. "GitHub")
+// or a localised { en, de } pair.
+function tv(value: string | L, lang: Lang): string {
+  return typeof value === "string" ? value : value[lang];
 }
 
 // Make a relative img/ or download/ path absolute so it resolves from /en/ and /de/.
@@ -120,6 +148,32 @@ function renderAbout(lang: Lang): string {
   return section("about", null, body);
 }
 
+function renderServices(lang: Lang): string {
+  const lead = `<p class="lead mb-5">${esc(t(data.services.lead, lang))}</p>`;
+  const cards = data.services.items
+    .map((s) => {
+      const points = s.points
+        .map((p) => `<li><i class="fa-li fa fa-check text-primary"></i> ${esc(t(p, lang))}</li>`)
+        .join("");
+      return `<div class="col-md-6 col-lg-4 mb-4">
+    <div class="card service-card h-100 shadow-sm border-0">
+      <div class="card-body">
+        <div class="service-icon mb-3"><i class="${s.icon}" aria-hidden="true"></i></div>
+        <h3 class="card-title">${esc(t(s.title, lang))}</h3>
+        <p class="card-text">${esc(t(s.desc, lang))}</p>
+        <ul class="fa-ul service-points mb-0">${points}</ul>
+      </div>
+    </div>
+  </div>`;
+    })
+    .join("\n");
+  return section(
+    "services",
+    t(data.services.title, lang),
+    `${lead}<div class="row">${cards}</div>`,
+  );
+}
+
 function renderExperience(lang: Lang): string {
   const items = data.experience.items
     .map((item) => {
@@ -147,7 +201,7 @@ function renderExperience(lang: Lang): string {
   </div>`;
     })
     .join("\n");
-  return section(data.nav[1].id, t(data.experience.title, lang), items);
+  return section("experience", t(data.experience.title, lang), items);
 }
 
 function renderEducation(lang: Lang): string {
@@ -281,6 +335,35 @@ function renderDocuments(lang: Lang): string {
   );
 }
 
+function renderContact(lang: Lang): string {
+  const c = data.contact;
+  const lead = `<p class="lead mb-4">${esc(t(c.lead, lang))}</p>`;
+  const actions = c.actions
+    .map((a) => {
+      const cls = a.type === "primary" ? "btn btn-primary" : "btn btn-outline-primary";
+      const target = a.external ? ` ${TARGET}` : "";
+      return `<a href="${a.href}"${target} class="${cls} btn-lg me-3 mb-3"><i class="${a.icon} me-2" aria-hidden="true"></i>${esc(
+        t(a.label, lang),
+      )}</a>`;
+    })
+    .join("");
+  const channels = c.channels
+    .map((ch) => {
+      const label = esc(tv(ch.label, lang));
+      const value = esc(tv(ch.value, lang));
+      const inner = `<i class="${ch.icon} fa-fw contact-icon" aria-hidden="true"></i>
+      <span class="contact-text"><span class="contact-label">${label}</span><span class="contact-value">${value}</span></span>`;
+      return ch.href
+        ? `<a href="${ch.href}"${ch.external ? ` ${TARGET}` : ""} class="contact-channel">${inner}</a>`
+        : `<div class="contact-channel">${inner}</div>`;
+    })
+    .join("\n");
+  const body = `${lead}
+  <div class="contact-actions mb-5">${actions}</div>
+  <div class="contact-channels">${channels}</div>`;
+  return section("contact", t(c.title, lang), body);
+}
+
 const THEME_LABELS = {
   system: { en: "System", de: "System" },
   light: { en: "Light", de: "Hell" },
@@ -319,6 +402,7 @@ export function renderNav(lang: Lang): string {
 export function renderContent(lang: Lang): string {
   return [
     renderAbout(lang),
+    renderServices(lang),
     renderExperience(lang),
     renderEducation(lang),
     renderSkills(lang),
@@ -326,5 +410,6 @@ export function renderContent(lang: Lang): string {
     renderInterests(lang),
     renderCertifications(lang),
     renderDocuments(lang),
+    renderContact(lang),
   ].join('\n\n    <hr class="m-0">\n\n    ');
 }

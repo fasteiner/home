@@ -1,0 +1,33 @@
+// Service / offering cards — extend the project .card look with a branded icon
+// badge and a tidy bullet list of what each service includes.
+
+.service-card {
+  .card-title {
+    margin-bottom: 0.6rem;
+  }
+
+  .service-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 0.75rem;
+    font-size: 1.4rem;
+    color: $primary;
+    background-color: rgba($primary, 0.12);
+  }
+
+  .service-points {
+    margin-top: 0.5rem;
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    .fa-li {
+      // Tighter, on-brand check marks for the inline feature list.
+      font-size: 0.85rem;
+    }
+  }
+}

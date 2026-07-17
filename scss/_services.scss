@@ -30,4 +30,30 @@
       font-size: 0.85rem;
     }
   }
+
+  // "via techwork data GmbH" pill on services delivered through the partner.
+  // Text carries the meaning (not colour alone); the darker orange keeps the
+  // small label above WCAG AA contrast on the light tint in both colour modes.
+  .provider-badge {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: shade-color($primary, 18%);
+    background-color: rgba($primary, 0.12);
+
+    i {
+      font-size: 0.72rem;
+    }
+  }
+}
+
+[data-bs-theme="dark"] .service-card .provider-badge {
+  color: tint-color($primary, 40%);
+  background-color: rgba($primary, 0.22);
 }

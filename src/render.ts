@@ -2,8 +2,10 @@
 // Used by the Vite plugin (see vite.config.ts) to prerender /en/ and /de/.
 
 import resumeData from "./data/resume.json";
+import { LINKS } from "./config";
 
 export type Lang = "en" | "de";
+export type PageKey = "home" | "imprint" | "privacy";
 
 interface L {
   en: string;
@@ -62,9 +64,27 @@ interface DocItem {
 }
 interface Service {
   icon: string;
+  delivery: "direct" | "techwork";
   title: L;
   desc: L;
   points: L[];
+}
+interface ImprintRow {
+  label?: L;
+  value: string | L;
+  href?: string;
+  link?: { prefix: L; label: string; href: string };
+}
+interface Imprint {
+  title: L;
+  responsible: L;
+  name: string;
+  address: L;
+  rows: ImprintRow[];
+}
+interface Privacy {
+  title: L;
+  placeholder: L;
 }
 interface ContactAction {
   type: "primary" | "outline";
@@ -89,7 +109,7 @@ interface ResumeData {
   };
   nav: { id: string; label: L }[];
   social: { href: string; icon: string; label: string }[];
-  services: { title: L; lead: L; items: Service[] };
+  services: { title: L; lead: L; deliveryNote: L; viaLabel: L; items: Service[] };
   contact: { title: L; lead: L; actions: ContactAction[]; channels: ContactChannel[] };
   experience: { title: L; items: ExperienceItem[] };
   education: { title: L; items: EduItem[] };
@@ -98,11 +118,28 @@ interface ResumeData {
   interests: { title: L; items: Interest[] };
   certifications: { title: L; items: Cert[] };
   documents: { title: L; items: DocItem[] };
+  imprint: Imprint;
+  privacy: Privacy;
 }
 
 const data = resumeData as unknown as ResumeData;
 
 const TARGET = 'rel="noopener noreferrer" target="_blank"';
+
+// Localised paths for the main page and the two legal pages, keyed by page and
+// language. Used for the sidebar links, the language switch and the footer.
+const PAGES: Record<PageKey, L> = {
+  home: { en: "/en/", de: "/de/" },
+  imprint: { en: "/en/imprint/", de: "/de/impressum/" },
+  privacy: { en: "/en/privacy/", de: "/de/datenschutz/" },
+};
+
+// Expand {{TOKEN}} placeholders (booking link, e-mail addresses, phone) from
+// src/config.ts. Applied once to the finished page HTML by the Vite plugin, so
+// each of those literals is defined in exactly one place.
+export function resolve(html: string): string {
+  return html.replace(/\{\{(\w+)\}\}/g, (match, key: string) => LINKS[key] ?? match);
+}
 
 function esc(value: string): string {
   return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -149,17 +186,27 @@ function renderAbout(lang: Lang): string {
 }
 
 function renderServices(lang: Lang): string {
-  const lead = `<p class="lead mb-5">${esc(t(data.services.lead, lang))}</p>`;
+  const lead = `<p class="lead mb-3">${esc(t(data.services.lead, lang))}</p>`;
+  const note = `<p class="services-delivery-note text-body-secondary mb-5">${esc(
+    t(data.services.deliveryNote, lang),
+  )}</p>`;
+  const viaLabel = esc(t(data.services.viaLabel, lang));
   const cards = data.services.items
     .map((s) => {
       const points = s.points
         .map((p) => `<li><i class="fa-li fa fa-check text-primary"></i> ${esc(t(p, lang))}</li>`)
         .join("");
+      // Direct services render unchanged; techwork services carry a labelled
+      // pill (text, not colour alone) so the delivery partner is explicit.
+      const badge =
+        s.delivery === "techwork"
+          ? `\n        <span class="provider-badge"><i class="fas fa-handshake me-1" aria-hidden="true"></i>${viaLabel}</span>`
+          : "";
       return `<div class="col-md-6 col-lg-4 mb-4">
     <div class="card service-card h-100 shadow-sm border-0">
       <div class="card-body">
         <div class="service-icon mb-3"><i class="${s.icon}" aria-hidden="true"></i></div>
-        <h3 class="card-title">${esc(t(s.title, lang))}</h3>
+        <h3 class="card-title">${esc(t(s.title, lang))}</h3>${badge}
         <p class="card-text">${esc(t(s.desc, lang))}</p>
         <ul class="fa-ul service-points mb-0">${points}</ul>
       </div>
@@ -170,7 +217,7 @@ function renderServices(lang: Lang): string {
   return section(
     "services",
     t(data.services.title, lang),
-    `${lead}<div class="row">${cards}</div>`,
+    `${lead}${note}<div class="row">${cards}</div>`,
   );
 }
 
@@ -370,11 +417,15 @@ const THEME_LABELS = {
   dark: { en: "Dark", de: "Dunkel" },
 };
 
-export function renderNav(lang: Lang): string {
+export function renderNav(lang: Lang, page: PageKey = "home"): string {
+  // On the main page the section links are in-page anchors (#services); on a
+  // legal subpage they point back to the same section on the main page
+  // (/en/#services) so the sidebar keeps working as a table of contents.
+  const sectionHref = (id: string) => (page === "home" ? `#${id}` : `${PAGES.home[lang]}#${id}`);
   const links = data.nav
     .map(
       (n) =>
-        `<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#${n.id}">${esc(t(n.label, lang))}</a></li>`,
+        `<li class="nav-item"><a class="nav-link js-scroll-trigger" href="${sectionHref(n.id)}">${esc(t(n.label, lang))}</a></li>`,
     )
     .join("\n");
 
@@ -385,6 +436,8 @@ export function renderNav(lang: Lang): string {
   const themeAria = lang === "de" ? "Designauswahl" : "Theme switcher";
   const langAria = lang === "de" ? "Sprache" : "Language";
 
+  // The language switch maps to the equivalent page in the other language
+  // (e.g. /en/imprint/ <-> /de/impressum/), not just the home page.
   return `${links}
   <li class="nav-item">
     <div class="theme-switcher">
@@ -393,8 +446,8 @@ export function renderNav(lang: Lang): string {
   </li>
   <li class="nav-item">
     <div class="lang-switch" role="group" aria-label="${langAria}">
-      <a href="/en/" hreflang="en" class="lang-option"${lang === "en" ? ' aria-current="true"' : ""}>EN</a>
-      <a href="/de/" hreflang="de" class="lang-option"${lang === "de" ? ' aria-current="true"' : ""}>DE</a>
+      <a href="${PAGES[page].en}" hreflang="en" class="lang-option"${lang === "en" ? ' aria-current="true"' : ""}>EN</a>
+      <a href="${PAGES[page].de}" hreflang="de" class="lang-option"${lang === "de" ? ' aria-current="true"' : ""}>DE</a>
     </div>
   </li>`;
 }
@@ -412,4 +465,62 @@ export function renderContent(lang: Lang): string {
     renderDocuments(lang),
     renderContact(lang),
   ].join('\n\n    <hr class="m-0">\n\n    ');
+}
+
+// Site footer with the legal links (imprint + privacy) and a copyright line.
+// Appended to every page, so the legal notices are reachable from anywhere.
+export function renderFooter(lang: Lang, page: PageKey = "home"): string {
+  const name = `${data.meta.name.pre} ${data.meta.name.highlight} ${data.meta.name.post}`;
+  const year = new Date().getFullYear();
+  const navAria = lang === "de" ? "Rechtliches" : "Legal";
+  const current = (p: PageKey) => (page === p ? ' aria-current="page"' : "");
+  return `<footer class="site-footer">
+    <nav class="footer-links" aria-label="${navAria}">
+      <a href="${PAGES.imprint[lang]}"${current("imprint")}>${esc(t(data.imprint.title, lang))}</a>
+      <a href="${PAGES.privacy[lang]}"${current("privacy")}>${esc(t(data.privacy.title, lang))}</a>
+    </nav>
+    <p class="footer-copy mb-0">© ${year} ${esc(name)}</p>
+  </footer>`;
+}
+
+// Legal pages are standalone documents (no About section), so their title is
+// the page <h1> — which keeps the heading order valid. They deliberately avoid
+// the .resume-section class so the scrollspy / section-nav / lang-switch scripts
+// stay inert, and use plain markup so the content is always visible without JS.
+export function renderImprint(lang: Lang): string {
+  const im = data.imprint;
+  const rows = im.rows
+    .map((r) => {
+      let value = esc(tv(r.value, lang));
+      if (r.href) value = `<a href="${r.href}">${value}</a>`;
+      if (r.link) {
+        value += ` ${esc(t(r.link.prefix, lang))} <a href="${r.link.href}" ${TARGET}>${esc(
+          r.link.label,
+        )}</a>`;
+      }
+      const label = r.label ? `<span class="legal-label">${esc(t(r.label, lang))}</span>` : "";
+      const rowClass = r.label ? "legal-row" : "legal-row legal-row--statement";
+      return `<div class="${rowClass}">${label}<span class="legal-value">${value}</span></div>`;
+    })
+    .join("\n");
+  const body = `<p class="subheading mb-4">${esc(t(im.responsible, lang))}</p>
+    <p class="lead mb-1">${esc(im.name)}</p>
+    <p class="mb-4">${esc(t(im.address, lang))}</p>
+    <div class="legal-list">${rows}</div>`;
+  return `<section class="legal-section p-3 p-lg-5">
+  <div class="legal-content">
+    <h1 class="mb-4">${esc(t(im.title, lang))}</h1>
+    ${body}
+  </div>
+</section>`;
+}
+
+export function renderPrivacy(lang: Lang): string {
+  const pv = data.privacy;
+  return `<section class="legal-section p-3 p-lg-5">
+  <div class="legal-content">
+    <h1 class="mb-4">${esc(t(pv.title, lang))}</h1>
+    <p class="lead">${esc(t(pv.placeholder, lang))}</p>
+  </div>
+</section>`;
 }

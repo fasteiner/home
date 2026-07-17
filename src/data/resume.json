@@ -4,8 +4,8 @@
     "shortName": "Fabian Steiner",
     "profileImage": "img/fabian_steiner.webp",
     "lead": {
-      "en": "I'm an independent Automation Consultant who also subcontracts for techwork data GmbH. I deliver automation consulting with PowerShell and Python, Azure integrations, Jenkins support, API scripting, Logic Apps and Azure Automation, and broader M365 automation. Xurrent, Freshdesk, and techwork automator consulting are provided through techwork. Outside of work I dive into multi-language automation projects and find balance in the rush of motorcycles, the splash of water skiing, and the rhythm of MotoGP and Formula 1.",
-      "de": "Ich bin selbstständiger Automation Consultant und arbeite zudem als Subunternehmer für die techwork data GmbH. Ich biete Automatisierungsberatung mit PowerShell und Python, Azure-Integrationen, Jenkins-Support, API-Scripting, Logic Apps und Azure Automation sowie M365-Automatisierung im weiteren Sinne. Die Beratung zu Xurrent, Freshdesk und dem techwork automator läuft über techwork. Abseits der Arbeit vertiefe ich mich in Automatisierungsprojekte mit den unterschiedlichsten Programmiersprachen und finde meinen Ausgleich im Nervenkitzel auf dem Motorrad, in der Gischt beim Wasserski und im Rhythmus von MotoGP und Formel 1."
+      "en": "I'm an independent Automation Consultant who also subcontracts for techwork data GmbH. I deliver automation consulting with PowerShell and Python, Azure integrations, Jenkins support, API scripting, Logic Apps and Azure Automation, and broader M365 automation. Some I deliver directly; others in partnership with techwork data GmbH, where I work as a subcontractor. Outside of work I dive into multi-language automation projects and find balance in the rush of motorcycles, the splash of water skiing, and the rhythm of MotoGP and Formula 1.",
+      "de": "Ich bin selbstständiger Automation Consultant und arbeite zudem als Subunternehmer für die techwork data GmbH. Ich biete Automatisierungsberatung mit PowerShell und Python, Azure-Integrationen, Jenkins-Support, API-Scripting, Logic Apps und Azure Automation sowie M365-Automatisierung im weiteren Sinne. Einen Teil erbringe ich direkt, andere in Partnerschaft mit der techwork data GmbH, für die ich als Subcontractor tätig bin. Abseits der Arbeit vertiefe ich mich in Automatisierungsprojekte mit den unterschiedlichsten Programmiersprachen und finde meinen Ausgleich im Nervenkitzel auf dem Motorrad, in der Gischt beim Wasserski und im Rhythmus von MotoGP und Formel 1."
     }
   },
 
@@ -42,9 +42,15 @@
       "en": "As an independent Automation Consultant I help teams replace repetitive, error-prone manual work with reliable automation. Whether it's a single script or a platform-wide integration, here's how we can work together.",
       "de": "Als selbstständiger Automation Consultant helfe ich Teams, wiederkehrende und fehleranfällige Handarbeit durch verlässliche Automatisierung zu ersetzen. Ob ein einzelnes Skript oder eine plattformübergreifende Integration – so können wir zusammenarbeiten."
     },
+    "deliveryNote": {
+      "en": "Some services I deliver directly; others are provided in partnership with techwork data GmbH, where I work as a subcontractor — each card is labelled accordingly.",
+      "de": "Einige Leistungen erbringe ich direkt, andere in Partnerschaft mit der techwork data GmbH, für die ich als Subcontractor tätig bin — jede Karte ist entsprechend gekennzeichnet."
+    },
+    "viaLabel": { "en": "via techwork data GmbH", "de": "über techwork data GmbH" },
     "items": [
       {
         "icon": "fas fa-robot",
+        "delivery": "direct",
         "title": { "en": "Automation Consulting", "de": "Automatisierungsberatung" },
         "desc": {
           "en": "From a recurring manual task to a fully automated workflow — designed, built and documented in PowerShell or Python.",
@@ -61,6 +67,7 @@
       },
       {
         "icon": "fas fa-cloud",
+        "delivery": "direct",
         "title": { "en": "Cloud & M365 Integration", "de": "Cloud- & M365-Integration" },
         "desc": {
           "en": "Connect and automate your Microsoft 365 and Azure landscape — from identity to Logic Apps and Azure Automation.",
@@ -77,6 +84,7 @@
       },
       {
         "icon": "fas fa-headset",
+        "delivery": "techwork",
         "title": { "en": "ITSM & Xurrent (4me)", "de": "ITSM & Xurrent (4me)" },
         "desc": {
           "en": "Certified Xurrent administration: workflow design, automation rules, knowledge-base tooling and API integrations.",
@@ -93,6 +101,7 @@
       },
       {
         "icon": "fas fa-code-branch",
+        "delivery": "direct",
         "title": { "en": "CI/CD & DevOps", "de": "CI/CD & DevOps" },
         "desc": {
           "en": "Build, test and deploy pipelines that run themselves — with Jenkins, GitHub Actions and infrastructure scripting.",
@@ -115,6 +124,7 @@
       },
       {
         "icon": "fas fa-plug",
+        "delivery": "techwork",
         "title": { "en": "API & Integration Engineering", "de": "API- & Integrations-Engineering" },
         "desc": {
           "en": "Make your tools talk to each other. REST and GraphQL integrations across the platforms your business already runs on.",
@@ -123,15 +133,16 @@
         "points": [
           { "en": "REST & GraphQL API scripting", "de": "REST- & GraphQL-API-Scripting" },
           { "en": "Jira & Azure DevOps integrations", "de": "Jira- & Azure-DevOps-Integrationen" },
-          { "en": "Custom modules (Notion, Brevo, …)", "de": "Eigene Module (Notion, Brevo, …)" }
+          { "en": "Big Data / ETL integrations", "de": "Big-Data- / ETL-Integrationen" }
         ]
       },
       {
         "icon": "fas fa-laptop-code",
+        "delivery": "techwork",
         "title": { "en": "Web Application Development", "de": "Webanwendungs-Entwicklung" },
         "desc": {
-          "en": "Lightweight internal tools and web apps that put your automation behind a clean, usable interface.",
-          "de": "Schlanke interne Tools und Webanwendungen, die Ihre Automatisierung hinter eine klare, nutzbare Oberfläche bringen."
+          "en": "Lightweight internal tools and web apps built on and hosted with the techwork automator, putting your automation behind a clean, usable interface.",
+          "de": "Schlanke interne Tools und Webanwendungen auf Basis des techwork automator – darauf entwickelt und gehostet, die Ihre Automatisierung hinter eine klare, nutzbare Oberfläche bringen."
         },
         "points": [
           { "en": "Internal tools & dashboards", "de": "Interne Tools & Dashboards" },
@@ -139,7 +150,10 @@
             "en": "JavaScript / TypeScript front-ends",
             "de": "JavaScript- / TypeScript-Frontends"
           },
-          { "en": "Self-hosted & cloud deployments", "de": "Self-Hosted- & Cloud-Deployments" }
+          {
+            "en": "Built & hosted on the techwork automator",
+            "de": "Entwickelt & gehostet auf dem techwork automator"
+          }
         ]
       }
     ]
@@ -498,30 +512,6 @@
           }
         },
         "date": { "en": "2013 - 2018", "de": "2013 - 2018" }
-      },
-      {
-        "school": { "name": "Mater Salvatoris Kenyongasse", "href": "http://www.kenyon.at/" },
-        "subtitle": { "en": "Private Grammar School", "de": "Privates Gymnasium" },
-        "detail": {
-          "text": {
-            "en": "Grammar School with focus on science",
-            "de": "Gymnasium mit naturwissenschaftlichem Schwerpunkt"
-          }
-        },
-        "date": { "en": "2011 - 2013", "de": "2011 - 2013" }
-      },
-      {
-        "school": {
-          "name": "St. Marien Liniengasse",
-          "href": "https://www.liniengasse.at/home/index.php"
-        },
-        "subtitle": { "en": "Private Secondary School", "de": "Private Mittelschule" },
-        "date": { "en": "2009 - 2011", "de": "2009 - 2011" }
-      },
-      {
-        "school": { "name": "St. Marien Liniengasse", "href": "http://stmarien-vs.at/" },
-        "subtitle": { "en": "Private Primary School", "de": "Private Volksschule" },
-        "date": { "en": "2005 - 2009", "de": "2005 - 2009" }
       }
     ]
   },
@@ -897,14 +887,14 @@
       {
         "type": "primary",
         "icon": "fas fa-paper-plane",
-        "href": "mailto:fabian@stei-ner.net?subject=Project%20inquiry",
+        "href": "mailto:{{EMAIL_TECHWORK}}?subject=Project%20inquiry",
         "label": { "en": "Email me", "de": "Schreib mir" },
         "external": false
       },
       {
         "type": "outline",
         "icon": "far fa-calendar-check",
-        "href": "https://outlook.office.com/bookwithme/user/fabian@stei-ner.net",
+        "href": "{{BOOKING_URL}}",
         "label": { "en": "Book a meeting", "de": "Termin buchen" },
         "external": true
       }
@@ -912,9 +902,16 @@
     "channels": [
       {
         "icon": "fas fa-envelope",
-        "label": { "en": "Email", "de": "E-Mail" },
-        "value": "fabian@stei-ner.net",
-        "href": "mailto:fabian@stei-ner.net",
+        "label": { "en": "Email (direct)", "de": "E-Mail (direkt)" },
+        "value": "{{EMAIL_DIRECT}}",
+        "href": "mailto:{{EMAIL_DIRECT}}",
+        "external": false
+      },
+      {
+        "icon": "fas fa-envelope",
+        "label": { "en": "Email (via techwork)", "de": "E-Mail (über techwork)" },
+        "value": "{{EMAIL_TECHWORK}}",
+        "href": "mailto:{{EMAIL_TECHWORK}}",
         "external": false
       },
       {
@@ -947,5 +944,83 @@
         }
       }
     ]
+  },
+
+  "imprint": {
+    "title": { "en": "Imprint", "de": "Impressum" },
+    "responsible": {
+      "en": "Media owner and responsible for content",
+      "de": "Medieninhaber und für den Inhalt verantwortlich"
+    },
+    "name": "Ing. Fabian Franz Steiner BSc.",
+    "address": {
+      "en": "Wurmbstraße 44/8, 1120 Vienna, Austria",
+      "de": "Wurmbstraße 44/8, 1120 Wien, Österreich"
+    },
+    "rows": [
+      {
+        "label": { "en": "Phone", "de": "Telefon" },
+        "value": "{{PHONE}}",
+        "href": "tel:+4368110892683"
+      },
+      {
+        "label": { "en": "Email", "de": "E-Mail" },
+        "value": "{{EMAIL_DIRECT}}",
+        "href": "mailto:{{EMAIL_DIRECT}}"
+      },
+      {
+        "label": { "en": "Business purpose", "de": "Unternehmensgegenstand" },
+        "value": {
+          "en": "IT services and automation consulting",
+          "de": "IT-Dienstleistungen und Automatisierungsberatung"
+        }
+      },
+      {
+        "label": { "en": "Trade", "de": "Gewerbe" },
+        "value": {
+          "en": "Services in automatic data processing and information technology (free trade / freies Gewerbe)",
+          "de": "Dienstleistungen in der automatischen Datenverarbeitung und Informationstechnik (freies Gewerbe)"
+        }
+      },
+      { "label": { "en": "GISA number", "de": "GISA-Zahl" }, "value": "38963322" },
+      { "label": { "en": "VAT ID", "de": "UID-Nummer" }, "value": "ATU82731037" },
+      {
+        "value": {
+          "en": "Member of the Austrian Economic Chamber Vienna, UBIT division",
+          "de": "Mitglied der Wirtschaftskammer Wien, Fachgruppe UBIT (Unternehmensberatung, Buchhaltung und Informationstechnologie)"
+        }
+      },
+      {
+        "label": { "en": "Professional title", "de": "Berufsbezeichnung" },
+        "value": {
+          "en": "Ingenieur (Ing.) – awarded in Austria",
+          "de": "Ingenieur (Ing.) – verliehen in Österreich"
+        }
+      },
+      {
+        "label": { "en": "Trade authority", "de": "Gewerbebehörde" },
+        "value": { "en": "Magistrate of the City of Vienna", "de": "Magistrat der Stadt Wien" }
+      },
+      {
+        "label": { "en": "Applicable regulation", "de": "Anwendbare Rechtsvorschriften" },
+        "value": {
+          "en": "Austrian Trade Act (Gewerbeordnung, GewO)",
+          "de": "Gewerbeordnung (GewO)"
+        },
+        "link": {
+          "prefix": { "en": "available at", "de": "abrufbar unter" },
+          "label": "www.ris.bka.gv.at",
+          "href": "https://www.ris.bka.gv.at"
+        }
+      }
+    ]
+  },
+
+  "privacy": {
+    "title": { "en": "Privacy Policy", "de": "Datenschutzerklärung" },
+    "placeholder": {
+      "en": "The privacy policy is being prepared and will be published here shortly.",
+      "de": "Die Datenschutzerklärung wird derzeit vorbereitet und in Kürze hier veröffentlicht."
+    }
   }
 }

@@ -1,10 +1,20 @@
 import { defineConfig, type IndexHtmlTransformContext } from "vite";
 import { fileURLToPath } from "node:url";
-import { renderNav, renderContent, type Lang } from "./src/render";
+import {
+  renderNav,
+  renderContent,
+  renderImprint,
+  renderPrivacy,
+  renderFooter,
+  resolve,
+  type Lang,
+  type PageKey,
+} from "./src/render";
 
 const path = (relative: string) => fileURLToPath(new URL(relative, import.meta.url));
 
-// Prerender the resume content from resume.json into the /en/ and /de/ pages.
+// Prerender the content from resume.json into the /en/ and /de/ pages, plus the
+// legal pages (/en/imprint, /de/impressum, /en/privacy, /de/datenschutz).
 function prerenderResume() {
   return {
     name: "prerender-resume",
@@ -14,9 +24,24 @@ function prerenderResume() {
         const match = ctx.path.match(/\/(en|de)\//);
         if (!match) return html; // root redirect page — nothing to inject
         const lang = match[1] as Lang;
-        return html
-          .replace("<!--@NAV-->", renderNav(lang))
-          .replace("<!--@CONTENT-->", renderContent(lang));
+        const page: PageKey = /\/(imprint|impressum)\//.test(ctx.path)
+          ? "imprint"
+          : /\/(privacy|datenschutz)\//.test(ctx.path)
+            ? "privacy"
+            : "home";
+        const content =
+          page === "imprint"
+            ? renderImprint(lang)
+            : page === "privacy"
+              ? renderPrivacy(lang)
+              : renderContent(lang);
+        // resolve() expands the {{TOKEN}} placeholders (booking link, e-mails,
+        // phone) once over the finished HTML.
+        return resolve(
+          html
+            .replace("<!--@NAV-->", renderNav(lang, page))
+            .replace("<!--@CONTENT-->", `${content}\n${renderFooter(lang, page)}`),
+        );
       },
     },
   };
@@ -42,6 +67,10 @@ export default defineConfig({
         main: path("./index.html"),
         en: path("./en/index.html"),
         de: path("./de/index.html"),
+        imprintEn: path("./en/imprint/index.html"),
+        imprintDe: path("./de/impressum/index.html"),
+        privacyEn: path("./en/privacy/index.html"),
+        privacyDe: path("./de/datenschutz/index.html"),
       },
     },
   },

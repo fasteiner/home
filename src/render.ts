@@ -82,9 +82,15 @@ interface Imprint {
   address: L;
   rows: ImprintRow[];
 }
+interface PrivacySection {
+  heading: L;
+  body: L[];
+}
 interface Privacy {
   title: L;
-  placeholder: L;
+  intro: L;
+  updated: L;
+  sections: PrivacySection[];
 }
 interface ContactAction {
   type: "primary" | "outline";
@@ -517,10 +523,18 @@ export function renderImprint(lang: Lang): string {
 
 export function renderPrivacy(lang: Lang): string {
   const pv = data.privacy;
+  const sections = pv.sections
+    .map((s) => {
+      const paras = s.body.map((p) => `<p>${esc(t(p, lang))}</p>`).join("\n      ");
+      return `<h2 class="h4 mt-5 mb-3">${esc(t(s.heading, lang))}</h2>\n      ${paras}`;
+    })
+    .join("\n      ");
   return `<section class="legal-section p-3 p-lg-5">
   <div class="legal-content">
     <h1 class="mb-4">${esc(t(pv.title, lang))}</h1>
-    <p class="lead">${esc(t(pv.placeholder, lang))}</p>
+    <p class="lead">${esc(t(pv.intro, lang))}</p>
+      ${sections}
+    <p class="text-body-secondary mt-5">${esc(t(pv.updated, lang))}</p>
   </div>
 </section>`;
 }

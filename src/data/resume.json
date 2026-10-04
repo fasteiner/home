@@ -646,9 +646,9 @@
           "href": "https://www.powershellgallery.com/packages/XurrentHelpers/"
         },
         "badges": [
-          { "src": "https://img.shields.io/powershellgallery/v/XurrentHelpers", "alt": "Version" },
+          { "src": "/img/badges/psg-xurrenthelpers-v.svg", "alt": "Version" },
           {
-            "src": "https://img.shields.io/powershellgallery/dt/XurrentHelpers",
+            "src": "/img/badges/psg-xurrenthelpers-dt.svg",
             "alt": "Downloads"
           }
         ]
@@ -668,18 +668,18 @@
         },
         "badges": [
           {
-            "src": "https://img.shields.io/powershellgallery/v/Sampler.CustomTasks",
+            "src": "/img/badges/psg-sampler-customtasks-v.svg",
             "alt": "Version"
           },
           {
-            "src": "https://img.shields.io/powershellgallery/dt/Sampler.CustomTasks",
+            "src": "/img/badges/psg-sampler-customtasks-dt.svg",
             "alt": "Downloads"
           }
         ]
       },
       {
         "title": "Notion PowerShell Module",
-        "image": "https://raw.githubusercontent.com/fasteiner/Notion/main/TSNotion.png",
+        "image": "/img/projects/tsnotion.png",
         "imageAlt": "Notion PowerShell Module Logo",
         "primaryHref": "https://www.powershellgallery.com/packages/Notion/",
         "repo": "https://github.com/fasteiner/Notion",
@@ -692,13 +692,13 @@
           "href": "https://www.powershellgallery.com/packages/Notion/"
         },
         "badges": [
-          { "src": "https://img.shields.io/powershellgallery/v/Notion", "alt": "Version" },
-          { "src": "https://img.shields.io/powershellgallery/dt/Notion", "alt": "Downloads" }
+          { "src": "/img/badges/psg-notion-v.svg", "alt": "Version" },
+          { "src": "/img/badges/psg-notion-dt.svg", "alt": "Downloads" }
         ]
       },
       {
         "title": "Brevo PowerShell Module",
-        "image": "https://raw.githubusercontent.com/tsubotitsch/Brevo/main/Brevo-Powershell.png",
+        "image": "/img/projects/brevo-powershell.png",
         "imageAlt": "Brevo PowerShell Module Logo",
         "primaryHref": "https://www.powershellgallery.com/packages/Brevo/",
         "repo": "https://github.com/tsubotitsch/Brevo",
@@ -711,8 +711,8 @@
           "href": "https://www.powershellgallery.com/packages/Brevo/"
         },
         "badges": [
-          { "src": "https://img.shields.io/powershellgallery/v/Brevo", "alt": "Version" },
-          { "src": "https://img.shields.io/powershellgallery/dt/Brevo", "alt": "Downloads" }
+          { "src": "/img/badges/psg-brevo-v.svg", "alt": "Version" },
+          { "src": "/img/badges/psg-brevo-dt.svg", "alt": "Downloads" }
         ]
       },
       {
@@ -730,8 +730,8 @@
           "href": "https://pypi.org/project/xurrent/"
         },
         "badges": [
-          { "src": "https://img.shields.io/pypi/v/xurrent", "alt": "Version" },
-          { "src": "https://img.shields.io/pypi/dm/xurrent", "alt": "Downloads" }
+          { "src": "/img/badges/pypi-xurrent-v.svg", "alt": "Version" },
+          { "src": "/img/badges/pypi-xurrent-dm.svg", "alt": "Downloads" }
         ]
       },
       {
@@ -1108,29 +1108,11 @@
         ]
       },
       {
-        "heading": { "en": "Web fonts (Google Fonts)", "de": "Schriftarten (Google Fonts)" },
+        "heading": { "en": "Fonts, icons and images", "de": "Schriftarten, Symbole und Bilder" },
         "body": [
           {
-            "en": "For its typography the site uses the fonts Saira Extra Condensed and Mulish, which are loaded from Google servers (Google Ireland Limited / Google LLC, USA) when the page opens (fonts.googleapis.com and fonts.gstatic.com). Your IP address is transmitted to Google in the process. The legal basis is my legitimate interest in a consistent, appealing presentation (Art. 6(1)(f) GDPR).",
-            "de": "Für die Darstellung verwende ich die Schriftarten Saira Extra Condensed und Mulish, die beim Seitenaufruf von Servern von Google (Google Ireland Limited bzw. Google LLC, USA) geladen werden (fonts.googleapis.com und fonts.gstatic.com). Dabei wird Ihre IP-Adresse an Google übertragen. Rechtsgrundlage ist mein berechtigtes Interesse an einer einheitlichen, ansprechenden Darstellung (Art. 6 Abs. 1 lit. f DSGVO)."
-          }
-        ]
-      },
-      {
-        "heading": { "en": "Icons (Font Awesome)", "de": "Symbole (Font Awesome)" },
-        "body": [
-          {
-            "en": "The icons used on the site come from Font Awesome and are loaded via the CDN cdnjs.cloudflare.com (Cloudflare, Inc., USA). Here too your IP address is transmitted to the provider (Art. 6(1)(f) GDPR).",
-            "de": "Die auf der Seite verwendeten Symbole stammen von Font Awesome und werden über das CDN cdnjs.cloudflare.com (Cloudflare, Inc., USA) geladen. Auch dabei wird Ihre IP-Adresse an den Anbieter übertragen (Art. 6 Abs. 1 lit. f DSGVO)."
-          }
-        ]
-      },
-      {
-        "heading": { "en": "Embedded external content", "de": "Eingebundene externe Inhalte" },
-        "body": [
-          {
-            "en": "In the projects area of the home page, status graphics from img.shields.io and two project images from raw.githubusercontent.com (GitHub, Inc., USA) are embedded as images. When this content loads, your IP address is transmitted to the respective services (Art. 6(1)(f) GDPR).",
-            "de": "Auf der Startseite werden im Projektbereich Status-Grafiken von img.shields.io sowie zwei Projektbilder von raw.githubusercontent.com (GitHub, Inc., USA) als Bilder eingebunden. Beim Laden dieser Inhalte wird Ihre IP-Adresse an die jeweiligen Dienste übertragen (Art. 6 Abs. 1 lit. f DSGVO)."
+            "en": "All fonts (Mulish, Saira Extra Condensed), icons (Font Awesome) and images, including the status badges in the projects area, are served from this website's own server. They are not loaded from third-party services, so no data about you is transmitted to any third party when the page is displayed.",
+            "de": "Alle Schriftarten (Mulish, Saira Extra Condensed), Symbole (Font Awesome) und Bilder – einschließlich der Status-Badges im Projektbereich – werden vom eigenen Server dieser Website ausgeliefert. Sie werden nicht von Drittdiensten nachgeladen, sodass beim Anzeigen der Seite keine Daten über Sie an Dritte übertragen werden."
           }
         ]
       },

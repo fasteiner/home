@@ -1,6 +1,19 @@
 // Styles (compiled by Vite via Dart Sass — includes Bootstrap + the theme layer)
 import "../scss/resume.scss";
 
+// Self-hosted fonts — bundled locally by Vite, so no third-party CDN (Google
+// Fonts) is contacted. Latin subset, only the weights the theme uses: Mulish
+// 400/800 (+ italics), Saira Extra Condensed 500/700.
+import "@fontsource/mulish/latin-400.css";
+import "@fontsource/mulish/latin-400-italic.css";
+import "@fontsource/mulish/latin-800.css";
+import "@fontsource/mulish/latin-800-italic.css";
+import "@fontsource/saira-extra-condensed/latin-500.css";
+import "@fontsource/saira-extra-condensed/latin-700.css";
+
+// Self-hosted Font Awesome 6 — bundled locally instead of loaded from cdnjs.
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 // Bootstrap behaviour: registers the data-API for the collapse navbar and the
 // scrollspy used by the sidebar navigation.
 import "bootstrap";

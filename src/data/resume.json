@@ -4,8 +4,8 @@
     "shortName": "Fabian Steiner",
     "profileImage": "img/fabian_steiner.webp",
     "lead": {
-      "en": "I'm an independent Automation Consultant who also subcontracts for techwork data GmbH. I deliver automation consulting with PowerShell and Python, Azure integrations, Jenkins support, API scripting, Logic Apps and Azure Automation, and broader M365 automation. Some I deliver directly; others in partnership with techwork data GmbH, where I work as a subcontractor. Outside of work I dive into multi-language automation projects and find balance in the rush of motorcycles, the splash of water skiing, and the rhythm of MotoGP and Formula 1.",
-      "de": "Ich bin selbstständiger Automation Consultant und arbeite zudem als Subunternehmer für die techwork data GmbH. Ich biete Automatisierungsberatung mit PowerShell und Python, Azure-Integrationen, Jenkins-Support, API-Scripting, Logic Apps und Azure Automation sowie M365-Automatisierung im weiteren Sinne. Einen Teil erbringe ich direkt, andere in Partnerschaft mit der techwork data GmbH, für die ich als Subcontractor tätig bin. Abseits der Arbeit vertiefe ich mich in Automatisierungsprojekte mit den unterschiedlichsten Programmiersprachen und finde meinen Ausgleich im Nervenkitzel auf dem Motorrad, in der Gischt beim Wasserski und im Rhythmus von MotoGP und Formel 1."
+      "en": "I'm an independent Automation Consultant who also subcontracts for techwork data GmbH. I deliver automation consulting with PowerShell and Python, Azure integrations, Jenkins support, API scripting, Logic Apps and Azure Automation, and broader M365 automation. Some I deliver directly; others in partnership with techwork data GmbH, where I work as a subcontractor. A current focus is connecting in-house systems and APIs to AI assistants via the Model Context Protocol (MCP). Outside of work I dive into multi-language automation projects and find balance in the rush of motorcycles, the splash of water skiing, and the rhythm of MotoGP and Formula 1.",
+      "de": "Ich bin selbstständiger Automation Consultant und arbeite zudem als Subunternehmer für die techwork data GmbH. Ich biete Automatisierungsberatung mit PowerShell und Python, Azure-Integrationen, Jenkins-Support, API-Scripting, Logic Apps und Azure Automation sowie M365-Automatisierung im weiteren Sinne. Einen Teil erbringe ich direkt, andere in Partnerschaft mit der techwork data GmbH, für die ich als Subcontractor tätig bin. Ein aktueller Schwerpunkt ist die Anbindung eigener Systeme und APIs an KI-Assistenten über das Model Context Protocol (MCP). Abseits der Arbeit vertiefe ich mich in Automatisierungsprojekte mit den unterschiedlichsten Programmiersprachen und finde meinen Ausgleich im Nervenkitzel auf dem Motorrad, in der Gischt beim Wasserski und im Rhythmus von MotoGP und Formel 1."
     }
   },
 
@@ -48,6 +48,52 @@
     },
     "viaLabel": { "en": "via techwork data GmbH", "de": "über techwork data GmbH" },
     "items": [
+      {
+        "icon": "fas fa-diagram-project",
+        "delivery": "direct",
+        "title": { "en": "MCP Server Development", "de": "MCP-Server-Entwicklung" },
+        "desc": {
+          "en": "I connect your systems and APIs to AI assistants via the Model Context Protocol (MCP) — in Node.js/TypeScript or Python. Your team asks the assistant directly for data from your systems instead of hunting it down.",
+          "de": "Ich binde Ihre Systeme und APIs über das Model Context Protocol (MCP) an KI-Assistenten an – in Node.js/TypeScript oder Python. Ihr Team fragt den Assistenten direkt nach Daten aus Ihren Systemen, statt sie zusammenzusuchen."
+        },
+        "points": [
+          {
+            "en": "Scoping: which tools and data the assistant really needs",
+            "de": "Scoping: welche Tools und Daten der Assistent wirklich braucht"
+          },
+          {
+            "en": "Connecting M365/Microsoft Graph, REST APIs, databases and line-of-business apps",
+            "de": "Anbindung von M365/Microsoft Graph, REST-APIs, Datenbanken und Fachanwendungen"
+          },
+          {
+            "en": "Authentication (OAuth, API keys), local (stdio) or remote (HTTP) operation, tests, docs and handover",
+            "de": "Authentifizierung (OAuth, API-Keys), Betrieb lokal (stdio) oder remote (HTTP), Tests, Doku und Übergabe"
+          }
+        ]
+      },
+      {
+        "icon": "fas fa-chalkboard-user",
+        "delivery": "direct",
+        "title": { "en": "AI Workshops for SMEs", "de": "KI-Workshops für KMU" },
+        "desc": {
+          "en": "Hands-on workshops on how your team uses AI assistants sensibly in daily work — remote or on-site in Vienna. On request, a technical track for developer teams.",
+          "de": "Praxisnahe Workshops, wie Ihr Team KI-Assistenten im Arbeitsalltag sinnvoll einsetzt – remote oder vor Ort in Wien. Auf Wunsch eine technische Variante für Entwicklerteams."
+        },
+        "points": [
+          {
+            "en": "Practical use cases in daily work and effective prompting",
+            "de": "Sinnvolle Einsatzfälle im Arbeitsalltag und gutes Prompting"
+          },
+          {
+            "en": "Data protection, limits and responsible use",
+            "de": "Datenschutz, Grenzen und verantwortungsvoller Umgang"
+          },
+          {
+            "en": "Optional for developer teams: building your own MCP servers",
+            "de": "Optional für Entwicklerteams: eigene MCP-Server bauen"
+          }
+        ]
+      },
       {
         "icon": "fas fa-robot",
         "delivery": "direct",
@@ -170,6 +216,10 @@
         "org": { "name": { "en": "Self-employed", "de": "Selbstständig" } },
         "date": { "en": "December 2025 - now", "de": "Dezember 2025 - heute" },
         "bullets": [
+          {
+            "en": "Developing MCP servers (Model Context Protocol) in Node.js/TypeScript and Python to connect in-house systems and APIs to AI assistants",
+            "de": "Entwicklung von MCP-Servern (Model Context Protocol) in Node.js/TypeScript und Python zur Anbindung eigener Systeme und APIs an KI-Assistenten"
+          },
           {
             "en": "Automation consulting and programming in PowerShell and Python for Microsoft 365 and Azure scenarios",
             "de": "Automatisierungsberatung und -programmierung in PowerShell und Python für Microsoft-365- und Azure-Szenarien"
@@ -1018,9 +1068,115 @@
 
   "privacy": {
     "title": { "en": "Privacy Policy", "de": "Datenschutzerklärung" },
-    "placeholder": {
-      "en": "The privacy policy is being prepared and will be published here shortly.",
-      "de": "Die Datenschutzerklärung wird derzeit vorbereitet und in Kürze hier veröffentlicht."
-    }
+    "intro": {
+      "en": "This privacy policy explains how personal data is processed when you visit this website. I process as little data as possible and use no analytics or tracking services.",
+      "de": "Diese Datenschutzerklärung informiert Sie über die Verarbeitung personenbezogener Daten beim Besuch dieser Website. Ich verarbeite so wenige Daten wie möglich und setze keine Analyse- oder Tracking-Dienste ein."
+    },
+    "updated": {
+      "en": "Last updated: October 2026",
+      "de": "Stand: Oktober 2026"
+    },
+    "sections": [
+      {
+        "heading": { "en": "Controller", "de": "Verantwortlicher" },
+        "body": [
+          {
+            "en": "The controller responsible for data processing on this website is:",
+            "de": "Verantwortlich für die Datenverarbeitung auf dieser Website ist:"
+          },
+          {
+            "en": "Ing. Fabian Franz Steiner BSc., Wurmbstraße 44/8, 1120 Vienna, Austria. Email: {{EMAIL_DIRECT}}",
+            "de": "Ing. Fabian Franz Steiner BSc., Wurmbstraße 44/8, 1120 Wien, Österreich. E-Mail: {{EMAIL_DIRECT}}"
+          }
+        ]
+      },
+      {
+        "heading": { "en": "Hosting and delivery", "de": "Bereitstellung und Hosting" },
+        "body": [
+          {
+            "en": "This website is a static site provided through GitHub Pages (GitHub, Inc., USA) and delivered via the Cloudflare content delivery network (Cloudflare, Inc., USA). Both providers are certified under the EU-US Data Privacy Framework and act as processors on my behalf.",
+            "de": "Diese Website ist eine statische Seite, die über GitHub Pages (GitHub, Inc., USA) bereitgestellt und über das Content Delivery Network von Cloudflare (Cloudflare, Inc., USA) ausgeliefert wird. Beide Anbieter sind unter dem EU-US Data Privacy Framework zertifiziert und für mich als Auftragsverarbeiter tätig."
+          },
+          {
+            "en": "When the site is requested, these services process technically necessary access data such as your IP address, date and time, the requested resource and information about your browser and operating system. This is required to deliver the site securely and reliably. The legal basis is my legitimate interest in secure and performant delivery (Art. 6(1)(f) GDPR).",
+            "de": "Beim Abruf der Seite verarbeiten diese Dienste technisch notwendige Zugriffsdaten wie Ihre IP-Adresse, Datum und Uhrzeit, die angeforderte Ressource sowie Angaben zu Browser und Betriebssystem. Das ist erforderlich, um die Seite sicher und zuverlässig auszuliefern. Rechtsgrundlage ist mein berechtigtes Interesse an einer sicheren und performanten Bereitstellung (Art. 6 Abs. 1 lit. f DSGVO)."
+          },
+          {
+            "en": "In doing so, Cloudflare may set a technically necessary cookie (__cf_bm) to protect against automated abuse.",
+            "de": "Cloudflare kann dabei ein technisch notwendiges Cookie (__cf_bm) zur Abwehr von automatisiertem Missbrauch setzen."
+          }
+        ]
+      },
+      {
+        "heading": { "en": "Web fonts (Google Fonts)", "de": "Schriftarten (Google Fonts)" },
+        "body": [
+          {
+            "en": "For its typography the site uses the fonts Saira Extra Condensed and Mulish, which are loaded from Google servers (Google Ireland Limited / Google LLC, USA) when the page opens (fonts.googleapis.com and fonts.gstatic.com). Your IP address is transmitted to Google in the process. The legal basis is my legitimate interest in a consistent, appealing presentation (Art. 6(1)(f) GDPR).",
+            "de": "Für die Darstellung verwende ich die Schriftarten Saira Extra Condensed und Mulish, die beim Seitenaufruf von Servern von Google (Google Ireland Limited bzw. Google LLC, USA) geladen werden (fonts.googleapis.com und fonts.gstatic.com). Dabei wird Ihre IP-Adresse an Google übertragen. Rechtsgrundlage ist mein berechtigtes Interesse an einer einheitlichen, ansprechenden Darstellung (Art. 6 Abs. 1 lit. f DSGVO)."
+          }
+        ]
+      },
+      {
+        "heading": { "en": "Icons (Font Awesome)", "de": "Symbole (Font Awesome)" },
+        "body": [
+          {
+            "en": "The icons used on the site come from Font Awesome and are loaded via the CDN cdnjs.cloudflare.com (Cloudflare, Inc., USA). Here too your IP address is transmitted to the provider (Art. 6(1)(f) GDPR).",
+            "de": "Die auf der Seite verwendeten Symbole stammen von Font Awesome und werden über das CDN cdnjs.cloudflare.com (Cloudflare, Inc., USA) geladen. Auch dabei wird Ihre IP-Adresse an den Anbieter übertragen (Art. 6 Abs. 1 lit. f DSGVO)."
+          }
+        ]
+      },
+      {
+        "heading": { "en": "Embedded external content", "de": "Eingebundene externe Inhalte" },
+        "body": [
+          {
+            "en": "In the projects area of the home page, status graphics from img.shields.io and two project images from raw.githubusercontent.com (GitHub, Inc., USA) are embedded as images. When this content loads, your IP address is transmitted to the respective services (Art. 6(1)(f) GDPR).",
+            "de": "Auf der Startseite werden im Projektbereich Status-Grafiken von img.shields.io sowie zwei Projektbilder von raw.githubusercontent.com (GitHub, Inc., USA) als Bilder eingebunden. Beim Laden dieser Inhalte wird Ihre IP-Adresse an die jeweiligen Dienste übertragen (Art. 6 Abs. 1 lit. f DSGVO)."
+          }
+        ]
+      },
+      {
+        "heading": { "en": "Local storage and cookies", "de": "Lokale Speicherung und Cookies" },
+        "body": [
+          {
+            "en": "Your language and theme (light/dark) preference is stored exclusively locally in your browser (localStorage). This information is not transmitted to me or to third parties and serves only to retain your choice on your next visit.",
+            "de": "Ihre Sprach- und Designeinstellung (hell/dunkel) speichere ich ausschließlich lokal in Ihrem Browser (localStorage). Diese Angaben werden nicht an mich oder Dritte übertragen und dienen nur dazu, Ihre Auswahl beim nächsten Besuch beizubehalten."
+          },
+          {
+            "en": "No cookies are set for analytics or advertising purposes. As only technically necessary storage is used, no consent (and no cookie banner) is required under Section 165(3) of the Austrian Telecommunications Act (TKG 2021).",
+            "de": "Es werden keine Cookies zu Analyse- oder Werbezwecken gesetzt. Da ausschließlich technisch notwendige Speicherung zum Einsatz kommt, ist nach § 165 Abs. 3 TKG 2021 keine Einwilligung (und kein Cookie-Banner) erforderlich."
+          }
+        ]
+      },
+      {
+        "heading": { "en": "Contacting me", "de": "Kontaktaufnahme" },
+        "body": [
+          {
+            "en": "If you contact me by email ({{EMAIL_DIRECT}}), I process the data you provide solely to handle your request. The legal basis is the initiation or performance of a contract and my legitimate interest in responding to your enquiry (Art. 6(1)(b) and (f) GDPR).",
+            "de": "Wenn Sie mich per E-Mail ({{EMAIL_DIRECT}}) kontaktieren, verarbeite ich die von Ihnen übermittelten Daten ausschließlich zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist die Anbahnung oder Erfüllung eines Vertrags sowie mein berechtigtes Interesse an der Beantwortung Ihrer Anfrage (Art. 6 Abs. 1 lit. b und f DSGVO)."
+          },
+          {
+            "en": "The appointment-booking button leads to a Microsoft service (Outlook/Bookings) and is only called when you click it; Microsoft's privacy terms then apply.",
+            "de": "Der Button zur Terminbuchung führt zu einem Dienst von Microsoft (Outlook/Bookings) und wird erst beim Anklicken aufgerufen; es gelten dann die Datenschutzbestimmungen von Microsoft."
+          }
+        ]
+      },
+      {
+        "heading": { "en": "Retention and your rights", "de": "Speicherdauer und Ihre Rechte" },
+        "body": [
+          {
+            "en": "Access data in server logs is retained by the hosting providers only as long as necessary for operation and security. I keep email enquiries for as long as needed to handle them and to meet legal obligations.",
+            "de": "Zugriffsdaten in Server-Logs werden von den Hosting-Anbietern nur so lange gespeichert, wie es für Betrieb und Sicherheit erforderlich ist. E-Mail-Anfragen bewahre ich so lange auf, wie es zur Bearbeitung und aufgrund gesetzlicher Pflichten nötig ist."
+          },
+          {
+            "en": "You have the right to access, rectification, erasure, restriction of processing, data portability and the right to object. To exercise these rights, please use the email address stated above.",
+            "de": "Ihnen stehen das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie ein Widerspruchsrecht zu. Wenden Sie sich dazu bitte an die oben genannte E-Mail-Adresse."
+          },
+          {
+            "en": "You also have the right to lodge a complaint with the Austrian Data Protection Authority (Österreichische Datenschutzbehörde, Barichgasse 40-42, 1030 Vienna, dsb.gv.at).",
+            "de": "Außerdem haben Sie das Recht auf Beschwerde bei der österreichischen Datenschutzbehörde (Österreichische Datenschutzbehörde, Barichgasse 40-42, 1030 Wien, dsb.gv.at)."
+          }
+        ]
+      }
+    ]
   }
 }

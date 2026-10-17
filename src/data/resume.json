@@ -748,20 +748,6 @@
           { "src": "/img/badges/pypi-xurrent-v.svg", "alt": "Version" },
           { "src": "/img/badges/pypi-xurrent-dm.svg", "alt": "Downloads" }
         ]
-      },
-      {
-        "title": "Keep A ChangeLog Assistant",
-        "image": "img/KeepAChangelogAssistant.webp",
-        "imageAlt": "Keep A ChangeLog Assistant Logo",
-        "primaryHref": "https://chat.openai.com/g/g-684af39084148191b7c83c89daf1b477-keep-a-changelog-assistant",
-        "desc": {
-          "en": "A Custom GPT to assist with generating and maintaining changelogs.",
-          "de": "Ein Custom GPT zur Unterstützung beim Erstellen und Pflegen von Changelogs."
-        },
-        "button": {
-          "label": { "en": "Try the Assistant", "de": "Assistent ausprobieren" },
-          "href": "https://chat.openai.com/g/g-684af39084148191b7c83c89daf1b477-keep-a-changelog-assistant"
-        }
       }
     ]
   },

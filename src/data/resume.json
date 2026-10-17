@@ -1057,6 +1057,13 @@
         "external": true
       },
       {
+        "icon": "fab fa-git-alt",
+        "label": "Codeberg",
+        "value": "@fasteiner",
+        "href": "https://codeberg.org/fasteiner",
+        "external": true
+      },
+      {
         "icon": "fas fa-location-dot",
         "label": { "en": "Based in", "de": "Standort" },
         "value": {

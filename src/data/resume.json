@@ -16,6 +16,7 @@
     { "id": "education", "label": { "en": "Education", "de": "Ausbildung" } },
     { "id": "skills", "label": { "en": "Skills", "de": "Kenntnisse" } },
     { "id": "projects", "label": { "en": "Projects", "de": "Projekte" } },
+    { "id": "contributions", "label": { "en": "Contributions", "de": "Beiträge" } },
     { "id": "interests", "label": { "en": "Interests", "de": "Interessen" } },
     { "id": "awards", "label": { "en": "Certifications", "de": "Zertifizierungen" } },
     { "id": "documents", "label": { "en": "Documents", "de": "Dokumente" } },
@@ -716,6 +717,20 @@
         ]
       },
       {
+        "title": "PSImageConverter",
+        "icon": "fas fa-images",
+        "primaryHref": "https://github.com/fasteiner/PSImageConverter",
+        "repo": "https://github.com/fasteiner/PSImageConverter",
+        "desc": {
+          "en": "A cross-platform PowerShell module to convert images between HEIC/HEIF, WebP, AVIF, JPEG, PNG and other formats. Pipeline-friendly, keeps EXIF metadata and needs no codec installation.",
+          "de": "Ein plattformübergreifendes PowerShell-Modul zum Konvertieren von Bildern zwischen HEIC/HEIF, WebP, AVIF, JPEG, PNG und weiteren Formaten. Pipeline-fähig, behält die EXIF-Metadaten und braucht keine Codec-Installation."
+        },
+        "button": {
+          "label": { "en": "View on GitHub", "de": "Auf GitHub ansehen" },
+          "href": "https://github.com/fasteiner/PSImageConverter"
+        }
+      },
+      {
         "title": "Xurrent Python Module",
         "image": "img/XurrentPython.webp",
         "imageAlt": "Xurrent Python Module Logo",
@@ -747,6 +762,50 @@
           "label": { "en": "Try the Assistant", "de": "Assistent ausprobieren" },
           "href": "https://chat.openai.com/g/g-684af39084148191b7c83c89daf1b477-keep-a-changelog-assistant"
         }
+      }
+    ]
+  },
+
+  "contributions": {
+    "title": { "en": "Open-Source Contributions", "de": "Open-Source-Beiträge" },
+    "lead": {
+      "en": "Projects by others that I actively contribute to.",
+      "de": "Projekte anderer, an denen ich aktiv mitentwickle."
+    },
+    "items": [
+      {
+        "title": "CITS-to-go",
+        "repo": {
+          "label": "codeberg.org/sascha8a/cits-to-go",
+          "href": "https://codeberg.org/sascha8a/cits-to-go"
+        },
+        "tech": {
+          "en": "Android app (Kotlin) · ESP32-C5",
+          "de": "Android-App (Kotlin) · ESP32-C5"
+        },
+        "date": { "en": "October 2026 - now", "de": "Oktober 2026 - heute" },
+        "summary": {
+          "en": "A portable C-ITS capture and transmit bridge: a Seeed Studio XIAO ESP32-C5 receives V2X messages from vehicles and roadside units and streams them over USB-C to an Android app, which saves them as PCAP, forwards them to MQTT in the OpenTrafficMap format and can broadcast its own CAM messages.",
+          "de": "Eine mobile C-ITS-Empfangs- und Sendebrücke: Ein Seeed Studio XIAO ESP32-C5 empfängt V2X-Nachrichten von Fahrzeugen und Straßeninfrastruktur und streamt sie per USB-C an eine Android-App, die sie als PCAP speichert, im OpenTrafficMap-Format an MQTT weiterleitet und eigene CAM-Nachrichten senden kann."
+        },
+        "bullets": [
+          {
+            "en": "Map page with a live view of received CAM and DENM messages, stations, roadside units and the own vehicle",
+            "de": "Kartenansicht mit Live-Darstellung empfangener CAM- und DENM-Nachrichten, Stationen, Roadside Units und des eigenen Fahrzeugs"
+          },
+          {
+            "en": "Decoding of CAM position, heading and speed, DENM containers and GeoNetworking headers in the Android app",
+            "de": "Dekodierung von CAM-Position, -Richtung und -Geschwindigkeit, DENM-Containern und GeoNetworking-Headern in der Android-App"
+          },
+          {
+            "en": "Selectable vehicle profiles for the CAM broadcast, including the vehicle size",
+            "de": "Wählbare Fahrzeugprofile für den CAM-Broadcast inklusive Fahrzeuggröße"
+          },
+          {
+            "en": "New app icon, a dev container for the Android app and documentation",
+            "de": "Neues App-Icon, ein Dev Container für die Android-App und Dokumentation"
+          }
+        ]
       }
     ]
   },

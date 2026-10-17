@@ -48,6 +48,7 @@
       "de": "Einige Leistungen erbringe ich direkt, andere in Partnerschaft mit der techwork data GmbH, für die ich als Subcontractor tätig bin — jede Karte ist entsprechend gekennzeichnet."
     },
     "viaLabel": { "en": "via techwork data GmbH", "de": "über techwork data GmbH" },
+    "viaHref": "https://www.techwork.at/",
     "items": [
       {
         "icon": "fas fa-diagram-project",
@@ -604,7 +605,9 @@
       {
         "name": { "en": "Tools", "de": "Werkzeuge" },
         "items": [
+          { "en": "techwork automator", "de": "techwork automator" },
           { "en": "Jenkins", "de": "Jenkins" },
+          { "en": "Docker", "de": "Docker" },
           { "en": "Office, Microsoft Project & Visio", "de": "Office, Microsoft Project & Visio" },
           {
             "en": "Adobe (Photoshop, Illustrator, InDesign)",
@@ -758,13 +761,13 @@
       "en": "Projects by others that I actively contribute to.",
       "de": "Projekte anderer, an denen ich aktiv mitentwickle."
     },
+    "contributedLabel": { "en": "My contributions", "de": "Meine Beiträge" },
     "items": [
       {
         "title": "CITS-to-go",
-        "repo": {
-          "label": "codeberg.org/sascha8a/cits-to-go",
-          "href": "https://codeberg.org/sascha8a/cits-to-go"
-        },
+        "icon": "fas fa-tower-broadcast",
+        "href": "https://codeberg.org/sascha8a/cits-to-go",
+        "button": { "en": "View on Codeberg", "de": "Auf Codeberg ansehen" },
         "tech": {
           "en": "Android app (Kotlin) · ESP32-C5",
           "de": "Android-App (Kotlin) · ESP32-C5"
@@ -800,12 +803,12 @@
     "title": { "en": "Interests / Hobbies", "de": "Interessen / Hobbys" },
     "items": [
       {
-        "name": { "en": "Dancing", "de": "Tanzen" },
+        "name": { "en": "Water skiing", "de": "Wasserski" },
         "text": {
-          "en": "Dancing is my favourite thing to do",
-          "de": "Tanzen ist meine liebste Beschäftigung"
+          "en": "Nothing beats the rush of gliding across the water.",
+          "de": "Nichts geht über das Gefühl, übers Wasser zu gleiten."
         },
-        "image": "img/portfolio-1.webp"
+        "icon": "fas fa-water"
       },
       {
         "name": { "en": "Motorcycles", "de": "Motorräder" },
@@ -824,9 +827,21 @@
         "image": "img/portfolio-3.webp"
       },
       {
-        "name": { "en": "Beekeeping", "de": "Imkern" },
-        "text": { "en": "", "de": "" },
-        "image": "img/portfolio-4.webp"
+        "name": { "en": "Programming", "de": "Programmieren" },
+        "text": {
+          "en": "Building my own tools and side projects in all kinds of languages, just for fun.",
+          "de": "Eigene Tools und Projekte in den unterschiedlichsten Sprachen – einfach aus Spaß."
+        },
+        "icon": "fas fa-code"
+      },
+      {
+        "name": { "en": "OpenTrafficMap", "de": "OpenTrafficMap" },
+        "text": {
+          "en": "Tracking down new C-ITS stations and hosting two of my own nodes.",
+          "de": "Neue C-ITS-Stationen aufspüren und zwei eigene Nodes hosten."
+        },
+        "icon": "fas fa-map-location-dot",
+        "href": "https://opentrafficmap.org"
       }
     ]
   },
@@ -990,7 +1005,7 @@
         "type": "outline",
         "icon": "far fa-calendar-check",
         "href": "{{BOOKING_URL}}",
-        "label": { "en": "Book a meeting", "de": "Termin buchen" },
+        "label": { "en": "Book a meeting (techwork)", "de": "Termin buchen (techwork)" },
         "external": true
       }
     ],

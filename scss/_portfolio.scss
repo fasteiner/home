@@ -18,6 +18,24 @@
     object-fit: cover;
   }
 
+  // The tiles are links; keep the underline off the icon and caption.
+  text-decoration: none;
+
+  // Icon tile for hobbies without a photo — same box, branded gradient. The
+  // icon is a large, faint watermark on the right, so the caption (with its
+  // own backdrop) can overlap it at any text length without hurting legibility.
+  .portfolio-icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    padding-right: 8%;
+    font-size: 6rem;
+    color: rgba(#fff, 0.22);
+    background: linear-gradient(135deg, $primary, shade-color($primary, 55%));
+  }
+
   .caption {
     display: flex;
     height: 100%;
@@ -61,6 +79,10 @@
     max-width: 500px;
     margin: 0 auto 1.5rem;
 
+    .portfolio-icon {
+      font-size: 9rem;
+    }
+
     .caption {
       transition:
         clip-path 0.25s ease-out,
@@ -73,12 +95,14 @@
       }
     }
 
-    img {
+    img,
+    .portfolio-icon {
       transition: clip-path 0.25s ease-out;
       clip-path: inset(-1px);
     }
 
-    &:hover img {
+    &:hover img,
+    &:hover .portfolio-icon {
       clip-path: inset(2rem);
     }
 

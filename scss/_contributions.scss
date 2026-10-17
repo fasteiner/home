@@ -1,0 +1,43 @@
+// Open-source contribution cards — the project card look (icon header, button)
+// plus a check-mark list of what I contributed, like the service cards.
+
+.contribution-card {
+  .card-title {
+    margin-bottom: 0.25rem;
+  }
+
+  .contribution-meta {
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--bs-secondary-color);
+  }
+
+  // The list follows the summary directly; the button sits at the bottom.
+  .card-text {
+    flex-grow: 0;
+  }
+
+  .contribution-heading {
+    margin: 0.25rem 0 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .contribution-points {
+    margin-bottom: 1rem;
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    .fa-li {
+      font-size: 0.85rem;
+    }
+  }
+
+  .btn {
+    margin-top: auto;
+  }
+}

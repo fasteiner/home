@@ -51,7 +51,9 @@ interface Project {
 }
 interface Contribution {
   title: string;
-  repo: { label: string; href: string };
+  icon: string;
+  href: string;
+  button: L;
   tech: L;
   date: L;
   summary: L;
@@ -60,7 +62,9 @@ interface Contribution {
 interface Interest {
   name: L;
   text: L;
-  image: string;
+  image?: string;
+  icon?: string;
+  href?: string;
 }
 interface Cert {
   text: L;
@@ -123,13 +127,20 @@ interface ResumeData {
   };
   nav: { id: string; label: L }[];
   social: { href: string; icon: string; label: string }[];
-  services: { title: L; lead: L; deliveryNote: L; viaLabel: L; items: Service[] };
+  services: {
+    title: L;
+    lead: L;
+    deliveryNote: L;
+    viaLabel: L;
+    viaHref: string;
+    items: Service[];
+  };
   contact: { title: L; lead: L; actions: ContactAction[]; channels: ContactChannel[] };
   experience: { title: L; items: ExperienceItem[] };
   education: { title: L; items: EduItem[] };
   skills: { title: L; groups: SkillGroup[] };
   projects: { title: L; items: Project[] };
-  contributions: { title: L; lead: L; items: Contribution[] };
+  contributions: { title: L; lead: L; contributedLabel: L; items: Contribution[] };
   interests: { title: L; items: Interest[] };
   certifications: { title: L; items: Cert[] };
   documents: { title: L; items: DocItem[] };
@@ -212,10 +223,10 @@ function renderServices(lang: Lang): string {
         .map((p) => `<li><i class="fa-li fa fa-check text-primary"></i> ${esc(t(p, lang))}</li>`)
         .join("");
       // Direct services render unchanged; techwork services carry a labelled
-      // pill (text, not colour alone) so the delivery partner is explicit.
+      // pill (text, not colour alone) that links to the delivery partner.
       const badge =
         s.delivery === "techwork"
-          ? `\n        <span class="provider-badge"><i class="fas fa-handshake me-1" aria-hidden="true"></i>${viaLabel}</span>`
+          ? `\n        <a class="provider-badge" href="${data.services.viaHref}" ${TARGET}><i class="fas fa-handshake me-1" aria-hidden="true"></i>${viaLabel}</a>`
           : "";
       return `<div class="col-md-6 col-lg-4 mb-4">
     <div class="card service-card h-100 shadow-sm border-0">
@@ -343,27 +354,36 @@ function renderProjects(lang: Lang): string {
   return section("projects", t(data.projects.title, lang), `<div class="row">${cards}</div>`);
 }
 
-// Other people's projects I contribute to — same layout as the experience
-// entries, with the upstream repository as the subheading.
+// Other people's projects I contribute to — project-style cards (icon header,
+// button to the upstream repository) with a check list of my contributions.
 function renderContributions(lang: Lang): string {
   const lead = `<p class="lead mb-5">${esc(t(data.contributions.lead, lang))}</p>`;
-  const items = data.contributions.items
+  const contributedLabel = esc(t(data.contributions.contributedLabel, lang));
+  const cards = data.contributions.items
     .map((c) => {
-      const bullets = c.bullets.map((b) => `<li>${esc(t(b, lang))}</li>`).join("");
-      return `<div class="resume-item d-flex flex-column flex-md-row mb-5">
-    <div class="resume-content me-auto">
-      <h3 class="mb-0">${esc(c.title)}</h3>
-      <div class="subheading mb-3"><a href="${c.repo.href}" ${TARGET}>${esc(c.repo.label)}</a> &nbsp;&nbsp;| ${esc(
-        t(c.tech, lang),
-      )}</div>
-      <p>${esc(t(c.summary, lang))}</p>
-      <ul>${bullets}</ul>
+      const points = c.bullets
+        .map((b) => `<li><i class="fa-li fa fa-check text-primary"></i> ${esc(t(b, lang))}</li>`)
+        .join("");
+      return `<div class="col-lg-6 mb-4">
+    <div class="card contribution-card h-100 shadow-sm border-0">
+      <a href="${c.href}" ${TARGET} aria-label="${esc(c.title)}"><div class="card-img-top d-flex align-items-center justify-content-center"><i class="${c.icon} fa-4x text-primary" aria-hidden="true"></i></div></a>
+      <div class="card-body">
+        <h3 class="card-title">${esc(c.title)}</h3>
+        <p class="contribution-meta">${esc(t(c.tech, lang))} · <span class="text-primary">${esc(t(c.date, lang))}</span></p>
+        <p class="card-text">${esc(t(c.summary, lang))}</p>
+        <h4 class="contribution-heading">${contributedLabel}</h4>
+        <ul class="fa-ul contribution-points">${points}</ul>
+        <a href="${c.href}" ${TARGET} class="btn btn-primary">${esc(t(c.button, lang))}</a>
+      </div>
     </div>
-    <div class="resume-date text-md-end"><span class="text-primary">${esc(t(c.date, lang))}</span></div>
   </div>`;
     })
     .join("\n");
-  return section("contributions", t(data.contributions.title, lang), `${lead}${items}`);
+  return section(
+    "contributions",
+    t(data.contributions.title, lang),
+    `${lead}<div class="row">${cards}</div>`,
+  );
 }
 
 function renderInterests(lang: Lang): string {
@@ -371,18 +391,28 @@ function renderInterests(lang: Lang): string {
     .map((i) => {
       const text = esc(t(i.text, lang));
       const caption = text ? `<p class="mb-0">${text}</p>` : "";
+      // Hobbies without a photo get a branded tile with a large icon instead.
+      const media = i.image
+        ? `<img class="img-fluid" src="${asset(i.image)}" alt="" loading="lazy" decoding="async">`
+        : `<span class="portfolio-icon"><i class="${i.icon}" aria-hidden="true"></i></span>`;
+      const link = i.href ? `href="${i.href}" ${TARGET}` : 'href="#"';
       return `<div class="col-lg-6">
-    <a class="portfolio-item" href="#">
+    <a class="portfolio-item" ${link}>
       <span class="caption"><span class="caption-content">
         <h3>${esc(t(i.name, lang))}</h3>
         ${caption}
       </span></span>
-      <img class="img-fluid" src="${asset(i.image)}" alt="" loading="lazy" decoding="async">
+      ${media}
     </a>
   </div>`;
     })
     .join("\n");
-  return section("interests", t(data.interests.title, lang), `<div class="row g-0">${items}</div>`);
+  // Centre a last tile that is left on its own in the two-column grid.
+  return section(
+    "interests",
+    t(data.interests.title, lang),
+    `<div class="row g-0 justify-content-center">${items}</div>`,
+  );
 }
 
 function renderCertifications(lang: Lang): string {

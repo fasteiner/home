@@ -6,6 +6,12 @@
     margin-bottom: 0.6rem;
   }
 
+  // Keep the bullet list right under the description. The project cards let
+  // .card-text grow to bottom-align their buttons; service cards have none.
+  .card-text {
+    flex-grow: 0;
+  }
+
   .service-icon {
     display: inline-flex;
     align-items: center;
@@ -31,12 +37,15 @@
     }
   }
 
-  // "via techwork data GmbH" pill on services delivered through the partner.
-  // Text carries the meaning (not colour alone); the darker orange keeps the
-  // small label above WCAG AA contrast on the light tint in both colour modes.
+  // "via techwork data GmbH" pill on services delivered through the partner,
+  // linking to the partner's site. Text carries the meaning (not colour alone);
+  // the darker orange keeps the small label above WCAG AA contrast on the light
+  // tint in both colour modes.
   .provider-badge {
     display: inline-flex;
     align-items: center;
+    // Hug the label instead of stretching across the flex-column card body.
+    align-self: flex-start;
     margin-bottom: 0.75rem;
     padding: 0.2rem 0.6rem;
     border-radius: 999px;
@@ -46,6 +55,14 @@
     letter-spacing: 0.04em;
     color: shade-color($primary, 18%);
     background-color: rgba($primary, 0.12);
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+
+    &:hover,
+    &:focus-visible {
+      background-color: rgba($primary, 0.22);
+      text-decoration: underline;
+    }
 
     i {
       font-size: 0.72rem;
@@ -56,4 +73,9 @@
 [data-bs-theme="dark"] .service-card .provider-badge {
   color: tint-color($primary, 40%);
   background-color: rgba($primary, 0.22);
+
+  &:hover,
+  &:focus-visible {
+    background-color: rgba($primary, 0.34);
+  }
 }

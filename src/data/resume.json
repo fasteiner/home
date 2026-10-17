@@ -1109,7 +1109,10 @@
       },
       {
         "label": { "en": "Trade authority", "de": "Gewerbebehörde" },
-        "value": { "en": "Magistrate of the City of Vienna", "de": "Magistrat der Stadt Wien" }
+        "value": {
+          "en": "Magistrate of the City of Vienna, Municipal District Office for the 12th District (Magistratisches Bezirksamt für den 12. Bezirk)",
+          "de": "Magistrat der Stadt Wien, Magistratisches Bezirksamt für den 12. Bezirk"
+        }
       },
       {
         "label": { "en": "Applicable regulation", "de": "Anwendbare Rechtsvorschriften" },

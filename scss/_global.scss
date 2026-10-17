@@ -48,6 +48,15 @@ p.lead {
   font-size: 1.5rem;
 }
 
+// Hero row: the "Start a project" button next to the social icons; wraps onto
+// two lines on narrow screens.
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .social-icons {
   a {
     display: inline-block;

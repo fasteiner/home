@@ -6,6 +6,10 @@
     "lead": {
       "en": "I'm an independent Automation Consultant who also subcontracts for techwork data GmbH. I deliver automation consulting with PowerShell and Python, Azure integrations, Jenkins support, API scripting, Logic Apps and Azure Automation, and broader M365 automation. Some I deliver directly; others in partnership with techwork data GmbH, where I work as a subcontractor. A current focus is connecting in-house systems and APIs to AI assistants via the Model Context Protocol (MCP). Outside of work I dive into multi-language automation projects and find balance in the rush of motorcycles, the splash of water skiing, and the rhythm of MotoGP and Formula 1.",
       "de": "Ich bin selbstständiger Automation Consultant und arbeite zudem als Subunternehmer für die techwork data GmbH. Ich biete Automatisierungsberatung mit PowerShell und Python, Azure-Integrationen, Jenkins-Support, API-Scripting, Logic Apps und Azure Automation sowie M365-Automatisierung im weiteren Sinne. Einen Teil erbringe ich direkt, andere in Partnerschaft mit der techwork data GmbH, für die ich als Subcontractor tätig bin. Ein aktueller Schwerpunkt ist die Anbindung eigener Systeme und APIs an KI-Assistenten über das Model Context Protocol (MCP). Abseits der Arbeit vertiefe ich mich in Automatisierungsprojekte mit den unterschiedlichsten Programmiersprachen und finde meinen Ausgleich im Nervenkitzel auf dem Motorrad, in der Gischt beim Wasserski und im Rhythmus von MotoGP und Formel 1."
+    },
+    "cta": {
+      "icon": "fas fa-comments",
+      "label": { "en": "Start a project", "de": "Projekt anfragen" }
     }
   },
 
@@ -49,6 +53,13 @@
     },
     "viaLabel": { "en": "via techwork data GmbH", "de": "über techwork data GmbH" },
     "viaHref": "https://www.techwork.at/",
+    "cta": {
+      "text": {
+        "en": "Does any of this fit what you're planning? Let's talk.",
+        "de": "Passt etwas davon zu Ihrem Vorhaben? Lassen Sie uns sprechen."
+      },
+      "label": { "en": "Get in touch", "de": "Kontakt aufnehmen" }
+    },
     "items": [
       {
         "icon": "fas fa-diagram-project",
@@ -988,17 +999,17 @@
   },
 
   "contact": {
-    "title": { "en": "Let's Work Together", "de": "Lass uns zusammenarbeiten" },
+    "title": { "en": "Let's Work Together", "de": "Lassen Sie uns zusammenarbeiten" },
     "lead": {
       "en": "Have a process worth automating, or a project in mind? I'm available for freelance automation work — remote or on-site in and around Vienna. Drop me a line or grab a slot in my calendar.",
-      "de": "Einen Prozess, der sich zu automatisieren lohnt, oder ein Projekt im Kopf? Ich bin für freiberufliche Automatisierungsprojekte verfügbar – remote oder vor Ort in und um Wien. Schreib mir oder buch dir direkt einen Termin in meinem Kalender."
+      "de": "Sie haben einen Prozess, der sich zu automatisieren lohnt, oder ein Projekt im Kopf? Ich bin für freiberufliche Automatisierungsprojekte verfügbar – remote oder vor Ort in und um Wien. Schreiben Sie mir oder buchen Sie direkt einen Termin in meinem Kalender."
     },
     "actions": [
       {
         "type": "primary",
         "icon": "fas fa-paper-plane",
         "href": "mailto:{{EMAIL_TECHWORK}}?subject=Project%20inquiry",
-        "label": { "en": "Email me", "de": "Schreib mir" },
+        "label": { "en": "Email me", "de": "Schreiben Sie mir" },
         "external": false
       },
       {

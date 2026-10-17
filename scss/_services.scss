@@ -70,6 +70,23 @@
   }
 }
 
+// Call to action under the service cards, linking to the contact section.
+.services-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  margin-top: 1rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0.75rem;
+  background-color: rgba($primary, 0.08);
+}
+
+[data-bs-theme="dark"] .services-cta {
+  background-color: rgba($primary, 0.14);
+}
+
 [data-bs-theme="dark"] .service-card .provider-badge {
   color: tint-color($primary, 40%);
   background-color: rgba($primary, 0.22);

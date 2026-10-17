@@ -49,6 +49,14 @@ interface Project {
   button: { label: L; href: string };
   badges?: { src: string; alt: string }[];
 }
+interface Contribution {
+  title: string;
+  repo: { label: string; href: string };
+  tech: L;
+  date: L;
+  summary: L;
+  bullets: L[];
+}
 interface Interest {
   name: L;
   text: L;
@@ -121,6 +129,7 @@ interface ResumeData {
   education: { title: L; items: EduItem[] };
   skills: { title: L; groups: SkillGroup[] };
   projects: { title: L; items: Project[] };
+  contributions: { title: L; lead: L; items: Contribution[] };
   interests: { title: L; items: Interest[] };
   certifications: { title: L; items: Cert[] };
   documents: { title: L; items: DocItem[] };
@@ -334,6 +343,29 @@ function renderProjects(lang: Lang): string {
   return section("projects", t(data.projects.title, lang), `<div class="row">${cards}</div>`);
 }
 
+// Other people's projects I contribute to — same layout as the experience
+// entries, with the upstream repository as the subheading.
+function renderContributions(lang: Lang): string {
+  const lead = `<p class="lead mb-5">${esc(t(data.contributions.lead, lang))}</p>`;
+  const items = data.contributions.items
+    .map((c) => {
+      const bullets = c.bullets.map((b) => `<li>${esc(t(b, lang))}</li>`).join("");
+      return `<div class="resume-item d-flex flex-column flex-md-row mb-5">
+    <div class="resume-content me-auto">
+      <h3 class="mb-0">${esc(c.title)}</h3>
+      <div class="subheading mb-3"><a href="${c.repo.href}" ${TARGET}>${esc(c.repo.label)}</a> &nbsp;&nbsp;| ${esc(
+        t(c.tech, lang),
+      )}</div>
+      <p>${esc(t(c.summary, lang))}</p>
+      <ul>${bullets}</ul>
+    </div>
+    <div class="resume-date text-md-end"><span class="text-primary">${esc(t(c.date, lang))}</span></div>
+  </div>`;
+    })
+    .join("\n");
+  return section("contributions", t(data.contributions.title, lang), `${lead}${items}`);
+}
+
 function renderInterests(lang: Lang): string {
   const items = data.interests.items
     .map((i) => {
@@ -466,6 +498,7 @@ export function renderContent(lang: Lang): string {
     renderEducation(lang),
     renderSkills(lang),
     renderProjects(lang),
+    renderContributions(lang),
     renderInterests(lang),
     renderCertifications(lang),
     renderDocuments(lang),

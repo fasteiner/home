@@ -124,6 +124,7 @@ interface ResumeData {
     shortName: string;
     profileImage: string;
     lead: L;
+    cta: { icon: string; label: L };
   };
   nav: { id: string; label: L }[];
   social: { href: string; icon: string; label: string }[];
@@ -133,6 +134,7 @@ interface ResumeData {
     deliveryNote: L;
     viaLabel: L;
     viaHref: string;
+    cta: { text: L; label: L };
     items: Service[];
   };
   contact: { title: L; lead: L; actions: ContactAction[]; channels: ContactChannel[] };
@@ -195,7 +197,7 @@ function section(id: string, title: string | null, body: string): string {
 }
 
 function renderAbout(lang: Lang): string {
-  const { name, lead } = data.meta;
+  const { name, lead, cta } = data.meta;
   const social = data.social
     .map(
       (s) =>
@@ -207,7 +209,10 @@ function renderAbout(lang: Lang): string {
     ${esc(name.post)}</h1>
   <div class="subheading mb-5"></div>
   <p class="lead mb-5">${esc(t(lead, lang))}</p>
-  <div class="social-icons">${social}</div>`;
+  <div class="about-actions">
+    <a href="#contact" class="btn btn-primary btn-lg js-scroll-trigger"><i class="${cta.icon} me-2" aria-hidden="true"></i>${esc(t(cta.label, lang))}</a>
+    <div class="social-icons">${social}</div>
+  </div>`;
   return section("about", null, body);
 }
 
@@ -240,10 +245,15 @@ function renderServices(lang: Lang): string {
   </div>`;
     })
     .join("\n");
+  // Call to action after the offer: the point where a visitor decides.
+  const cta = `<div class="services-cta">
+    <p class="lead mb-0">${esc(t(data.services.cta.text, lang))}</p>
+    <a href="#contact" class="btn btn-primary btn-lg js-scroll-trigger">${esc(t(data.services.cta.label, lang))}</a>
+  </div>`;
   return section(
     "services",
     t(data.services.title, lang),
-    `${lead}${note}<div class="row">${cards}</div>`,
+    `${lead}${note}<div class="row">${cards}</div>${cta}`,
   );
 }
 

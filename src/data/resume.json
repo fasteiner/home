@@ -736,8 +736,8 @@
         "primaryHref": "https://www.powershellgallery.com/packages/PSImageConverter/",
         "repo": "https://github.com/fasteiner/PSImageConverter",
         "desc": {
-          "en": "A cross-platform PowerShell module that converts HEIC/HEIF and other images to JPEG, PNG, WebP, AVIF, JPEG XL, TIFF, BMP and GIF, and writes HEIC with the encoder of the operating system. Pipeline-friendly and keeps metadata and colour profiles where the target format can store them; reading and every other format need no codec installation. Available as a preview on the PowerShell Gallery.",
-          "de": "Ein plattformübergreifendes PowerShell-Modul, das HEIC/HEIF- und andere Bilder nach JPEG, PNG, WebP, AVIF, JPEG XL, TIFF, BMP und GIF konvertiert und HEIC mit dem Encoder des Betriebssystems schreibt. Pipeline-fähig und behält Metadaten und Farbprofile, soweit das Zielformat sie speichern kann; zum Lesen und für alle anderen Formate ist keine Codec-Installation nötig. Als Vorabversion in der PowerShell Gallery verfügbar."
+          "en": "A cross-platform PowerShell module that converts HEIC/HEIF and other images to JPEG, PNG, WebP, AVIF, JPEG XL, TIFF, BMP and GIF, and writes HEIC with the encoder of the operating system. Pipeline-friendly and keeps metadata and colour profiles where the target format can store them; reading and every other format need no codec installation. Available on the PowerShell Gallery.",
+          "de": "Ein plattformübergreifendes PowerShell-Modul, das HEIC/HEIF- und andere Bilder nach JPEG, PNG, WebP, AVIF, JPEG XL, TIFF, BMP und GIF konvertiert und HEIC mit dem Encoder des Betriebssystems schreibt. Pipeline-fähig und behält Metadaten und Farbprofile, soweit das Zielformat sie speichern kann; zum Lesen und für alle anderen Formate ist keine Codec-Installation nötig. In der PowerShell Gallery verfügbar."
         },
         "button": {
           "label": { "en": "View on PowerShell Gallery", "de": "Auf PowerShell Gallery ansehen" },

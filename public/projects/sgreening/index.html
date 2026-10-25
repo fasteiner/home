@@ -12,22 +12,16 @@
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	
-	<!-- Popup-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- Bootstrap 3 styles on top (the page was designed with both); self-hosted -->
+	<link rel="stylesheet" href="vendor/bootstrap3/css/bootstrap.min.css">
 	
 	<!-- Custom fonts for this template -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+    <link href="css/fonts.css" rel="stylesheet">
 	
     <!-- Custom styles for this template -->
     <link href="css/grayscale.min.css" rel="stylesheet">
-	<link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet'>
 	<link href="css/custom.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-	<script src='https://www.google.com/recaptcha/api.js'></script>
   </head>
 
   <body id="page-top" data-spy="scroll" data-target=".navbar" data-offset="-600">
@@ -184,8 +178,11 @@ Des Weiteren sind Unstimmigkeiten erkannt worden.</td></tr><tr><td class = 'ampe
       </div>
     </section>
 
-    <!-- Map Section -->
-    <div id="map-container" class="col-lg-12"></div>
+    <!-- Location: a link to OpenStreetMap instead of an embedded map, so no
+         third-party tiles load with the page -->
+    <section id="map" class="content-section text-center">
+      <a class="btn btn-default" href="https://www.openstreetmap.org/?mlat=48.190776&amp;mlon=16.397527#map=17/48.190776/16.397527" target="_blank" rel="noopener noreferrer">HTL Rennweg auf OpenStreetMap ansehen</a>
+    </section>
 
     <!-- Footer -->
     <footer style = "font-size:1.2em;">
@@ -203,20 +200,6 @@ Des Weiteren sind Unstimmigkeiten erkannt worden.</td></tr><tr><td class = 'ampe
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Map via Leaflet + OpenStreetMap (no API key required) -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script>
-      (function () {
-        var coords = [48.190776, 16.397527];
-        var map = L.map("map-container", { center: coords, zoom: 15, scrollWheelZoom: true, touchZoom: true });
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-          maxZoom: 19,
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-        L.marker(coords).addTo(map);
-      })();
-    </script>
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.js"></script>

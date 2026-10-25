@@ -3,7 +3,7 @@ import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   {
-    ignores: ["dist", "public", "node_modules", "home"],
+    ignores: ["dist", "public", "node_modules", "home", "test-results", "playwright-report"],
   },
   {
     files: ["**/*.{ts,js}"],

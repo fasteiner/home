@@ -110,7 +110,7 @@ function head(route: Route): string {
     const otherLang = route.lang === "en" ? "de" : "en";
     lines.push(
       `<meta property="og:type" content="${pageKey === "home" ? "profile" : "website"}">`,
-      `<meta property="og:site_name" content="${esc(data.meta.shortName)}">`,
+      `<meta property="og:site_name" content="${esc(fullName())}">`,
       `<meta property="og:title" content="${esc(title(route))}">`,
       `<meta property="og:description" content="${esc(description(route))}">`,
       `<meta property="og:url" content="${url}">`,
@@ -175,7 +175,8 @@ function structuredData(lang: Lang): string {
   const business = {
     "@type": "ProfessionalService",
     "@id": `${SITE_URL}/#business`,
-    name: `${fullName()} – Automation Consulting`,
+    // A sole proprietorship: the company name is the full name.
+    name: fullName(),
     url: `${SITE_URL}${PAGES.home[lang]}`,
     image: `${SITE_URL}${OG_IMAGE.src}`,
     email: LINKS.EMAIL_DIRECT,
@@ -352,6 +353,7 @@ export function renderVCard(): string {
     "VERSION:3.0",
     `N:${escape(data.meta.name.highlight)};${escape(given)};${escape(additional.join(" "))};${escape(prefix)};${escape(data.meta.name.post)}`,
     `FN:${escape(fullName())}`,
+    `ORG:${escape(fullName())}`,
     `TITLE:${escape(JOB_TITLE)}`,
     `EMAIL;TYPE=INTERNET,WORK:${LINKS.EMAIL_DIRECT}`,
     `TEL;TYPE=CELL,VOICE:${LINKS.PHONE}`,

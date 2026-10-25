@@ -20,18 +20,18 @@
   "pages": {
     "home": {
       "title": {
-        "en": "Fabian Steiner – Automation Consultant & MCP Development, Vienna",
-        "de": "Fabian Steiner – Automation Consultant & MCP-Entwicklung, Wien"
+        "en": "Ing. Fabian Franz Steiner BSc. – Automation Consultant & MCP Development, Vienna",
+        "de": "Ing. Fabian Franz Steiner BSc. – Automation Consultant & MCP-Entwicklung, Wien"
       },
       "description": {
-        "en": "Personal website and online resume of Ing. Fabian Steiner BSc., Automation Consultant in Vienna. Focus: MCP server development, AI integration, and M365/Azure automation.",
-        "de": "Persönliche Website und Online-Lebenslauf von Ing. Fabian Steiner BSc., Automation Consultant in Wien. Schwerpunkt: MCP-Server-Entwicklung, KI-Integration und M365/Azure-Automatisierung."
+        "en": "Ing. Fabian Franz Steiner BSc. – independent Automation Consultant in Vienna: MCP server development, AI integration and M365/Azure automation. Including an online CV.",
+        "de": "Ing. Fabian Franz Steiner BSc. – selbstständiger Automation Consultant in Wien: MCP-Server-Entwicklung, KI-Integration und M365/Azure-Automatisierung. Mit Online-Lebenslauf."
       }
     },
     "imprint": {
       "title": {
-        "en": "Imprint · Ing. Fabian Steiner BSc.",
-        "de": "Impressum · Ing. Fabian Steiner BSc."
+        "en": "Imprint · Ing. Fabian Franz Steiner BSc.",
+        "de": "Impressum · Ing. Fabian Franz Steiner BSc."
       },
       "description": {
         "en": "Imprint (legal notice) for Ing. Fabian Franz Steiner BSc., Automation Consultant in Vienna.",
@@ -40,8 +40,8 @@
     },
     "privacy": {
       "title": {
-        "en": "Privacy Policy · Ing. Fabian Steiner BSc.",
-        "de": "Datenschutzerklärung · Ing. Fabian Steiner BSc."
+        "en": "Privacy Policy · Ing. Fabian Franz Steiner BSc.",
+        "de": "Datenschutzerklärung · Ing. Fabian Franz Steiner BSc."
       },
       "description": {
         "en": "Privacy policy for the website of Ing. Fabian Franz Steiner BSc., Automation Consultant in Vienna.",
@@ -50,8 +50,8 @@
     },
     "cv": {
       "title": {
-        "en": "CV · Ing. Fabian Steiner BSc.",
-        "de": "Lebenslauf · Ing. Fabian Steiner BSc."
+        "en": "CV · Ing. Fabian Franz Steiner BSc.",
+        "de": "Lebenslauf · Ing. Fabian Franz Steiner BSc."
       },
       "description": {
         "en": "Curriculum vitae of Ing. Fabian Franz Steiner BSc., Automation Consultant in Vienna: experience, education, skills and certifications.",

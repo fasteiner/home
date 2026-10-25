@@ -1,4 +1,4 @@
-import { Collapse } from "bootstrap";
+import Collapse from "bootstrap/js/dist/collapse";
 
 // Smooth scroll for in-page anchor links marked with `.js-scroll-trigger`.
 const scrollLinks = document.querySelectorAll<HTMLAnchorElement>(

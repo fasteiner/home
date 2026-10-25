@@ -1,0 +1,27 @@
+// 404 page — bilingual, without the sidebar (the visitor's language is unknown).
+
+body.page-plain {
+  padding: 0;
+}
+
+.not-found {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding-top: 15vh !important;
+
+  h1 {
+    font-size: 8rem;
+    line-height: 1;
+  }
+}
+
+.not-found-blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 2rem 3rem;
+  margin-top: 2rem;
+
+  h2 {
+    font-size: 2rem;
+  }
+}

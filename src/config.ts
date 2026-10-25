@@ -12,3 +12,17 @@ export const LINKS: Record<string, string> = {
   EMAIL_TECHWORK: "f.steiner@techwork.at",
   PHONE: "+43 681 10892683",
 };
+
+// Public origin of the site — used for canonical / hreflang / Open Graph URLs,
+// the sitemap and the structured data.
+export const SITE_URL = "https://fabian.stei-ner.net";
+
+// Business address in structured form, for the vCard and the schema.org data.
+// The imprint shows the same address as a localised sentence (resume.json).
+export const ADDRESS = {
+  street: "Wurmbstraße 44/8",
+  postalCode: "1120",
+  locality: { en: "Vienna", de: "Wien" },
+  country: { en: "Austria", de: "Österreich" },
+  countryCode: "AT",
+};

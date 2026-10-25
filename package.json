@@ -15,7 +15,11 @@
     "dev": "vite",
     "dev-docker": "vite --host",
     "build": "tsc --noEmit && vite build",
+    "build:pdf": "node scripts/build-pdf.mjs",
     "preview": "vite preview",
+    "test": "npm run build && npm run build:pdf && npm run test:e2e",
+    "test:e2e": "playwright test",
+    "images": "node scripts/generate-images.mjs",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
@@ -23,12 +27,15 @@
   "dependencies": {
     "@fontsource/mulish": "^5.3.0",
     "@fontsource/saira-extra-condensed": "^5.3.0",
-    "@fortawesome/fontawesome-free": "^6.7.2",
-    "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
     "@eslint/js": "^9.17.0",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@playwright/test": "1.63.0",
     "@types/bootstrap": "^5.2.10",
     "@types/node": "^22.10.2",
     "eslint": "^9.17.0",

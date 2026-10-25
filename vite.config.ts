@@ -1,48 +1,35 @@
-import { defineConfig, type IndexHtmlTransformContext } from "vite";
+import { defineConfig, type IndexHtmlTransformContext, type Plugin } from "vite";
 import { fileURLToPath } from "node:url";
-import {
-  renderNav,
-  renderContent,
-  renderImprint,
-  renderPrivacy,
-  renderFooter,
-  resolve,
-  type Lang,
-  type PageKey,
-} from "./src/render";
+import { ROUTES, generatedFiles, renderPage, routeForPath } from "./src/page";
 
 const path = (relative: string) => fileURLToPath(new URL(relative, import.meta.url));
 
-// Prerender the content from resume.json into the /en/ and /de/ pages, plus the
-// legal pages (/en/imprint, /de/impressum, /en/privacy, /de/datenschutz).
-function prerenderResume() {
+// Prerender every page from resume.json: the HTML entry files only mark the
+// routes, the whole document comes from renderPage() in src/page.ts. Also
+// emits (and, in dev, serves) the sitemap and the vCard.
+function prerender(): Plugin {
   return {
-    name: "prerender-resume",
+    name: "prerender",
     transformIndexHtml: {
-      order: "pre" as const,
-      handler(html: string, ctx: IndexHtmlTransformContext) {
-        const match = ctx.path.match(/\/(en|de)\//);
-        if (!match) return html; // root redirect page — nothing to inject
-        const lang = match[1] as Lang;
-        const page: PageKey = /\/(imprint|impressum)\//.test(ctx.path)
-          ? "imprint"
-          : /\/(privacy|datenschutz)\//.test(ctx.path)
-            ? "privacy"
-            : "home";
-        const content =
-          page === "imprint"
-            ? renderImprint(lang)
-            : page === "privacy"
-              ? renderPrivacy(lang)
-              : renderContent(lang);
-        // resolve() expands the {{TOKEN}} placeholders (booking link, e-mails,
-        // phone) once over the finished HTML.
-        return resolve(
-          html
-            .replace("<!--@NAV-->", renderNav(lang, page))
-            .replace("<!--@CONTENT-->", `${content}\n${renderFooter(lang, page)}`),
-        );
+      order: "pre",
+      handler(_html: string, ctx: IndexHtmlTransformContext) {
+        const route = routeForPath(ctx.path);
+        if (!route) throw new Error(`No route for ${ctx.path}`);
+        return renderPage(route, { dev: Boolean(ctx.server) });
       },
+    },
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        const file = generatedFiles()[(req.url ?? "").slice(1)];
+        if (!file) return next();
+        res.setHeader("Content-Type", `${file.type}; charset=utf-8`);
+        res.end(file.body);
+      });
+    },
+    generateBundle() {
+      for (const [fileName, file] of Object.entries(generatedFiles())) {
+        this.emitFile({ type: "asset", fileName, source: file.body });
+      }
     },
   };
 }
@@ -51,27 +38,22 @@ function prerenderResume() {
 export default defineConfig({
   base: "/",
   appType: "mpa",
-  plugins: [prerenderResume()],
+  plugins: [prerender()],
   server: {
     port: 5173,
   },
-  // Pre-bundle Bootstrap (and Popper) at server start so the dev server doesn't
+  preview: {
+    port: 4173,
+  },
+  // Pre-bundle the Bootstrap plugins at server start so the dev server doesn't
   // discover them mid-load and trigger a re-optimize + page reload.
   optimizeDeps: {
-    include: ["bootstrap", "@popperjs/core"],
+    include: ["bootstrap/js/dist/collapse", "bootstrap/js/dist/scrollspy"],
   },
   build: {
     outDir: "dist",
     rollupOptions: {
-      input: {
-        main: path("./index.html"),
-        en: path("./en/index.html"),
-        de: path("./de/index.html"),
-        imprintEn: path("./en/imprint/index.html"),
-        imprintDe: path("./de/impressum/index.html"),
-        privacyEn: path("./en/privacy/index.html"),
-        privacyDe: path("./de/datenschutz/index.html"),
-      },
+      input: Object.fromEntries(ROUTES.map((r) => [r.file, path(`./${r.file}`)])),
     },
   },
   css: {

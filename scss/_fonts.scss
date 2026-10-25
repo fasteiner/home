@@ -1,0 +1,55 @@
+// Metric-matched fallbacks for the web fonts. Until Mulish / Saira Extra
+// Condensed have loaded, text is set in Arial (or its metric twin Liberation
+// Sans on Linux) scaled to the web font's metrics, so the swap to the real font
+// barely moves the layout.
+//
+// Vertical metrics come from @capsizecss/core; the widths (size-adjust) are
+// measured for how the site sets each face: Saira only ever in capitals, the
+// bold weights against Arial Bold (so the browser doesn't fake a wider bold).
+// ascent/descent-override scale inversely with size-adjust.
+
+$fallback-regular:
+  local("Arial"), local("ArialMT"), local("Liberation Sans"), local("LiberationSans");
+$fallback-bold:
+  local("Arial Bold"), local("Arial-BoldMT"), local("Liberation Sans Bold"),
+  local("LiberationSans-Bold");
+
+@font-face {
+  font-family: "Mulish Fallback";
+  font-weight: 400;
+  src: $fallback-regular;
+  ascent-override: 96.5581%;
+  descent-override: 24.0194%;
+  line-gap-override: 0%;
+  size-adjust: 104.0824%;
+}
+
+@font-face {
+  font-family: "Mulish Fallback";
+  font-weight: 700 900;
+  src: $fallback-bold;
+  ascent-override: 101.31%;
+  descent-override: 25.2%;
+  line-gap-override: 0%;
+  size-adjust: 99.2%;
+}
+
+@font-face {
+  font-family: "Saira Extra Condensed Fallback";
+  font-weight: 400 600;
+  src: $fallback-regular;
+  ascent-override: 190.95%;
+  descent-override: 73.86%;
+  line-gap-override: 0%;
+  size-adjust: 59.44%;
+}
+
+@font-face {
+  font-family: "Saira Extra Condensed Fallback";
+  font-weight: 700 900;
+  src: $fallback-bold;
+  ascent-override: 196.67%;
+  descent-override: 76.07%;
+  line-gap-override: 0%;
+  size-adjust: 57.71%;
+}

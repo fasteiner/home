@@ -19,7 +19,9 @@ $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #e83e8c !default;
 $red: #dc3545 !default;
-$orange: #bd5d38 !default;
+// Brand orange, a touch darker than the original #bd5d38 so white text on it
+// and orange text on white both pass WCAG AA (4.97:1).
+$orange: #b05634 !default;
 $yellow: #ffc107 !default;
 $green: #28a745 !default;
 $teal: #20c997 !default;
@@ -34,8 +36,17 @@ $danger: $red !default;
 $light: $gray-100 !default;
 $dark: $gray-800 !default;
 
-// Body text colour (feeds Bootstrap's light colour mode)
-$body-color: $gray-600 !default;
+// Body text colour (feeds Bootstrap's light colour mode). $gray-700 gives
+// 8.2:1 on white; the secondary (muted) text keeps at least 5.8:1 on the light
+// tertiary background.
+$body-color: $gray-700 !default;
+$body-secondary-color: #5c636a !default;
+
+// Sidebar / mobile navbar links: full white on the brand orange (4.97:1). The
+// active link is marked with an underline instead of a dimmer colour.
+$navbar-dark-color: $white !default;
+$navbar-dark-hover-color: $white !default;
+$navbar-dark-active-color: $white !default;
 
 // Page Variables
 

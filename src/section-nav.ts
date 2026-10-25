@@ -2,6 +2,9 @@
 //  - Left / Right arrow keys move to the previous / next section.
 //  - A floating button scrolls to the next section (and hides on the last one).
 
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons/faChevronDown";
+import { iconSvg } from "./icon-svg";
+
 const sections = Array.from(document.querySelectorAll<HTMLElement>(".resume-section"));
 const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -50,8 +53,11 @@ if (sections.length > 1) {
   const nextButton = document.createElement("button");
   nextButton.type = "button";
   nextButton.className = "section-scroll-btn";
-  nextButton.setAttribute("aria-label", "Scroll to next section");
-  nextButton.innerHTML = '<i class="fas fa-chevron-down" aria-hidden="true"></i>';
+  nextButton.setAttribute(
+    "aria-label",
+    document.documentElement.lang === "de" ? "Zum nächsten Abschnitt" : "Scroll to next section",
+  );
+  nextButton.innerHTML = iconSvg(faChevronDown);
   nextButton.addEventListener("click", () => goTo(currentIndex() + 1));
   document.body.appendChild(nextButton);
 

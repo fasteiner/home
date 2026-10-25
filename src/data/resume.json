@@ -3,14 +3,80 @@
     "name": { "pre": "Ing. Fabian Franz", "highlight": "Steiner", "post": "BSc." },
     "shortName": "Fabian Steiner",
     "profileImage": "img/fabian_steiner.webp",
+    "tagline": {
+      "en": "Automation Consultant · MCP & AI integration · M365 / Azure · Vienna",
+      "de": "Automation Consultant · MCP & KI-Integration · M365 / Azure · Wien"
+    },
     "lead": {
-      "en": "I'm an independent Automation Consultant who also subcontracts for techwork data GmbH. I deliver automation consulting with PowerShell and Python, Azure integrations, Jenkins support, API scripting, Logic Apps and Azure Automation, and broader M365 automation. Some I deliver directly; others in partnership with techwork data GmbH, where I work as a subcontractor. A current focus is connecting in-house systems and APIs to AI assistants via the Model Context Protocol (MCP). Outside of work I dive into multi-language automation projects and find balance in the rush of motorcycles, the splash of water skiing, and the rhythm of MotoGP and Formula 1.",
-      "de": "Ich bin selbstständiger Automation Consultant und arbeite zudem als Subunternehmer für die techwork data GmbH. Ich biete Automatisierungsberatung mit PowerShell und Python, Azure-Integrationen, Jenkins-Support, API-Scripting, Logic Apps und Azure Automation sowie M365-Automatisierung im weiteren Sinne. Einen Teil erbringe ich direkt, andere in Partnerschaft mit der techwork data GmbH, für die ich als Subcontractor tätig bin. Ein aktueller Schwerpunkt ist die Anbindung eigener Systeme und APIs an KI-Assistenten über das Model Context Protocol (MCP). Abseits der Arbeit vertiefe ich mich in Automatisierungsprojekte mit den unterschiedlichsten Programmiersprachen und finde meinen Ausgleich im Nervenkitzel auf dem Motorrad, in der Gischt beim Wasserski und im Rhythmus von MotoGP und Formel 1."
+      "en": "Automation with PowerShell and Python for Microsoft 365 and Azure – and, as a current focus, MCP servers that connect your systems to AI assistants. Independent consultant based in Vienna, working remotely or on-site.",
+      "de": "Automatisierung mit PowerShell und Python für Microsoft 365 und Azure – und als aktueller Schwerpunkt MCP-Server, die Ihre Systeme an KI-Assistenten anbinden. Selbstständig mit Sitz in Wien, remote oder vor Ort."
     },
     "cta": {
       "icon": "fas fa-comments",
       "label": { "en": "Start a project", "de": "Projekt anfragen" }
     }
+  },
+
+  "pages": {
+    "home": {
+      "title": {
+        "en": "Fabian Steiner – Automation Consultant & MCP Development, Vienna",
+        "de": "Fabian Steiner – Automation Consultant & MCP-Entwicklung, Wien"
+      },
+      "description": {
+        "en": "Personal website and online resume of Ing. Fabian Steiner BSc., Automation Consultant in Vienna. Focus: MCP server development, AI integration, and M365/Azure automation.",
+        "de": "Persönliche Website und Online-Lebenslauf von Ing. Fabian Steiner BSc., Automation Consultant in Wien. Schwerpunkt: MCP-Server-Entwicklung, KI-Integration und M365/Azure-Automatisierung."
+      }
+    },
+    "imprint": {
+      "title": {
+        "en": "Imprint · Ing. Fabian Steiner BSc.",
+        "de": "Impressum · Ing. Fabian Steiner BSc."
+      },
+      "description": {
+        "en": "Imprint (legal notice) for Ing. Fabian Franz Steiner BSc., Automation Consultant in Vienna.",
+        "de": "Impressum von Ing. Fabian Franz Steiner BSc., Automation Consultant in Wien."
+      }
+    },
+    "privacy": {
+      "title": {
+        "en": "Privacy Policy · Ing. Fabian Steiner BSc.",
+        "de": "Datenschutzerklärung · Ing. Fabian Steiner BSc."
+      },
+      "description": {
+        "en": "Privacy policy for the website of Ing. Fabian Franz Steiner BSc., Automation Consultant in Vienna.",
+        "de": "Datenschutzerklärung der Website von Ing. Fabian Franz Steiner BSc., Automation Consultant in Wien."
+      }
+    },
+    "cv": {
+      "title": {
+        "en": "CV · Ing. Fabian Steiner BSc.",
+        "de": "Lebenslauf · Ing. Fabian Steiner BSc."
+      },
+      "description": {
+        "en": "Curriculum vitae of Ing. Fabian Franz Steiner BSc., Automation Consultant in Vienna: experience, education, skills and certifications.",
+        "de": "Lebenslauf von Ing. Fabian Franz Steiner BSc., Automation Consultant in Wien: Berufserfahrung, Ausbildung, Kenntnisse und Zertifizierungen."
+      }
+    },
+    "notFound": {
+      "title": { "en": "Page not found", "de": "Seite nicht gefunden" },
+      "text": {
+        "en": "This page does not exist (anymore). Perhaps the link is outdated.",
+        "de": "Diese Seite gibt es nicht (mehr). Vielleicht ist der Link veraltet."
+      },
+      "button": { "en": "To the homepage", "de": "Zur Startseite" }
+    }
+  },
+
+  "cv": {
+    "title": { "en": "Curriculum Vitae", "de": "Lebenslauf" },
+    "profile": { "en": "Profile", "de": "Profil" },
+    "download": { "en": "Download as PDF", "de": "Als PDF herunterladen" },
+    "pdf": {
+      "en": "download/CV_Fabian_Steiner.pdf",
+      "de": "download/Lebenslauf_Fabian_Steiner.pdf"
+    },
+    "website": { "en": "Website", "de": "Website" }
   },
 
   "nav": [
@@ -227,7 +293,7 @@
           "de": "Selbstständiger Automation Consultant"
         },
         "org": { "name": { "en": "Self-employed", "de": "Selbstständig" } },
-        "date": { "en": "December 2025 - now", "de": "Dezember 2025 - heute" },
+        "date": { "en": "December 2025 – now", "de": "Dezember 2025 – heute" },
         "bullets": [
           {
             "en": "Developing MCP servers (Model Context Protocol) in Node.js/TypeScript and Python to connect in-house systems and APIs to AI assistants",
@@ -260,7 +326,7 @@
           "name": { "en": "techwork data GmbH", "de": "techwork data GmbH" },
           "href": "https://www.techwork.at/"
         },
-        "date": { "en": "December 2025 - now", "de": "Dezember 2025 - heute" },
+        "date": { "en": "December 2025 – now", "de": "Dezember 2025 – heute" },
         "bullets": [
           {
             "en": "Design and delivery of <a href='https://www.techwork.at/automator/' rel='noopener noreferrer' target='_blank'>techwork automator</a> solutions aligned to customer processes",
@@ -303,7 +369,7 @@
           "name": { "en": "TTTech Computertechnik AG", "de": "TTTech Computertechnik AG" },
           "href": "https://www.tttech.com/"
         },
-        "date": { "en": "June 2022 - December 2025", "de": "Juni 2022 - Dezember 2025" },
+        "date": { "en": "June 2022 – December 2025", "de": "Juni 2022 – Dezember 2025" },
         "bullets": [
           {
             "en": "Agent creation in Copilot Studio",
@@ -345,7 +411,7 @@
           "name": { "en": "TTTech Computertechnik AG", "de": "TTTech Computertechnik AG" },
           "href": "https://www.tttech.com/"
         },
-        "date": { "en": "August 2020 - May 2022", "de": "August 2020 - Mai 2022" },
+        "date": { "en": "August 2020 – May 2022", "de": "August 2020 – Mai 2022" },
         "bullets": [
           { "en": "Phone Support & Dispatching", "de": "Telefon-Support & Dispatching" },
           { "en": "Computer Setup", "de": "Computer-Setup" },
@@ -371,166 +437,171 @@
             "de": "Backend-Automatisierung (PowerShell, Jenkins)"
           }
         ]
-      },
-      {
-        "role": { "en": "Junior System Engineer", "de": "Junior System Engineer" },
-        "org": {
-          "name": { "en": "CP-Consult Bugram GmbH", "de": "CP-Consult Bugram GmbH" },
-          "href": "http://www.cp-consult.at/"
-        },
-        "reference": {
-          "href": "download/Dienstzeugnis_CP-Consult.pdf",
-          "label": { "en": "Employers Reference", "de": "Dienstzeugnis" }
-        },
-        "date": { "en": "August 2019 - February 2020", "de": "August 2019 - Februar 2020" },
-        "bullets": [
-          { "en": "Network Design and Configuration", "de": "Netzwerkdesign und -konfiguration" },
-          { "en": "DIVOS Configuration", "de": "DIVOS-Konfiguration" },
-          {
-            "en": "SQL View and Procedure Development",
-            "de": "Entwicklung von SQL-Views und -Prozeduren"
-          },
-          {
-            "en": "Active Directory Administration (GPOs, DFS, Password Policies, etc.)",
-            "de": "Active-Directory-Administration (GPOs, DFS, Passwortrichtlinien usw.)"
-          },
-          { "en": "VCenter Setup + Administration", "de": "vCenter-Einrichtung + Administration" }
-        ]
-      },
-      {
-        "role": { "en": "Recruit", "de": "Grundwehrdiener" },
-        "org": {
-          "name": { "en": "Austrian Armed Forces", "de": "Österreichisches Bundesheer" },
-          "href": "http://www.bundesheer.at/"
-        },
-        "reference": {
-          "href": "download/Praktikumsbestätigung_Österreichisches_Bundesheer.pdf",
-          "label": { "en": "Employers Reference", "de": "Dienstzeugnis" }
-        },
-        "date": { "en": "October 2018 - March 2019", "de": "Oktober 2018 - März 2019" }
-      },
-      {
-        "role": { "en": "Network Administrator", "de": "Netzwerkadministrator" },
-        "org": { "name": { "en": "Christian Lewold", "de": "Christian Lewold" } },
-        "date": { "en": "December 2018", "de": "Dezember 2018" },
-        "summary": {
-          "en": "Configuration of the company network",
-          "de": "Konfiguration des Firmennetzwerks"
-        }
-      },
-      {
-        "role": { "en": "IT Staff", "de": "IT-Mitarbeiter" },
-        "org": {
-          "name": {
-            "en": "FCP Fritsch, Chiari & Partner ZT GmbH",
-            "de": "FCP Fritsch, Chiari & Partner ZT GmbH"
-          },
-          "href": "http://www.fcp.at"
-        },
-        "reference": {
-          "href": "download/Praktikumszeugnis_FCP_2018.pdf",
-          "label": { "en": "Employers Reference", "de": "Dienstzeugnis" }
-        },
-        "date": { "en": "August 2018 - September 2018", "de": "August 2018 - September 2018" },
-        "summary": {
-          "en": "Network Administration, Web Development, Monitoring, Windows 10 Migration, Virtualisation and IT Support",
-          "de": "Netzwerkadministration, Webentwicklung, Monitoring, Windows-10-Migration, Virtualisierung und IT-Support"
-        }
-      },
-      {
-        "role": { "en": "Programmer and Designer", "de": "Programmierer und Designer" },
-        "org": {
-          "name": { "en": "SGREENING (Diploma project)", "de": "SGREENING (Diplomarbeit)" },
-          "href": "/projects/sgreening/"
-        },
-        "date": { "en": "September 2017 - May 2018", "de": "September 2017 - Mai 2018" },
-        "summary": {
-          "en": "Diploma project: Development of a Server Room Monitoring System",
-          "de": "Diplomarbeit: Entwicklung eines Serverraum-Überwachungssystems"
-        }
-      },
-      {
-        "role": { "en": "IT Staff", "de": "IT-Mitarbeiter" },
-        "org": {
-          "name": {
-            "en": "FCP Fritsch, Chiari & Partner ZT GmbH",
-            "de": "FCP Fritsch, Chiari & Partner ZT GmbH"
-          },
-          "href": "http://www.fcp.at"
-        },
-        "reference": {
-          "href": "download/Praktikumszeugnis_FCP_2017.pdf",
-          "label": { "en": "Employers Reference", "de": "Dienstzeugnis" }
-        },
-        "date": { "en": "August 2017", "de": "August 2017" },
-        "summary": {
-          "en": "Network Administration, Development of a Network Monitoring System, Preparing the Windows 10 Migration, Python Programming and Database Development",
-          "de": "Netzwerkadministration, Entwicklung eines Netzwerk-Monitoring-Systems, Vorbereitung der Windows-10-Migration, Python-Programmierung und Datenbankentwicklung"
-        }
-      },
-      {
-        "role": { "en": "Software Developer", "de": "Softwareentwickler" },
-        "org": {
-          "name": { "en": "Gebrüder Aschauer GnbR", "de": "Gebrüder Aschauer GnbR" },
-          "href": "http://www.bauernhofmilch.at"
-        },
-        "date": { "en": "March 2017 - April 2017", "de": "März 2017 - April 2017" },
-        "summary": {
-          "en": "Development of a tool to track medicine use on cows",
-          "de": "Entwicklung eines Tools zur Erfassung des Medikamenteneinsatzes bei Kühen"
-        }
-      },
-      {
-        "role": { "en": "IT Staff", "de": "IT-Mitarbeiter" },
-        "org": {
-          "name": {
-            "en": "FCP Fritsch, Chiari & Partner ZT GmbH",
-            "de": "FCP Fritsch, Chiari & Partner ZT GmbH"
-          },
-          "href": "http://www.fcp.at"
-        },
-        "date": { "en": "18.11, 2.12, 8. – 11.12.2016", "de": "18.11., 2.12., 8.–11.12.2016" },
-        "summary": {
-          "en": "Supporting the relocation of FCP: Configuring network devices, arranging workstations, configuring printers and beamers, wiring a server room and structured testing",
-          "de": "Unterstützung beim Umzug von FCP: Konfiguration von Netzwerkgeräten, Einrichten von Arbeitsplätzen, Konfiguration von Druckern und Beamern, Verkabelung eines Serverraums und strukturiertes Testen"
-        }
-      },
-      {
-        "role": { "en": "IT Staff", "de": "IT-Mitarbeiter" },
-        "org": {
-          "name": {
-            "en": "FCP Fritsch, Chiari & Partner ZT GmbH",
-            "de": "FCP Fritsch, Chiari & Partner ZT GmbH"
-          },
-          "href": "http://www.fcp.at"
-        },
-        "reference": {
-          "href": "download/Praktikumszeugnis_FCP_2016.pdf",
-          "label": { "en": "Employers Reference", "de": "Dienstzeugnis" }
-        },
-        "date": { "en": "August 2016", "de": "August 2016" },
-        "summary": {
-          "en": "Network Administration, Development of a Sensor System, Python Programming, Database Development and IT Support",
-          "de": "Netzwerkadministration, Entwicklung eines Sensorsystems, Python-Programmierung, Datenbankentwicklung und IT-Support"
-        }
-      },
-      {
-        "role": { "en": "Supply Chain Management", "de": "Supply Chain Management" },
-        "org": {
-          "name": { "en": "TTTech Computertechnik AG", "de": "TTTech Computertechnik AG" },
-          "href": "https://www.tttech.com/"
-        },
-        "reference": {
-          "href": "download/Praktikumszeugnis_TTTech_2015.pdf",
-          "label": { "en": "Employers Reference", "de": "Dienstzeugnis" }
-        },
-        "date": { "en": "July 2015 - August 2015", "de": "Juli 2015 - August 2015" },
-        "summary": {
-          "en": "Assembling and flashing / programming network devices, repairing and packing products, and visual quality control",
-          "de": "Montage und Flashen / Programmieren von Netzwerkgeräten, Reparatur und Verpackung von Produkten sowie optische Qualitätskontrolle"
-        }
       }
-    ]
+    ],
+    "earlier": {
+      "title": { "en": "Earlier positions", "de": "Frühere Stationen" },
+      "items": [
+        {
+          "role": { "en": "Junior System Engineer", "de": "Junior System Engineer" },
+          "org": {
+            "name": { "en": "CP-Consult Bugram GmbH", "de": "CP-Consult Bugram GmbH" },
+            "href": "http://www.cp-consult.at/"
+          },
+          "reference": {
+            "href": "download/Dienstzeugnis_CP-Consult.pdf",
+            "label": { "en": "Employer reference", "de": "Dienstzeugnis" }
+          },
+          "date": { "en": "August 2019 – February 2020", "de": "August 2019 – Februar 2020" },
+          "bullets": [
+            { "en": "Network Design and Configuration", "de": "Netzwerkdesign und -konfiguration" },
+            { "en": "DIVOS Configuration", "de": "DIVOS-Konfiguration" },
+            {
+              "en": "SQL View and Procedure Development",
+              "de": "Entwicklung von SQL-Views und -Prozeduren"
+            },
+            {
+              "en": "Active Directory Administration (GPOs, DFS, Password Policies, etc.)",
+              "de": "Active-Directory-Administration (GPOs, DFS, Passwortrichtlinien usw.)"
+            },
+            { "en": "VCenter Setup + Administration", "de": "vCenter-Einrichtung + Administration" }
+          ]
+        },
+        {
+          "role": { "en": "Recruit", "de": "Grundwehrdiener" },
+          "org": {
+            "name": { "en": "Austrian Armed Forces", "de": "Österreichisches Bundesheer" },
+            "href": "http://www.bundesheer.at/"
+          },
+          "reference": {
+            "href": "download/Praktikumsbestätigung_Österreichisches_Bundesheer.pdf",
+            "label": { "en": "Confirmation of service", "de": "Bestätigung" }
+          },
+          "date": { "en": "October 2018 – March 2019", "de": "Oktober 2018 – März 2019" }
+        },
+        {
+          "role": { "en": "Network Administrator", "de": "Netzwerkadministrator" },
+          "org": { "name": { "en": "Christian Lewold", "de": "Christian Lewold" } },
+          "date": { "en": "December 2018", "de": "Dezember 2018" },
+          "summary": {
+            "en": "Configuration of the company network",
+            "de": "Konfiguration des Firmennetzwerks"
+          }
+        },
+        {
+          "role": { "en": "IT Staff", "de": "IT-Mitarbeiter" },
+          "org": {
+            "name": {
+              "en": "FCP Fritsch, Chiari & Partner ZT GmbH",
+              "de": "FCP Fritsch, Chiari & Partner ZT GmbH"
+            },
+            "href": "http://www.fcp.at"
+          },
+          "reference": {
+            "href": "download/Praktikumszeugnis_FCP_2018.pdf",
+            "label": { "en": "Employer reference", "de": "Dienstzeugnis" }
+          },
+          "date": { "en": "August 2018 – September 2018", "de": "August 2018 – September 2018" },
+          "summary": {
+            "en": "Network Administration, Web Development, Monitoring, Windows 10 Migration, Virtualisation and IT Support",
+            "de": "Netzwerkadministration, Webentwicklung, Monitoring, Windows-10-Migration, Virtualisierung und IT-Support"
+          }
+        },
+        {
+          "role": { "en": "Programmer and Designer", "de": "Programmierer und Designer" },
+          "org": {
+            "name": { "en": "SGREENING (Diploma project)", "de": "SGREENING (Diplomarbeit)" },
+            "href": "/projects/sgreening/"
+          },
+          "date": { "en": "September 2017 – May 2018", "de": "September 2017 – Mai 2018" },
+          "summary": {
+            "en": "Diploma project: Development of a Server Room Monitoring System",
+            "de": "Diplomarbeit: Entwicklung eines Serverraum-Überwachungssystems"
+          }
+        },
+        {
+          "role": { "en": "IT Staff", "de": "IT-Mitarbeiter" },
+          "org": {
+            "name": {
+              "en": "FCP Fritsch, Chiari & Partner ZT GmbH",
+              "de": "FCP Fritsch, Chiari & Partner ZT GmbH"
+            },
+            "href": "http://www.fcp.at"
+          },
+          "reference": {
+            "href": "download/Praktikumszeugnis_FCP_2017.pdf",
+            "label": { "en": "Employer reference", "de": "Dienstzeugnis" }
+          },
+          "date": { "en": "August 2017", "de": "August 2017" },
+          "summary": {
+            "en": "Network Administration, Development of a Network Monitoring System, Preparing the Windows 10 Migration, Python Programming and Database Development",
+            "de": "Netzwerkadministration, Entwicklung eines Netzwerk-Monitoring-Systems, Vorbereitung der Windows-10-Migration, Python-Programmierung und Datenbankentwicklung"
+          }
+        },
+        {
+          "role": { "en": "Software Developer", "de": "Softwareentwickler" },
+          "org": {
+            "name": { "en": "Gebrüder Aschauer GnbR", "de": "Gebrüder Aschauer GnbR" },
+            "href": "http://www.bauernhofmilch.at"
+          },
+          "date": { "en": "March 2017 – April 2017", "de": "März 2017 – April 2017" },
+          "summary": {
+            "en": "Development of a tool to track medicine use on cows",
+            "de": "Entwicklung eines Tools zur Erfassung des Medikamenteneinsatzes bei Kühen"
+          }
+        },
+        {
+          "role": { "en": "IT Staff", "de": "IT-Mitarbeiter" },
+          "org": {
+            "name": {
+              "en": "FCP Fritsch, Chiari & Partner ZT GmbH",
+              "de": "FCP Fritsch, Chiari & Partner ZT GmbH"
+            },
+            "href": "http://www.fcp.at"
+          },
+          "date": { "en": "18.11, 2.12, 8. – 11.12.2016", "de": "18.11., 2.12., 8.–11.12.2016" },
+          "summary": {
+            "en": "Supporting the relocation of FCP: Configuring network devices, arranging workstations, configuring printers and beamers, wiring a server room and structured testing",
+            "de": "Unterstützung beim Umzug von FCP: Konfiguration von Netzwerkgeräten, Einrichten von Arbeitsplätzen, Konfiguration von Druckern und Beamern, Verkabelung eines Serverraums und strukturiertes Testen"
+          }
+        },
+        {
+          "role": { "en": "IT Staff", "de": "IT-Mitarbeiter" },
+          "org": {
+            "name": {
+              "en": "FCP Fritsch, Chiari & Partner ZT GmbH",
+              "de": "FCP Fritsch, Chiari & Partner ZT GmbH"
+            },
+            "href": "http://www.fcp.at"
+          },
+          "reference": {
+            "href": "download/Praktikumszeugnis_FCP_2016.pdf",
+            "label": { "en": "Employer reference", "de": "Dienstzeugnis" }
+          },
+          "date": { "en": "August 2016", "de": "August 2016" },
+          "summary": {
+            "en": "Network Administration, Development of a Sensor System, Python Programming, Database Development and IT Support",
+            "de": "Netzwerkadministration, Entwicklung eines Sensorsystems, Python-Programmierung, Datenbankentwicklung und IT-Support"
+          }
+        },
+        {
+          "role": { "en": "Supply Chain Management", "de": "Supply Chain Management" },
+          "org": {
+            "name": { "en": "TTTech Computertechnik AG", "de": "TTTech Computertechnik AG" },
+            "href": "https://www.tttech.com/"
+          },
+          "reference": {
+            "href": "download/Praktikumszeugnis_TTTech_2015.pdf",
+            "label": { "en": "Employer reference", "de": "Dienstzeugnis" }
+          },
+          "date": { "en": "July 2015 – August 2015", "de": "Juli 2015 – August 2015" },
+          "summary": {
+            "en": "Assembling and flashing / programming network devices, repairing and packing products, and visual quality control",
+            "de": "Montage und Flashen / Programmieren von Netzwerkgeräten, Reparatur und Verpackung von Produkten sowie optische Qualitätskontrolle"
+          }
+        }
+      ]
+    }
   },
 
   "education": {
@@ -544,12 +615,12 @@
         },
         "detail": {
           "text": {
-            "en": "Bachelor - Information and Communication Systems and Services",
+            "en": "Bachelor – Information and Communication Systems and Services",
             "de": "Bachelor – Information and Communication Systems and Services"
           },
           "href": "https://www.technikum-wien.at/en/programs/bachelor-information-and-communication-systems-and-services/"
         },
-        "date": { "en": "2021 - 2023", "de": "2021 - 2023" }
+        "date": { "en": "2021 – 2023", "de": "2021 – 2023" }
       },
       {
         "school": { "name": "TU Wien", "href": "https://www.tuwien.at/en/" },
@@ -560,7 +631,7 @@
             "de": "Bachelorstudium Medizinische Informatik"
           }
         },
-        "date": { "en": "2019 - 2021", "de": "2019 - 2021" }
+        "date": { "en": "2019 – 2021", "de": "2019 – 2021" }
       },
       {
         "school": { "name": "HTL Rennweg", "href": "https://www.htl.rennweg.at/" },
@@ -574,7 +645,7 @@
             "de": "IT-Schule mit Schwerpunkt Netzwerktechnik und Security"
           }
         },
-        "date": { "en": "2013 - 2018", "de": "2013 - 2018" }
+        "date": { "en": "2013 – 2018", "de": "2013 – 2018" }
       }
     ]
   },
@@ -585,19 +656,27 @@
       {
         "name": { "en": "Programming Languages", "de": "Programmiersprachen" },
         "icons": [
-          { "type": "fa", "value": "fab fa-html5" },
-          { "type": "fa", "value": "fab fa-css3-alt" },
-          { "type": "fa", "value": "fab fa-js-square" },
-          { "type": "fa", "value": "fab fa-php" },
-          { "type": "fa", "value": "fab fa-java" },
-          { "type": "fa", "value": "fab fa-python" },
-          { "type": "fa", "value": "fab fa-power" },
-          { "type": "img", "src": "img/mysql_128_black.ico" }
+          { "icon": "fas fa-terminal", "label": "PowerShell" },
+          { "icon": "fab fa-python", "label": "Python" },
+          { "icon": "fab fa-js", "label": "TypeScript / JavaScript" },
+          { "icon": "fab fa-node-js", "label": "Node.js" },
+          { "icon": "fas fa-database", "label": "SQL / MySQL" },
+          { "icon": "fab fa-html5", "label": "HTML / CSS" },
+          { "icon": "fab fa-php", "label": "PHP" },
+          { "icon": "fab fa-java", "label": "Java" }
         ],
         "items": [
-          { "en": "PowerShell", "de": "PowerShell" },
           { "en": "Groovy", "de": "Groovy" },
           { "en": "bash", "de": "bash" }
+        ]
+      },
+      {
+        "name": { "en": "AI & Integration", "de": "KI & Integration" },
+        "items": [
+          { "en": "Model Context Protocol (MCP)", "de": "Model Context Protocol (MCP)" },
+          { "en": "Copilot Studio", "de": "Copilot Studio" },
+          { "en": "Microsoft Graph", "de": "Microsoft Graph" },
+          { "en": "REST & GraphQL APIs", "de": "REST- & GraphQL-APIs" }
         ]
       },
       {
@@ -606,6 +685,10 @@
           { "en": "Active Directory", "de": "Active Directory" },
           { "en": "Ansible", "de": "Ansible" },
           { "en": "Azure / Entra", "de": "Azure / Entra" },
+          {
+            "en": "Azure Logic Apps & Azure Automation",
+            "de": "Azure Logic Apps & Azure Automation"
+          },
           { "en": "Exchange", "de": "Exchange" },
           { "en": "Cisco", "de": "Cisco" },
           { "en": "DIVOS", "de": "DIVOS" },
@@ -618,7 +701,10 @@
         "items": [
           { "en": "techwork automator", "de": "techwork automator" },
           { "en": "Jenkins", "de": "Jenkins" },
+          { "en": "GitHub Actions", "de": "GitHub Actions" },
           { "en": "Docker", "de": "Docker" },
+          { "en": "Xurrent (4me) & Freshdesk", "de": "Xurrent (4me) & Freshdesk" },
+          { "en": "Jira & Azure DevOps", "de": "Jira & Azure DevOps" },
           { "en": "Office, Microsoft Project & Visio", "de": "Office, Microsoft Project & Visio" },
           {
             "en": "Adobe (Photoshop, Illustrator, InDesign)",
@@ -629,7 +715,7 @@
       {
         "name": { "en": "Languages", "de": "Sprachen" },
         "items": [
-          { "en": "German", "de": "Deutsch" },
+          { "en": "German (native)", "de": "Deutsch (Muttersprache)" },
           { "en": "English", "de": "Englisch" },
           { "en": "Italian (A1)", "de": "Italienisch (A1)" }
         ]
@@ -694,7 +780,7 @@
       },
       {
         "title": "Notion PowerShell Module",
-        "image": "/img/projects/tsnotion.png",
+        "image": "/img/projects/tsnotion.webp",
         "imageAlt": "Notion PowerShell Module Logo",
         "primaryHref": "https://www.powershellgallery.com/packages/Notion/",
         "repo": "https://github.com/fasteiner/Notion",
@@ -713,7 +799,7 @@
       },
       {
         "title": "Brevo PowerShell Module",
-        "image": "/img/projects/brevo-powershell.png",
+        "image": "/img/projects/brevo-powershell.webp",
         "imageAlt": "Brevo PowerShell Module Logo",
         "primaryHref": "https://www.powershellgallery.com/packages/Brevo/",
         "repo": "https://github.com/tsubotitsch/Brevo",
@@ -784,7 +870,7 @@
           "en": "Android app (Kotlin) · ESP32-C5",
           "de": "Android-App (Kotlin) · ESP32-C5"
         },
-        "date": { "en": "October 2026 - now", "de": "Oktober 2026 - heute" },
+        "date": { "en": "October 2026 – now", "de": "Oktober 2026 – heute" },
         "summary": {
           "en": "A portable C-ITS capture and transmit bridge: a Seeed Studio XIAO ESP32-C5 receives V2X messages from vehicles and roadside units and streams them over USB-C to an Android app, which saves them as PCAP, forwards them to MQTT in the OpenTrafficMap format and can broadcast its own CAM messages.",
           "de": "Eine mobile C-ITS-Empfangs- und Sendebrücke: Ein Seeed Studio XIAO ESP32-C5 empfängt V2X-Nachrichten von Fahrzeugen und Straßeninfrastruktur und streamt sie per USB-C an eine Android-App, die sie als PCAP speichert, im OpenTrafficMap-Format an MQTT weiterleitet und eigene CAM-Nachrichten senden kann."
@@ -929,8 +1015,11 @@
     "title": { "en": "Documents", "de": "Dokumente" },
     "items": [
       {
-        "href": "download/Lebenslauf_Fabian_Steiner.pdf",
-        "label": { "en": "CV in German", "de": "Lebenslauf (Deutsch)" }
+        "href": {
+          "en": "download/CV_Fabian_Steiner.pdf",
+          "de": "download/Lebenslauf_Fabian_Steiner.pdf"
+        },
+        "label": { "en": "Curriculum vitae (PDF, up to date)", "de": "Lebenslauf (PDF, aktuell)" }
       },
       {
         "href": "download/BakkurkundeEng_BIC_6_SS2023.pdf",
@@ -950,8 +1039,8 @@
       {
         "href": "download/Praktikumsbestätigung_Österreichisches_Bundesheer.pdf",
         "label": {
-          "en": "Employer's Reference — Austrian Military (German)",
-          "de": "Dienstzeugnis — Österreichisches Bundesheer (Deutsch)"
+          "en": "Confirmation of Service — Austrian Armed Forces (German)",
+          "de": "Bestätigung — Österreichisches Bundesheer (Deutsch)"
         }
       },
       {
@@ -1019,6 +1108,13 @@
         "href": "{{BOOKING_URL}}",
         "label": { "en": "Book a meeting (techwork)", "de": "Termin buchen (techwork)" },
         "external": true
+      },
+      {
+        "type": "outline",
+        "icon": "fas fa-address-card",
+        "href": "/fabian-steiner.vcf",
+        "label": { "en": "Save contact (vCard)", "de": "Kontakt speichern (vCard)" },
+        "download": true
       }
     ],
     "channels": [

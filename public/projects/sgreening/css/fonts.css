@@ -1,0 +1,8 @@
+/* Self-hosted web fonts (latin subset, from @fontsource), replacing the
+   Google Fonts links so no visitor data reaches a third party. */
+@font-face { font-family: "Lora"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/lora-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Lora"; font-style: italic; font-weight: 400; font-display: swap; src: url("../fonts/lora-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family: "Lora"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/lora-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Lora"; font-style: italic; font-weight: 700; font-display: swap; src: url("../fonts/lora-latin-700-italic.woff2") format("woff2"); }
+@font-face { font-family: "Cabin"; font-style: normal; font-weight: 700; font-display: swap; src: url("../fonts/cabin-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Inconsolata"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/inconsolata-latin-400-normal.woff2") format("woff2"); }

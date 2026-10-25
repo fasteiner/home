@@ -11,12 +11,11 @@ import "@fontsource/mulish/latin-800-italic.css";
 import "@fontsource/saira-extra-condensed/latin-500.css";
 import "@fontsource/saira-extra-condensed/latin-700.css";
 
-// Self-hosted Font Awesome 6 — bundled locally instead of loaded from cdnjs.
-import "@fortawesome/fontawesome-free/css/all.min.css";
-
-// Bootstrap behaviour: registers the data-API for the collapse navbar and the
-// scrollspy used by the sidebar navigation.
-import "bootstrap";
+// Bootstrap behaviour: only the two plugins the site uses register their
+// data-API — Collapse for the mobile navbar, ScrollSpy for the sidebar.
+// (Icons are inline SVG rendered at build time, see src/icons.ts.)
+import "bootstrap/js/dist/collapse";
+import "bootstrap/js/dist/scrollspy";
 
 // Site scripts
 import "./theme-switcher";
@@ -43,33 +42,9 @@ if (lang === "en" || lang === "de") {
   }
 }
 
-// Drop the loading overlay (see the inline styles in the page <head>). Reaching
-// this point means the bundled stylesheet has been applied, so the page is now
-// fully styled; we only briefly wait for web fonts so the first visible frame is
-// already laid out in the final typeface, then fade the spinner out.
-function revealApp(): void {
-  const root = document.documentElement;
-  const loader = document.getElementById("app-loader");
-  root.classList.add("app-ready");
-  if (!loader) {
-    root.classList.remove("app-loading");
-    return;
-  }
-  const remove = (): void => {
-    loader.remove();
-    root.classList.remove("app-loading", "app-ready");
-  };
-  loader.addEventListener("transitionend", remove, { once: true });
-  // Fallback for when the fade is skipped (reduced motion) or transitionend is missed.
-  window.setTimeout(remove, 700);
+// Dev server only: drop the loading overlay (see DEV_LOADER in src/page.ts).
+// Reaching this point means the injected stylesheet has been applied.
+if (import.meta.env.DEV) {
+  document.getElementById("app-loader")?.remove();
+  document.documentElement.classList.remove("app-loading");
 }
-
-const fontsReady: Promise<unknown> =
-  "fonts" in document
-    ? Promise.race([
-        document.fonts.ready,
-        new Promise<void>((resolve) => window.setTimeout(resolve, 1500)),
-      ])
-    : Promise.resolve();
-
-void fontsReady.then(() => requestAnimationFrame(revealApp));

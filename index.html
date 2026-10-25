@@ -1,40 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Personal website and online resume of Ing. Fabian Steiner BSc., Automation Consultant.">
-  <meta name="author" content="Fabian Steiner">
-  <title>Ing. Fabian Steiner BSc.</title>
-  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
-
-  <!-- Send visitors to their language: stored choice, else browser language, else English. -->
-  <script>
-    (function () {
-      try {
-        var stored = localStorage.getItem("lang");
-        var lang =
-          stored === "de" || stored === "en"
-            ? stored
-            : (navigator.language || "en").toLowerCase().indexOf("de") === 0
-              ? "de"
-              : "en";
-        location.replace("/" + lang + "/");
-      } catch (e) {
-        location.replace("/en/");
-      }
-    })();
-  </script>
-  <meta http-equiv="refresh" content="0; url=/en/">
-  <link rel="alternate" hreflang="en" href="https://fabian.stei-ner.net/en/">
-  <link rel="alternate" hreflang="de" href="https://fabian.stei-ner.net/de/">
-</head>
-
-<body>
-  <noscript>
-    <p>Choose a language: <a href="/en/">English</a> &middot; <a href="/de/">Deutsch</a></p>
-  </noscript>
-</body>
-
-</html>
+<!--
+  Route marker for Vite. The whole page is generated from src/data/resume.json
+  by renderPage() in src/page.ts (see the prerender plugin in vite.config.ts).
+-->

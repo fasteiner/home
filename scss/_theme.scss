@@ -35,6 +35,22 @@ section.resume-section > .my-auto > h2 {
     color: tint-color($primary, 35%);
   }
 
+  // Orange text (dates, highlights) needs the lighter tint on the dark
+  // background: 6.2:1 instead of 3.1:1. Backgrounds keep the brand orange.
+  .text-primary {
+    color: tint-color($primary, 35%) !important;
+  }
+
+  .btn-outline-primary {
+    --bs-btn-color: #{tint-color($primary, 35%)};
+    --bs-btn-border-color: #{tint-color($primary, 35%)};
+    --bs-btn-hover-border-color: #{$primary};
+  }
+
+  .earlier-positions > summary::before {
+    border-color: tint-color($primary, 35%);
+  }
+
   .reference-link {
     color: tint-color($primary, 35%);
 

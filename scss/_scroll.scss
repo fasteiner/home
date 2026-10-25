@@ -97,7 +97,7 @@ html {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .section-scroll-btn:not(.is-hidden) i {
+  .section-scroll-btn:not(.is-hidden) .icon {
     animation: section-scroll-bounce 2s ease-in-out infinite;
   }
 }

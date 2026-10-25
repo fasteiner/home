@@ -20,7 +20,8 @@ for (const { path, lang } of INDEXED) {
     await page.goto(path);
     const meta = (selector: string) => page.locator(selector).first().getAttribute("content");
 
-    expect(await page.title()).toMatch(/Fabian Steiner/);
+    // The company name of the sole proprietorship is part of every title.
+    expect(await page.title()).toContain("Ing. Fabian Franz Steiner BSc.");
     expect((await meta('meta[name="description"]'))!.length).toBeGreaterThan(50);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", SITE_URL + path);
     for (const hreflang of ["en", "de", "x-default"]) {
@@ -31,6 +32,7 @@ for (const { path, lang } of INDEXED) {
     }
 
     expect(await meta('meta[property="og:title"]')).toBe(await page.title());
+    expect(await meta('meta[property="og:site_name"]')).toBe("Ing. Fabian Franz Steiner BSc.");
     expect(await meta('meta[property="og:url"]')).toBe(SITE_URL + path);
     expect(await meta('meta[property="og:locale"]')).toBe(lang === "de" ? "de_AT" : "en_US");
     expect(await meta('meta[name="twitter:card"]')).toBe("summary_large_image");
@@ -52,6 +54,7 @@ for (const { path } of HOME_PAGES) {
     const person = data["@graph"][0];
     expect(person.name).toBe("Fabian Franz Steiner");
     expect(person.sameAs).toContain("https://github.com/fasteiner");
+    expect(data["@graph"][1].name).toBe("Ing. Fabian Franz Steiner BSc.");
   });
 }
 

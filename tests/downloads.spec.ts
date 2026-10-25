@@ -32,7 +32,14 @@ test("the contact section offers a vCard with the contact details", async ({ pag
   await expect(button).toHaveAttribute("download", "");
   const vcard = await (await request.get("/fabian-steiner.vcf")).text();
   expect(vcard).toMatch(/^BEGIN:VCARD\r\nVERSION:3\.0\r\n/);
-  for (const line of ["FN:Ing. Fabian Franz Steiner BSc.", "EMAIL;", "TEL;", "ADR;", "URL:"]) {
+  for (const line of [
+    "FN:Ing. Fabian Franz Steiner BSc.",
+    "ORG:Ing. Fabian Franz Steiner BSc.",
+    "EMAIL;",
+    "TEL;",
+    "ADR;",
+    "URL:",
+  ]) {
     expect(vcard).toContain(line);
   }
   expect(vcard.trimEnd()).toMatch(/END:VCARD$/);

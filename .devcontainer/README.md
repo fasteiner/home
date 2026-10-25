@@ -20,6 +20,11 @@ through `appPort` is reachable from your host browser.
 - `npm run build` → static output in `dist/`
 - `npm run preview` → serve the production build locally
 
+## Test
+
+- `npm test` → build, generate the CV PDFs and run the Playwright usability tests
+  (the Chromium they need is installed by `postCreateCommand`)
+
 ## Notes
 
 - Node version in this dev container: 24.

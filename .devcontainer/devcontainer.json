@@ -15,7 +15,8 @@
     }
   },
 
-  "postCreateCommand": "npm install",
+  // Dependencies plus the Chromium the Playwright usability tests run in.
+  "postCreateCommand": "npm install && npx playwright install --with-deps chromium",
 
   "customizations": {
     "vscode": {

@@ -1,11 +1,12 @@
 // Whole-document rendering: the route table, the <head> (titles, canonical and
 // hreflang links, Open Graph, structured data), the page chrome, and the files
-// generated next to the pages (sitemap, vCard).
+// generated next to the pages (sitemap, vCard, project badges).
 //
 // The HTML entry files (index.html, en/index.html, …) only mark the routes for
 // Vite; the prerender plugin in vite.config.ts replaces their content with
 // renderPage().
 
+import { badgeFiles, loadBadges } from "./badges";
 import { ADDRESS, LINKS, SITE_URL } from "./config";
 import { renderSprite, resetIcons } from "./icons";
 import {
@@ -365,11 +366,20 @@ export function renderVCard(): string {
   return `${lines.join("\r\n")}\r\n`;
 }
 
+// Data fetched once per build or dev server before anything is rendered: the
+// figures of the project badges.
+let prepared: Promise<void> | undefined;
+export function prepare(): Promise<void> {
+  prepared ??= loadBadges(data.projects.items.flatMap((p) => (p.package ? [p.package] : [])));
+  return prepared;
+}
+
 // Files generated next to the pages: emitted into dist/ by the build and served
 // by the dev server.
 export function generatedFiles(): Record<string, { type: string; body: string }> {
   return {
     "sitemap.xml": { type: "application/xml", body: renderSitemap() },
     "fabian-steiner.vcf": { type: "text/vcard", body: renderVCard() },
+    ...badgeFiles(),
   };
 }

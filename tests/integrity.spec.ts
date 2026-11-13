@@ -1,7 +1,8 @@
 // Integrity: pages load cleanly, never contact a third party, show every image
-// and icon, and every internal link or download resolves.
+// and icon (the package badges with their figures), and every internal link or
+// download resolves.
 import { expect, test } from "@playwright/test";
-import { PAGES, scrollThrough } from "./pages";
+import { HOME_PAGES, PAGES, scrollThrough } from "./pages";
 
 const ALL_PATHS = [...PAGES.map((p) => p.path), "/", "/projects/sgreening/"];
 
@@ -60,6 +61,25 @@ for (const { path } of PAGES) {
         .filter(Boolean),
     );
     expect(brokenIcons).toEqual([]);
+  });
+}
+
+for (const { path } of HOME_PAGES) {
+  test(`${path} shows a version and a download badge on every package`, async ({ page }) => {
+    await page.goto(path);
+    const cards = page.locator("#projects .card").filter({
+      has: page.locator('a[href*="powershellgallery.com"], a[href*="pypi.org"]'),
+    });
+    expect(await cards.count()).toBeGreaterThan(0);
+    for (const card of await cards.all()) {
+      const alts = await card
+        .locator('img[src^="/img/badges/"]')
+        .evaluateAll((imgs) => (imgs as HTMLImageElement[]).map((img) => img.alt));
+      expect(alts).toEqual([
+        expect.stringMatching(/^(PowerShell Gallery|PyPI): v\d/),
+        expect.stringMatching(/^Downloads: \d/),
+      ]);
+    }
   });
 }
 

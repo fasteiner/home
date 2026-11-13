@@ -4,6 +4,7 @@
 
 import { readFileSync } from "node:fs";
 import resumeData from "./data/resume.json";
+import { badgesFor, type Package } from "./badges";
 import { LINKS } from "./config";
 import { icon } from "./icons";
 
@@ -50,7 +51,8 @@ interface Project {
   repo?: string;
   desc: L;
   button: { label: L; href: string };
-  badges?: { src: string; alt: string }[];
+  // Version and download badges from the PowerShell Gallery or PyPI.
+  package?: Package;
 }
 interface Contribution {
   title: string;
@@ -414,11 +416,12 @@ function renderProjects(lang: Lang): string {
       const repo = p.repo
         ? `\n        <a href="${p.repo}" ${TARGET} class="ms-2 text-body" title="View on GitHub" aria-label="${esc(p.title)} on GitHub">${icon("fab fa-github")}</a>`
         : "";
-      const badges = p.badges
-        ? `<div>${p.badges
-            .map((b) => img(b.src, `alt="${esc(b.alt)}" title="${esc(b.alt)}"`))
-            .join("")}</div>`
-        : "";
+      const badges = (p.package ? badgesFor(p.package) : [])
+        .map(
+          (b) =>
+            `<img src="${b.src}" width="${b.width}" height="${b.height}" alt="${esc(b.alt)}" title="${esc(b.alt)}" loading="lazy" decoding="async">`,
+        )
+        .join("");
       return `<div class="col-md-6 col-lg-4 mb-4">
     <div class="card h-100 shadow-sm border-0">
       <a href="${p.primaryHref}" ${TARGET}${mediaLabel}>${media}</a>
@@ -426,7 +429,7 @@ function renderProjects(lang: Lang): string {
         <h3 class="card-title">${esc(p.title)}${repo}</h3>
         <p class="card-text">${esc(t(p.desc, lang))}</p>
         <a href="${p.button.href}" ${TARGET} class="btn btn-primary mb-2">${esc(t(p.button.label, lang))}</a>
-        ${badges}
+        ${badges && `<div>${badges}</div>`}
       </div>
     </div>
   </div>`;

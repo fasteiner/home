@@ -746,13 +746,7 @@
           "label": { "en": "View on PowerShell Gallery", "de": "Auf PowerShell Gallery ansehen" },
           "href": "https://www.powershellgallery.com/packages/XurrentHelpers/"
         },
-        "badges": [
-          { "src": "/img/badges/psg-xurrenthelpers-v.svg", "alt": "Version" },
-          {
-            "src": "/img/badges/psg-xurrenthelpers-dt.svg",
-            "alt": "Downloads"
-          }
-        ]
+        "package": { "registry": "psgallery", "id": "XurrentHelpers" }
       },
       {
         "title": "Sampler.CustomTasks",
@@ -767,16 +761,7 @@
           "label": { "en": "View on PowerShell Gallery", "de": "Auf PowerShell Gallery ansehen" },
           "href": "https://www.powershellgallery.com/packages/Sampler.CustomTasks/"
         },
-        "badges": [
-          {
-            "src": "/img/badges/psg-sampler-customtasks-v.svg",
-            "alt": "Version"
-          },
-          {
-            "src": "/img/badges/psg-sampler-customtasks-dt.svg",
-            "alt": "Downloads"
-          }
-        ]
+        "package": { "registry": "psgallery", "id": "Sampler.CustomTasks" }
       },
       {
         "title": "Notion PowerShell Module",
@@ -792,10 +777,7 @@
           "label": { "en": "View on PowerShell Gallery", "de": "Auf PowerShell Gallery ansehen" },
           "href": "https://www.powershellgallery.com/packages/Notion/"
         },
-        "badges": [
-          { "src": "/img/badges/psg-notion-v.svg", "alt": "Version" },
-          { "src": "/img/badges/psg-notion-dt.svg", "alt": "Downloads" }
-        ]
+        "package": { "registry": "psgallery", "id": "Notion" }
       },
       {
         "title": "Brevo PowerShell Module",
@@ -811,10 +793,7 @@
           "label": { "en": "View on PowerShell Gallery", "de": "Auf PowerShell Gallery ansehen" },
           "href": "https://www.powershellgallery.com/packages/Brevo/"
         },
-        "badges": [
-          { "src": "/img/badges/psg-brevo-v.svg", "alt": "Version" },
-          { "src": "/img/badges/psg-brevo-dt.svg", "alt": "Downloads" }
-        ]
+        "package": { "registry": "psgallery", "id": "Brevo" }
       },
       {
         "title": "PSImageConverter",
@@ -829,7 +808,7 @@
           "label": { "en": "View on PowerShell Gallery", "de": "Auf PowerShell Gallery ansehen" },
           "href": "https://www.powershellgallery.com/packages/PSImageConverter/"
         },
-        "badges": [{ "src": "/img/badges/psg-psimageconverter-v.svg", "alt": "Version" }]
+        "package": { "registry": "psgallery", "id": "PSImageConverter" }
       },
       {
         "title": "Xurrent Python Module",
@@ -845,10 +824,7 @@
           "label": { "en": "View on PyPI", "de": "Auf PyPI ansehen" },
           "href": "https://pypi.org/project/xurrent/"
         },
-        "badges": [
-          { "src": "/img/badges/pypi-xurrent-v.svg", "alt": "Version" },
-          { "src": "/img/badges/pypi-xurrent-dm.svg", "alt": "Downloads" }
-        ]
+        "package": { "registry": "pypi", "id": "xurrent" }
       }
     ]
   },

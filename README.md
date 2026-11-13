@@ -49,6 +49,13 @@ languages, the CV page and the CV PDF update.
 Icons are Font Awesome icon data rendered at build time into a per-page SVG sprite
 (`src/icons.ts`); an unknown icon name fails the build.
 
+The version and download badges of the projects (`"package"` in `resume.json`) are drawn at
+build time by `src/badges.ts`: it fetches the figures from the PowerShell Gallery (the sum of
+the downloads of every version, since the gallery's package total is out of date) and from
+PyPI / pypistats.org, and renders them with `badge-maker`, the shields.io renderer. Visitors
+load them from this site, never from a third party. If a registry cannot be reached, the
+build fails in CI (the live site keeps its badges) and leaves the badges out locally.
+
 ## Tests
 
 `npm test` runs the Playwright usability tests in `tests/` against the production build, on a
@@ -76,6 +83,7 @@ src/
   render.ts             # page content from resume.json
   page.ts               # whole documents, routes, sitemap, vCard (used by vite.config.ts)
   icons.ts  icon-svg.ts # Font Awesome icons as inline SVG
+  badges.ts             # project version / download badges, fetched at build time
   main.ts  theme-switcher.ts  resume.ts  scroll-reveal.ts  section-nav.ts  …
 scss/                   # SCSS (imports the used parts of Bootstrap + the theme layer)
 scripts/                # CV PDF generation, social preview image / icons
@@ -94,8 +102,9 @@ See [.devcontainer/README.md](.devcontainer/README.md). Reopen in Container → 
 
 [`.github/workflows/ci.yml`](.github/workflows/ci.yml) lints, builds and tests every pull
 request. Pushing to `main` runs the same checks and, only when they pass, publishes `dist/`
-(including the freshly generated CV PDFs) to GitHub Pages. The custom domain is shipped from
-`public/CNAME`. Dependabot proposes dependency updates weekly.
+(including the freshly generated CV PDFs) to GitHub Pages. A scheduled run rebuilds and
+redeploys `main` every night so the project badges stay current. The custom domain is shipped
+from `public/CNAME`. Dependabot proposes dependency updates weekly.
 
 > One-time setup: in the repository **Settings → Pages**, set **Source** to **GitHub Actions**.
 

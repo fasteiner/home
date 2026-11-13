@@ -32,9 +32,14 @@
     margin-bottom: 0.8rem;
   }
 
-  div img {
+  // Version and download badges, each linking to its registry or statistics
+  // page; the link hugs the badge so its focus ring does too.
+  .badge-link {
+    display: inline-block;
     margin-right: 0.4rem;
     margin-bottom: 0.3rem;
+    border-radius: 3px;
+    line-height: 0;
   }
 }
 

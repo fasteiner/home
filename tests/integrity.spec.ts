@@ -1,6 +1,6 @@
 // Integrity: pages load cleanly, never contact a third party, show every image
-// and icon (the package badges with their figures), and every internal link or
-// download resolves.
+// (the package badges with their figures; icons: icons.spec.ts), and every
+// internal link or download resolves.
 import { expect, test } from "@playwright/test";
 import { HOME_PAGES, PAGES, scrollThrough } from "./pages";
 
@@ -33,7 +33,7 @@ for (const path of ALL_PATHS) {
 }
 
 for (const { path } of PAGES) {
-  test(`${path} shows every image and icon`, async ({ page }) => {
+  test(`${path} shows every image`, async ({ page }) => {
     await page.goto(path);
     await scrollThrough(page);
     await page.waitForLoadState("networkidle");
@@ -49,18 +49,6 @@ for (const { path } of PAGES) {
         })),
     );
     expect(images.filter((i) => !i.loaded || !i.sized)).toEqual([]);
-
-    // Every inline icon points at a symbol of the page's sprite that has a path.
-    const brokenIcons = await page.locator("svg.icon").evaluateAll((icons) =>
-      icons
-        .map((icon) => {
-          const ref = icon.querySelector("use")?.getAttribute("href");
-          const path = ref ? document.querySelector(`${ref} path`) : icon.querySelector("path");
-          return path?.getAttribute("d") ? null : (ref ?? icon.outerHTML.slice(0, 80));
-        })
-        .filter(Boolean),
-    );
-    expect(brokenIcons).toEqual([]);
   });
 }
 

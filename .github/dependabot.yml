@@ -7,6 +7,10 @@ updates:
     schedule:
       interval: weekly
     groups:
+      # The Font Awesome icon packages share their icon types, so they move
+      # together, major updates included (the first matching group wins).
+      fontawesome:
+        patterns: ["@fortawesome/*"]
       # Minor and patch updates arrive together in one pull request.
       minor-and-patch:
         update-types: [minor, patch]

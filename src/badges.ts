@@ -12,6 +12,9 @@ export interface Package {
 export interface Badge {
   src: string;
   alt: string;
+  // Where the badge links to: the registry page (version) or the download
+  // statistics (downloads).
+  href: string;
   width: number;
   height: number;
 }
@@ -19,6 +22,8 @@ export interface Badge {
 interface Stats {
   label: string;
   alt: string;
+  page: string;
+  statsPage: string;
   version: string;
   downloads: number;
   perMonth: boolean;
@@ -65,6 +70,8 @@ async function psGallery(id: string): Promise<Stats> {
   return {
     label: "powershell gallery",
     alt: "PowerShell Gallery",
+    page: `https://www.powershellgallery.com/packages/${id}/`,
+    statsPage: `https://www.powershellgallery.com/stats/packages/${id}?groupby=Version`,
     version,
     downloads,
     perMonth: false,
@@ -79,6 +86,8 @@ async function pypi(id: string): Promise<Stats> {
   return {
     label: "pypi",
     alt: "PyPI",
+    page: `https://pypi.org/project/${id}/`,
+    statsPage: `https://pypistats.org/packages/${id.toLowerCase()}`,
     version: project.info.version,
     downloads: recent.data.last_month,
     perMonth: true,
@@ -107,6 +116,7 @@ function draw(pkg: Package, stats: Stats): Badge[] {
       message: version,
       color: versionColor(version.slice(1)),
       alt: stats.alt,
+      href: stats.page,
     },
     {
       file: `${slug}-${stats.perMonth ? "dm" : "dt"}`,
@@ -114,14 +124,15 @@ function draw(pkg: Package, stats: Stats): Badge[] {
       message: downloads,
       color: downloadsColor(stats.downloads),
       alt: "Downloads",
+      href: stats.statsPage,
     },
   ];
-  return parts.map(({ file, label, message, color, alt }) => {
+  return parts.map(({ file, label, message, color, alt, href }) => {
     const svg = makeBadge({ label, message, color });
     const src = `/img/badges/${file}.svg`;
     svgs[src.slice(1)] = svg;
     const size = (name: string) => Number(svg.match(new RegExp(`\\s${name}="(\\d+)"`))![1]);
-    return { src, alt: `${alt}: ${message}`, width: size("width"), height: size("height") };
+    return { src, alt: `${alt}: ${message}`, href, width: size("width"), height: size("height") };
   });
 }
 

@@ -72,12 +72,31 @@ for (const { path } of HOME_PAGES) {
     });
     expect(await cards.count()).toBeGreaterThan(0);
     for (const card of await cards.all()) {
-      const alts = await card
-        .locator('img[src^="/img/badges/"]')
-        .evaluateAll((imgs) => (imgs as HTMLImageElement[]).map((img) => img.alt));
-      expect(alts).toEqual([
-        expect.stringMatching(/^(PowerShell Gallery|PyPI): v\d/),
-        expect.stringMatching(/^Downloads: \d/),
+      // Each badge links to its registry page (version) or statistics (downloads).
+      const badges = await card
+        .locator('a.badge-link:has(img[src^="/img/badges/"])')
+        .evaluateAll((links) =>
+          (links as HTMLAnchorElement[]).map((a) => ({
+            alt: a.querySelector("img")!.alt,
+            href: a.href,
+            newTab: a.target === "_blank" && a.relList.contains("noopener"),
+          })),
+        );
+      expect(badges).toEqual([
+        {
+          alt: expect.stringMatching(/^(PowerShell Gallery|PyPI): v\d/),
+          href: expect.stringMatching(
+            /^https:\/\/(www\.powershellgallery\.com\/packages|pypi\.org\/project)\/[\w.-]+\/$/,
+          ),
+          newTab: true,
+        },
+        {
+          alt: expect.stringMatching(/^Downloads: \d/),
+          href: expect.stringMatching(
+            /^https:\/\/(www\.powershellgallery\.com\/stats\/packages\/[\w.-]+\?groupby=Version|pypistats\.org\/packages\/[\w.-]+)$/,
+          ),
+          newTab: true,
+        },
       ]);
     }
   });

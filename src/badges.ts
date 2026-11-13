@@ -34,7 +34,9 @@ async function get(url: string): Promise<Response> {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return res;
     } catch (error) {
-      if (attempt === ATTEMPTS) throw new Error(`${url}: ${(error as Error).message}`);
+      if (attempt === ATTEMPTS) {
+        throw new Error(`${url}: ${(error as Error).message}`, { cause: error });
+      }
       await new Promise((resolve) => setTimeout(resolve, 1000 * 2 ** attempt));
     }
   }

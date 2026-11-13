@@ -33,14 +33,16 @@
 }
 
 .legal-label {
-  flex: 0 0 14rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--bs-secondary-color);
 
+  // A fixed label column beside the value. Only in the row layout: in the
+  // stacked phone layout the flex basis would become a 14rem tall label.
   @media (min-width: 576px) {
+    flex: 0 0 14rem;
     padding-top: 0.1rem;
   }
 }

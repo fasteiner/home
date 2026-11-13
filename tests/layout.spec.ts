@@ -42,6 +42,36 @@ test("the mobile navbar keeps its distance from the screen edges", async ({ page
   expect(touching).toEqual([]);
 });
 
+for (const path of ["/en/imprint/", "/de/impressum/"]) {
+  test(`${path} keeps each label next to its value`, async ({ page }) => {
+    await page.goto(path);
+    // Stacked (phone) or side by side (desktop): the value text starts right
+    // below or beside the label text. Measured on the text itself, since an
+    // oversized label box hides the gap inside it.
+    const gaps = await page.locator(".legal-row").evaluateAll((rows) =>
+      rows
+        .map((row) => {
+          const labelEl = row.querySelector(".legal-label");
+          if (!labelEl) return null;
+          const textBox = (el: Element) => {
+            const range = document.createRange();
+            range.selectNodeContents(el);
+            return range.getBoundingClientRect();
+          };
+          const label = textBox(labelEl);
+          const value = textBox(row.querySelector(".legal-value")!);
+          const stacked = value.top >= label.bottom - 1;
+          return {
+            label: labelEl.textContent,
+            gap: Math.round(stacked ? value.top - label.bottom : Math.abs(value.top - label.top)),
+          };
+        })
+        .filter((r) => r && r.gap > 12),
+    );
+    expect(gaps).toEqual([]);
+  });
+}
+
 test("phones do not download the sidebar photo", async ({ page, isMobile }) => {
   test.skip(!isMobile, "The photo is shown in the desktop sidebar");
   const photos: string[] = [];

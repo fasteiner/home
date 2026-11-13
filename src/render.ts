@@ -419,7 +419,7 @@ function renderProjects(lang: Lang): string {
       const badges = (p.package ? badgesFor(p.package) : [])
         .map(
           (b) =>
-            `<img src="${b.src}" width="${b.width}" height="${b.height}" alt="${esc(b.alt)}" title="${esc(b.alt)}" loading="lazy" decoding="async">`,
+            `<a class="badge-link" href="${b.href}" ${TARGET}><img src="${b.src}" width="${b.width}" height="${b.height}" alt="${esc(b.alt)}" title="${esc(b.alt)}" loading="lazy" decoding="async"></a>`,
         )
         .join("");
       return `<div class="col-md-6 col-lg-4 mb-4">

@@ -448,10 +448,6 @@
             "name": { "en": "CP-Consult Bugram GmbH", "de": "CP-Consult Bugram GmbH" },
             "href": "http://www.cp-consult.at/"
           },
-          "reference": {
-            "href": "download/Dienstzeugnis_CP-Consult.pdf",
-            "label": { "en": "Employer reference", "de": "Dienstzeugnis" }
-          },
           "date": { "en": "August 2019 – February 2020", "de": "August 2019 – Februar 2020" },
           "bullets": [
             { "en": "Network Design and Configuration", "de": "Netzwerkdesign und -konfiguration" },
@@ -473,10 +469,6 @@
             "name": { "en": "Austrian Armed Forces", "de": "Österreichisches Bundesheer" },
             "href": "http://www.bundesheer.at/"
           },
-          "reference": {
-            "href": "download/Praktikumsbestätigung_Österreichisches_Bundesheer.pdf",
-            "label": { "en": "Confirmation of service", "de": "Bestätigung" }
-          },
           "date": { "en": "October 2018 – March 2019", "de": "Oktober 2018 – März 2019" }
         },
         {
@@ -496,10 +488,6 @@
               "de": "FCP Fritsch, Chiari & Partner ZT GmbH"
             },
             "href": "http://www.fcp.at"
-          },
-          "reference": {
-            "href": "download/Praktikumszeugnis_FCP_2018.pdf",
-            "label": { "en": "Employer reference", "de": "Dienstzeugnis" }
           },
           "date": { "en": "August 2018 – September 2018", "de": "August 2018 – September 2018" },
           "summary": {
@@ -527,10 +515,6 @@
               "de": "FCP Fritsch, Chiari & Partner ZT GmbH"
             },
             "href": "http://www.fcp.at"
-          },
-          "reference": {
-            "href": "download/Praktikumszeugnis_FCP_2017.pdf",
-            "label": { "en": "Employer reference", "de": "Dienstzeugnis" }
           },
           "date": { "en": "August 2017", "de": "August 2017" },
           "summary": {
@@ -574,10 +558,6 @@
             },
             "href": "http://www.fcp.at"
           },
-          "reference": {
-            "href": "download/Praktikumszeugnis_FCP_2016.pdf",
-            "label": { "en": "Employer reference", "de": "Dienstzeugnis" }
-          },
           "date": { "en": "August 2016", "de": "August 2016" },
           "summary": {
             "en": "Network Administration, Development of a Sensor System, Python Programming, Database Development and IT Support",
@@ -589,10 +569,6 @@
           "org": {
             "name": { "en": "TTTech Computertechnik AG", "de": "TTTech Computertechnik AG" },
             "href": "https://www.tttech.com/"
-          },
-          "reference": {
-            "href": "download/Praktikumszeugnis_TTTech_2015.pdf",
-            "label": { "en": "Employer reference", "de": "Dienstzeugnis" }
           },
           "date": { "en": "July 2015 – August 2015", "de": "Juli 2015 – August 2015" },
           "summary": {
@@ -989,6 +965,13 @@
 
   "documents": {
     "title": { "en": "Documents", "de": "Dokumente" },
+    "onRequest": {
+      "text": {
+        "en": "Employer references, my bachelor's diploma and the engineer certificate are available on request.",
+        "de": "Dienst- und Praktikumszeugnisse, die Bachelor-Urkunde und das Ingenieurzertifikat erhalten Sie auf Anfrage."
+      },
+      "link": { "en": "Get in touch", "de": "Kontakt aufnehmen" }
+    },
     "items": [
       {
         "href": {
@@ -996,56 +979,6 @@
           "de": "download/Lebenslauf_Fabian_Steiner.pdf"
         },
         "label": { "en": "Curriculum vitae (PDF, up to date)", "de": "Lebenslauf (PDF, aktuell)" }
-      },
-      {
-        "href": "download/BakkurkundeEng_BIC_6_SS2023.pdf",
-        "label": { "en": "Bachelor Diploma (English)", "de": "Bachelor-Diplom (Englisch)" }
-      },
-      {
-        "href": "download/Ingenieurzertifikat.pdf",
-        "label": { "en": "Engineer Certificate (German)", "de": "Ingenieurzertifikat (Deutsch)" }
-      },
-      {
-        "href": "download/Dienstzeugnis_CP-Consult.pdf",
-        "label": {
-          "en": "Employer's Reference — CP-Consult 2019–2020 (German)",
-          "de": "Dienstzeugnis — CP-Consult 2019–2020 (Deutsch)"
-        }
-      },
-      {
-        "href": "download/Praktikumsbestätigung_Österreichisches_Bundesheer.pdf",
-        "label": {
-          "en": "Confirmation of Service — Austrian Armed Forces (German)",
-          "de": "Bestätigung — Österreichisches Bundesheer (Deutsch)"
-        }
-      },
-      {
-        "href": "download/Praktikumszeugnis_FCP_2018.pdf",
-        "label": {
-          "en": "Employer's Reference — FCP 2018 (German)",
-          "de": "Dienstzeugnis — FCP 2018 (Deutsch)"
-        }
-      },
-      {
-        "href": "download/Praktikumszeugnis_FCP_2017.pdf",
-        "label": {
-          "en": "Employer's Reference — FCP 2017 (German)",
-          "de": "Dienstzeugnis — FCP 2017 (Deutsch)"
-        }
-      },
-      {
-        "href": "download/Praktikumszeugnis_FCP_2016.pdf",
-        "label": {
-          "en": "Employer's Reference — FCP 2016 (German)",
-          "de": "Dienstzeugnis — FCP 2016 (Deutsch)"
-        }
-      },
-      {
-        "href": "download/Praktikumszeugnis_TTTech_2015.pdf",
-        "label": {
-          "en": "Employer's Reference — TTTech 2015 (German)",
-          "de": "Dienstzeugnis — TTTech 2015 (Deutsch)"
-        }
       },
       {
         "href": "download/Certificate%20Xurrent%20Automation%20Rules%20(for%20Absorb).pdf",

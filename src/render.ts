@@ -26,7 +26,6 @@ interface Org {
 interface ExperienceItem {
   role: L;
   org: Org;
-  reference?: LinkRef;
   date: L;
   bullets?: L[];
   summary?: L;
@@ -162,7 +161,9 @@ export interface ResumeData {
   contributions: { title: L; lead: L; contributedLabel: L; items: Contribution[] };
   interests: { title: L; items: Interest[] };
   certifications: { title: L; items: Cert[] };
-  documents: { title: L; items: DocItem[] };
+  // References and degree certificates are not published, only offered on
+  // request (they carry personal data such as the date of birth).
+  documents: { title: L; onRequest: { text: L; link: L }; items: DocItem[] };
   imprint: Imprint;
   privacy: Privacy;
 }
@@ -329,11 +330,6 @@ function experienceItem(item: ExperienceItem, lang: Lang): string {
   const org = item.org.href
     ? `<a href="${item.org.href}" ${TARGET}>${esc(t(item.org.name, lang))}</a>`
     : esc(t(item.org.name, lang));
-  const ref = item.reference
-    ? ` &nbsp;&nbsp;| <a href="${asset(item.reference.href)}" class="reference-link" ${TARGET}>${esc(
-        t(item.reference.label, lang),
-      )}</a>`
-    : "";
   let detail = "";
   if (item.bullets) {
     detail = `<ul>${item.bullets.map((b) => `<li>${t(b, lang)}</li>`).join("")}</ul>`;
@@ -343,7 +339,7 @@ function experienceItem(item: ExperienceItem, lang: Lang): string {
   return `<div class="resume-item d-flex flex-column flex-md-row mb-5">
     <div class="resume-content me-auto">
       <h3 class="mb-0">${esc(t(item.role, lang))}</h3>
-      <div class="subheading mb-3">${org}${ref}</div>
+      <div class="subheading mb-3">${org}</div>
       ${detail}
     </div>
     <div class="resume-date text-md-end"><span class="text-primary">${esc(t(item.date, lang))}</span></div>
@@ -526,10 +522,12 @@ function renderDocuments(lang: Lang): string {
   </a>`,
     )
     .join("\n");
+  const { onRequest } = data.documents;
+  const note = `<p class="documents-on-request mt-4 mb-0">${esc(t(onRequest.text, lang))} <a href="#contact" class="js-scroll-trigger">${esc(t(onRequest.link, lang))}</a></p>`;
   return section(
     "documents",
     t(data.documents.title, lang),
-    `<div class="list-group shadow-sm">${items}</div>`,
+    `<div class="list-group shadow-sm">${items}</div>${note}`,
   );
 }
 

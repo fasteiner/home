@@ -14,6 +14,13 @@ updates:
       # Minor and patch updates arrive together in one pull request.
       minor-and-patch:
         update-types: [minor, patch]
+    ignore:
+      # @types/node follows the Node.js major the site builds and runs on
+      # (Node 24 in CI and the README). Major bumps are skipped; 24.x minor and
+      # patch updates still arrive. Raise it by hand together with the runtime
+      # (see #44).
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: github-actions
     directory: /

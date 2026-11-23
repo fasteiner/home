@@ -16,19 +16,6 @@ section.resume-section > .my-auto > h2 {
   color: $primary;
 }
 
-// Understated, underlined "reference" links in the brand accent.
-.reference-link {
-  color: $primary;
-  text-decoration: underline;
-  font-weight: 500;
-  transition: color 0.2s ease;
-
-  &:hover,
-  &:focus {
-    color: shade-color($primary, 20%);
-  }
-}
-
 [data-bs-theme="dark"] {
   .subheading,
   section.resume-section > .my-auto > h2 {
@@ -49,14 +36,5 @@ section.resume-section > .my-auto > h2 {
 
   .earlier-positions > summary::before {
     border-color: tint-color($primary, 35%);
-  }
-
-  .reference-link {
-    color: tint-color($primary, 35%);
-
-    &:hover,
-    &:focus {
-      color: tint-color($primary, 55%);
-    }
   }
 }

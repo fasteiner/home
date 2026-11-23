@@ -1,4 +1,5 @@
 import { defineConfig, type IndexHtmlTransformContext, type Plugin } from "vite";
+import { readFileSync, statSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { ROUTES, generatedFiles, prepare, renderPage, routeForPath } from "./src/page";
 
@@ -41,11 +42,41 @@ function prerender(): Plugin {
   };
 }
 
+// Answer unknown paths in `vite preview` the way GitHub Pages does: status 404
+// with the site's own 404.html, so the tests see what visitors of a removed or
+// mistyped URL get (Vite alone would send an empty 404).
+function notFoundPage(): Plugin {
+  return {
+    name: "not-found-page",
+    configurePreviewServer(server) {
+      const outDir = path(`./${server.config.build.outDir}/`);
+      const exists = (file: string) => {
+        try {
+          return statSync(file).isFile();
+        } catch {
+          return false;
+        }
+      };
+      // Runs after Vite's static files and HTML fallback, so only requests
+      // that match no file in dist/ fall through to the 404 page.
+      return () => {
+        server.middlewares.use((req, res, next) => {
+          const pathname = decodeURIComponent(new URL(req.url ?? "/", "http://x").pathname);
+          if (exists(`${outDir}${pathname}`)) return next();
+          res.statusCode = 404;
+          res.setHeader("Content-Type", "text/html; charset=utf-8");
+          res.end(readFileSync(`${outDir}404.html`));
+        });
+      };
+    },
+  };
+}
+
 // https://vite.dev/config/
 export default defineConfig({
   base: "/",
   appType: "mpa",
-  plugins: [prerender()],
+  plugins: [prerender(), notFoundPage()],
   server: {
     port: 5173,
   },

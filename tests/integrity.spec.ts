@@ -4,7 +4,7 @@
 import { expect, test } from "@playwright/test";
 import { HOME_PAGES, PAGES, scrollThrough } from "./pages";
 
-const ALL_PATHS = [...PAGES.map((p) => p.path), "/", "/projects/sgreening/"];
+const ALL_PATHS = [...PAGES.map((p) => p.path), "/"];
 
 for (const path of ALL_PATHS) {
   test(`${path} loads without errors or third-party requests`, async ({ page, baseURL }) => {

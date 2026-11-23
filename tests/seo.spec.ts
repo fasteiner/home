@@ -76,6 +76,21 @@ test("the web manifest and its icons are served", async ({ request }) => {
   expect((await request.get("/img/apple-touch-icon.png")).status()).toBe(200);
 });
 
+test("security.txt names a contact and has not expired (RFC 9116)", async ({ request }) => {
+  const res = await request.get("/.well-known/security.txt");
+  expect(res.status()).toBe(200);
+  expect(res.headers()["content-type"]).toContain("text/plain");
+  const txt = await res.text();
+  expect(txt).toMatch(/^Contact: mailto:\S+@stei-ner\.net$/m);
+  expect(txt).toContain("Preferred-Languages: de, en");
+  expect(txt).toContain(`Canonical: ${SITE_URL}/.well-known/security.txt`);
+  // Expires must lie in the future and at most a year ahead; renew it in time.
+  const expires = Date.parse(txt.match(/^Expires: (\S+)$/m)![1]);
+  const days = (expires - Date.now()) / 86_400_000;
+  expect(days).toBeGreaterThan(0);
+  expect(days).toBeLessThanOrEqual(366);
+});
+
 test("the 404 page is bilingual, not indexed and links home", async ({ page }) => {
   await page.goto("/404.html");
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex");

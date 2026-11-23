@@ -1,0 +1,6 @@
+# Security contact for fabian.stei-ner.net (RFC 9116).
+# Renew "Expires" before it passes (at most one year ahead).
+Contact: mailto:fabian@stei-ner.net
+Expires: 2027-11-01T00:00:00.000Z
+Preferred-Languages: de, en
+Canonical: https://fabian.stei-ner.net/.well-known/security.txt

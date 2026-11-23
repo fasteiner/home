@@ -89,7 +89,7 @@ scss/                   # SCSS (imports the used parts of Bootstrap + the theme 
 scripts/                # CV PDF generation, social preview image / icons
 tests/                  # Playwright usability tests
 public/                 # static assets copied verbatim into dist/
-  img/  download/  projects/sgreening/  robots.txt  site.webmanifest  CNAME
+  img/  download/  robots.txt  site.webmanifest  CNAME
 .devcontainer/          # VS Code Dev Container (Node 24)
 .github/                # CI (tests + GitHub Pages deployment), Dependabot
 ```

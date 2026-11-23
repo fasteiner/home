@@ -84,3 +84,30 @@ test("the 404 page is bilingual, not indexed and links home", async ({ page }) =
   await expect(page.locator('a[href="/de/"]')).toBeVisible();
   await expect(page.locator('a[href="/en/"]')).toBeVisible();
 });
+
+// The SGREENING subpage was removed (#51): nothing links to it any more, and
+// its old URLs end on the site's 404 page, not on a broken page.
+test("the removed SGREENING subpage is no longer linked", async ({ page }) => {
+  for (const { path } of PAGES) {
+    await page.goto(path);
+    await expect(page.locator('a[href*="sgreening" i]'), path).toHaveCount(0);
+  }
+  // The diploma project itself stays in the experience list, as plain text.
+  await page.goto("/en/");
+  await expect(page.locator("#experience .subheading", { hasText: "SGREENING" })).toHaveCount(1);
+});
+
+for (const path of [
+  "/projects/sgreening/",
+  "/projects/sgreening/index.html",
+  "/projects/sgreening/vendor/jquery/jquery.min.js",
+  "/projects/sgreening/ms/2017_06_30.zip",
+]) {
+  test(`the old SGREENING URL ${path} shows the 404 page`, async ({ page }) => {
+    const response = await page.goto(path);
+    expect(response?.status()).toBe(404);
+    await expect(page.locator('.not-found-block[lang="de"] h2')).toHaveText("Seite nicht gefunden");
+    await expect(page.locator('.not-found-block[lang="en"] h2')).toHaveText("Page not found");
+    await expect(page.locator('a[href="/en/"]')).toBeVisible();
+  });
+}
